@@ -1,13 +1,12 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Headroom from 'react-headroom';
-import './Header.css';
+import './header.css';
 
-import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
-import StyleContext from '../../contexts/StyleContext';
+import { useStyle } from '~/contexts/StyleContext';
+import Switch from '~/components/base/switch/Switch';
 
 function Header() {
-	const { isDark } = useContext(StyleContext);
+	const { isDark } = useStyle();
 
 	return (
 		<Headroom>
@@ -52,7 +51,7 @@ function Header() {
 					</li>
 					<li>
 						<a>
-							<ToggleSwitch />
+							<Switch />
 						</a>
 					</li>
 				</ul>

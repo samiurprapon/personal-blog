@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/client';
-import { client } from './utils/Apollo';
-import { StyleProvider } from './contexts/StyleContext';
 
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Top from './components/topbutton/Top';
+import { client } from '~/utils/apollo';
+import { StyleProvider } from '~/contexts/StyleContext';
+
+import Header from '~/components/header/Header';
+import Footer from '~/components/footer/Footer';
+import Top from '~/components/base/topButton/TopButton';
 
 import './App.css';
 
-import Home from './containers/Home/Home';
-import Philosophy from './containers/Philosophy/Philosophy';
-import Programming from './containers/Programming/Programming';
-import Project from './containers/Project/Project';
-import Tools from './containers/Tools/Tools';
+import Home from '~/pages/latest/Latest';
+import Philosophy from '~/pages/philosophy/Philosophy';
+import Programming from '~/pages/programming/Programming';
+import Project from '~/pages/projects/Projects';
+import Tools from '~/pages/tools/Tools';
 
-import BlogPost from './containers/BlogPost/BlogPost';
+import BlogPost from '~/pages/post/Post';
 
 const App = () => {
 	const [isDark, setIsDark] = useState(false);

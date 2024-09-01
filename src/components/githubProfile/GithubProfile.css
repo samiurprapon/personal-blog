@@ -1,0 +1,99 @@
+.profile-image {
+	border-radius: 50%;
+	border: 0.5rem solid #e2e2e2;
+	margin-left: auto;
+	width: 100%;
+	max-width: 222px;
+	height: auto;
+	box-shadow: none;
+	transition: all 0.3s ease-out;
+}
+
+.main-content-profile {
+	flex: 100%;
+}
+
+.profile-image:hover {
+	box-shadow: rgba(0, 0, 0, 1) 0 30px 30px -30px;
+}
+
+.prof-title {
+	font-weight: 400;
+}
+
+.location-div {
+	text-shadow: blanchedalmond;
+}
+
+.opp-div {
+	padding-bottom: 1rem;
+}
+
+.row {
+	text-align: center;
+}
+
+.image-content-profile {
+	text-align: center;
+	max-width: 100%;
+	height: auto;
+}
+
+.bio-text {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+.desc-prof {
+	line-height: 45px;
+	font-size: 19px;
+}
+
+@media (max-width: 768px) {
+	.row {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.main-content-profile {
+		text-align: center;
+		order: 2;
+	}
+
+	.bio-text {
+		font-size: 16px;
+	}
+
+	.image-content-profile {
+		margin-left: auto;
+		margin-right: auto;
+		order: 1;
+	}
+
+	.desc-prof {
+		line-height: 30px;
+		font-size: 16px;
+	}
+
+	.profile-image {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		max-width: 250px;
+		height: auto;
+	}
+
+	.profile-image:hover {
+		box-shadow: rgba(0, 0, 0, 1) -0 50px 50px -50px;
+		transition: 0.3s ease-out;
+	}
+
+	.prof-title {
+		padding-bottom: 1rem;
+		font-size: 32px;
+		text-align: center;
+	}
+}

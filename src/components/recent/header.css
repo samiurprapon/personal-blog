@@ -1,0 +1,17 @@
+.prof-title {
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	font-size: 24px;
+	/* font-weight: 00; */
+}
+
+@media (max-width: 768px) {
+	.prof-title {
+		padding-bottom: 1rem;
+		font-size: 32px;
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}
