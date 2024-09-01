@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint",
+		"mhutchie.git-graph",
+		"wix.vscode-import-cost",
+		"christian-kohler.path-intellisense",
+		"oouo-diogo-perdigao.docthis",
+		"tbeseda.toggle-js-inlayhints"
+	]
+}
