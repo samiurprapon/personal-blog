@@ -1,0 +1,41 @@
+{
+	"name": "@samiurprapon/blog",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
+		"format": "prettier --write .",
+		"preview": "vite preview",
+		"prepare": "husky",
+		"postinstall": "husky",
+		"commmitmsg": "npx commitlint -x @commitlint/config-conventional -E HUSKY_GIT_PARAMS"
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^19.4.1",
+		"@commitlint/config-conventional": "^19.4.1",
+		"@eslint/js": "^9.9.0",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"eslint": "^9.9.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-react-hooks": "^5.1.0-rc-fb9a90fa48-20240614",
+		"eslint-plugin-react-refresh": "^0.4.9",
+		"globals": "^15.9.0",
+		"husky": "^9.1.5",
+		"lint-staged": "^15.2.9",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.3",
+		"typescript-eslint": "^8.0.1",
+		"vite": "^5.4.1"
+	}
+}
