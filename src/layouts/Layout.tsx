@@ -1,4 +1,4 @@
-import './Layout.css';
+import './layout.css';
 
 import PostList from '~/components/postList/PostList';
 import Profile from '~/components/profile/Profile';

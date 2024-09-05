@@ -16,6 +16,7 @@
 	},
 	"dependencies": {
 		"@apollo/client": "^3.11.5",
+		"@octokit/rest": "^21.0.2",
 		"atob": "^2.1.2",
 		"markdown-to-jsx": "^7.5.0",
 		"moment": "^2.30.1",

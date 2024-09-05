@@ -35,7 +35,7 @@ function Header() {
 				</label>
 				<ul className={isDark ? 'dark-menu menu' : 'menu'}>
 					<li>
-						<Link to="/blog/">Home</Link>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
 						<Link to="/philosophy">Philosophy</Link>
