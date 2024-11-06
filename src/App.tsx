@@ -1,14 +1,11 @@
-import Header from '~/sections/header/Header';
-import { GitHubContributionsCalendar } from '~/components/GitHubCalendar';
-import { GITHUB_USERNAME } from '~/configs/environment';
+import { RouterProvider } from 'react-router-dom';
+import router from '~/routes';
 
 function App() {
 	return (
-		<main className="container">
-			<Header />
-			<br />
-			<GitHubContributionsCalendar username={GITHUB_USERNAME} />
-		</main>
+		<>
+			<RouterProvider router={router} />
+		</>
 	);
 }
 

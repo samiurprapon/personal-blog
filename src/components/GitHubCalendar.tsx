@@ -101,6 +101,7 @@ export function GitHubContributionsCalendar({ username }: CalendarProps) {
 				<div className="col-xs-2">
 					<div className="text-center">
 						<span
+							key="last"
 							style={
 								year === 'last'
 									? { color: '#f25c54', paddingBottom: '8px' }
@@ -119,7 +120,7 @@ export function GitHubContributionsCalendar({ username }: CalendarProps) {
 						{ length: currentYear - GITHUB_JOIN_YEAR + 1 },
 						(_, i) => currentYear - i,
 					).map((selectedYear) => (
-						<div className="text-center">
+						<div className="text-center" key={selectedYear}>
 							<span
 								key={selectedYear}
 								style={
