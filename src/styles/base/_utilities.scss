@@ -1,0 +1,44 @@
+@use 'vars' as *;
+
+.no-padding {
+	padding: 0;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.hide {
+	display: none;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: end;
+}
+
+.flex-aligned {
+	display: flex;
+	align-items: center;
+}
+
+.selected {
+	font-weight: bold;
+}
+
+.primary-text {
+	color: $color-primary;
+}
+
+.secondary-text {
+	color: $color-secondary;
+}
+
+.italic-text {
+	font-style: italic;
+	margin-top: 0;
+	margin-bottom: 0;
+}

@@ -1,0 +1,37 @@
+/*
+|------------------------------------------------------------------|
+|                             Font families                        |
+|------------------------------------------------------------------|
+*/
+
+// import Poppins from google fonts
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700?display=swap');
+
+// import Inter font from google fonts
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap');
+
+// import Montserrat font from google fonts
+@import url('https://fonts.google.com/share?selection.family=Montserrat:ital,wght@0,100..900;1,100..900');
+
+// import Agustina font from local
+@font-face {
+	font-family: 'Agustina Regular';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		local('Agustina Regular'),
+		url('/src/assets/fonts/Agustina.woff') format('woff');
+	font-display: swap;
+}
+
+$font-montserrat: 'Montserrat', sans-serif;
+$font-agustina: 'Agustina Regular';
+
+$font-poppins: 'Poppins', sans-serif;
+$font-inter: 'Inter', sans-serif;
+
+/*
+|------------------------------------------------------------------|
+|                             Font styles                          |
+|------------------------------------------------------------------|
+*/
