@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { ThemeContextType } from '~/interfaces/ThemeContextType';
+import { ThemeContextType, Theme } from '~/interfaces/ThemeContextType';
 
 export const ThemeContext = createContext<ThemeContextType>({
-	theme: 'light',
+	theme: 'dark',
 	toggleTheme: () => {},
 });
 
@@ -11,34 +11,57 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-	const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(
-		() =>
-			(localStorage.getItem('theme') as 'light' | 'dark' | 'system') ||
-			'system',
+	const [theme, setTheme] = useState<Theme>(
+		() => (localStorage.getItem('theme') as Theme) || 'system',
 	);
 
-	useEffect(() => {
-		localStorage.setItem('theme', theme);
+	const updateTheme = (newTheme: Theme) => {
+		const root = document.documentElement;
+		root.classList.remove('light', 'dark');
 
-		document.body.classList.remove('light', 'dark');
-
-		document.body.classList.add(
-			theme === 'system'
+		const effectiveTheme: Exclude<Theme, 'system'> =
+			newTheme === 'system'
 				? matchMedia('(prefers-color-scheme: dark)').matches
 					? 'dark'
 					: 'light'
-				: theme,
-		);
+				: newTheme;
+
+		root.setAttribute('data-theme', effectiveTheme);
+	};
+
+	useEffect(() => {
+		localStorage.setItem('theme', theme);
+		updateTheme(theme);
+
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+		const handleSystemThemeChange = () => {
+			if (theme === 'system') {
+				updateTheme('system');
+			}
+		};
+
+		mediaQuery.addEventListener('change', handleSystemThemeChange);
+
+		return () => {
+			mediaQuery.removeEventListener('change', handleSystemThemeChange);
+		};
 	}, [theme]);
 
 	const toggleTheme = () => {
-		setTheme((prevTheme) =>
-			prevTheme === 'light'
-				? 'dark'
-				: prevTheme === 'dark'
-					? 'system'
-					: 'light',
-		);
+		setTheme((prevTheme: Theme) => {
+			if (prevTheme === 'light') {
+				return 'dark';
+			} else if (prevTheme === 'dark') {
+				return 'light';
+			} else if (prevTheme === 'system') {
+				return matchMedia('(prefers-color-scheme: dark)').matches
+					? 'light'
+					: 'dark';
+			} else {
+				return 'system';
+			}
+		});
 	};
 
 	return (

@@ -4,9 +4,8 @@ import { GITHUB_USERNAME } from '~/configs/environment';
 
 function HomePage() {
 	return (
-		<main className="container">
+		<main className="main-content">
 			<Header />
-			<br />
 			<GitHubContributionsCalendar username={GITHUB_USERNAME} />
 		</main>
 	);

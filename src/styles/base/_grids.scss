@@ -1,6 +1,6 @@
-@use "mixins";
-
 // grid system like bootstrap
+@use 'vars' as *;
+@use 'mixins' as *;
 
 /*
 |------------------------------------------------------------------|
@@ -65,64 +65,64 @@
 ------------ mobile first media query ---------*/
 
 /* mobile */
-@include mixins.screen(xs, min, mixins.$break-point-xs) {
-	@include mixins.grids(xs);
-	@include mixins.spacing(xs);
+@include screen(xs, min, $break-point-xs) {
+	@include grids(xs);
+	@include spacing(xs);
 }
 
 /* tablet */
-@include mixins.screen(sm, min, mixins.$break-point-sm) {
-	@include mixins.grids(sm);
-	@include mixins.spacing(sm);
+@include screen(sm, min, $break-point-sm) {
+	@include grids(sm);
+	@include spacing(sm);
 }
 
 /* desktop */
-@include mixins.screen(md, min, mixins.$break-point-md) {
-	@include mixins.grids(md);
-	@include mixins.spacing(md);
+@include screen(md, min, $break-point-md) {
+	@include grids(md);
+	@include spacing(md);
 }
 
 /* wide desktop */
-@include mixins.screen(lg, min, mixins.$break-point-lg) {
-	@include mixins.grids(lg);
-	@include mixins.spacing(lg);
+@include screen(lg, min, $break-point-lg) {
+	@include grids(lg);
+	@include spacing(lg);
 }
 
 /* large desktop */
-@include mixins.screen(xl, min, mixins.$break-point-xl) {
-	@include mixins.grids(xl);
-	@include mixins.spacing(xl);
+@include screen(xl, min, $break-point-xl) {
+	@include grids(xl);
+	@include spacing(xl);
 }
 
 /* ---------------------------------------------
 ----------- desktop first media query ---------*/
 
 /* wide desktop */
-@include mixins.screen(lg, max, mixins.$break-point-lg) {
+@include screen(lg, max, $break-point-lg) {
 	[class*='col-lg']:not([class*='col-xs']):not([class*='col-sm']):not(
 			[class*='col-md']
 		) {
-		@include mixins.fluid_grid;
+		@include fluid_grid;
 	}
 }
 
 /* desktop */
-@include mixins.screen(md, max, mixins.$break-point-md) {
+@include screen(md, max, $break-point-md) {
 	[class*='col-md']:not([class*='col-xs']):not([class*='col-sm']) {
-		@include mixins.fluid_grid;
+		@include fluid_grid;
 	}
 }
 
 /* tablet */
-@include mixins.screen(sm, max, mixins.$break-point-sm) {
+@include screen(sm, max, $break-point-sm) {
 	[class*='col-sm']:not([class*='col-xs']) {
-		@include mixins.fluid_grid;
+		@include fluid_grid;
 	}
 }
 
 /* mobile */
-@include mixins.screen(xs, max, mixins.$break-point-xs) {
+@include screen(xs, max, $break-point-xs) {
 	[class*='col-xs'] {
-		@include mixins.fluid_grid;
+		@include fluid_grid;
 	}
 }

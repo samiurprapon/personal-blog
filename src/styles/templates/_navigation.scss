@@ -1,0 +1,90 @@
+@use '../base/vars' as *;
+@use '../base/mixins' as *;
+
+.navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: $z-nav;
+	background: var(--bg-color);
+	backdrop-filter: blur(8px);
+	box-shadow: $shadow-md;
+	transition: $transition-default;
+
+	&__container {
+		@include flex(row, space-between, center);
+		max-width: 80rem;
+		margin: 0 auto;
+		padding: 0 $spacing-md;
+		height: 4rem;
+	}
+
+	&__logo {
+		font-size: 1.5rem;
+		font-weight: bold;
+		@include gradient-text;
+	}
+
+	&__desktop-menu {
+		display: none;
+
+		@include responsive($break-point-md) {
+			@include flex(row, flex-end, center);
+			gap: $spacing-lg;
+		}
+	}
+
+	&__mobile-menu {
+		@include responsive($break-point-md) {
+			display: none;
+		}
+
+		&-button {
+			@include button-reset;
+			padding: $spacing-xs;
+			color: var(--text-color);
+
+			&:hover {
+				background: var(--hover-color);
+				border-radius: 0.375rem;
+			}
+		}
+	}
+
+	&__theme-toggle {
+		@include button-reset;
+		padding: $spacing-xs;
+		color: var(--text-color);
+		margin-right: $spacing-xs;
+
+		&:hover {
+			background: var(--hover-color);
+			border-radius: 50%;
+		}
+	}
+
+	&__link {
+		@include nav-link;
+	}
+
+	&__dropdown {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: var(--bg-color);
+		box-shadow: $shadow-md;
+		@include flex(column);
+
+		&-link {
+			@include nav-link;
+			padding: $spacing-sm $spacing-md;
+			width: 100%;
+
+			&:hover {
+				background: var(--hover-color);
+			}
+		}
+	}
+}

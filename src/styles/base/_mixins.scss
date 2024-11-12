@@ -1,19 +1,4 @@
-/*
-*
-*
-*/
-
-/*
-|------------------------------------------------------------------|
-|                          BREAKPOINTS                             |
-|------------------------------------------------------------------|
-*/
-
-$break-point-xs: 0; /* mobile */
-$break-point-sm: 36rem; /* 576px */
-$break-point-md: 48rem; /* 768px */
-$break-point-lg: 64rem; /* 992px */
-$break-point-xl: 75rem; /* 1200px */
+@use 'vars' as *;
 
 @mixin grids($type) {
 	.col-#{$type}-0 {
@@ -26,7 +11,7 @@ $break-point-xl: 75rem; /* 1200px */
 		flex-basis: 8.33333333%;
 		max-width: 8.33333333%;
 		-ms-flex-preferred-size: 8.33333333%;
-		-webkit-flex-preferred-size: 83.33333333%;
+		-webkit-flex-preferred-size: 8.33333333%;
 	}
 	.col-#{$type}-2 {
 		flex-basis: 16.66666667%;
@@ -168,4 +153,46 @@ $break-point-xl: 75rem; /* 1200px */
 	max-width: 100%;
 	-ms-flex-preferred-size: 100%;
 	-webkit-flex-preferred-size: 100%;
+}
+
+@mixin responsive($breakpoint) {
+	@media screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin gradient-text {
+	background: linear-gradient(to right, $color-primary, $color-secondary);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+@mixin button-reset {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	outline: none;
+}
+
+@mixin nav-link {
+	padding: $spacing-xs $spacing-sm;
+	color: var(--text-color);
+	text-decoration: none;
+	font-size: 0.875rem;
+	font-weight: 500;
+	transition: $transition-fast;
+
+	&:hover {
+		color: $color-primary;
+	}
 }

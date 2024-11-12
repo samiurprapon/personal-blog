@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
-import mdx from '@mdx-js/rollup';
 import react from '@vitejs/plugin-react';
 
 const REQUIRED_ENV_VARS = [
@@ -32,13 +31,7 @@ export default defineConfig(({ mode }) => {
 	validateEnvVars();
 
 	return {
-		plugins: [
-			react(),
-			{
-				...mdx(),
-				enforce: 'pre',
-			},
-		],
+		plugins: [react()],
 		resolve: {
 			alias: {
 				'~': fileURLToPath(new URL('./src', import.meta.url)),
