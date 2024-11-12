@@ -5,6 +5,7 @@ import Loadable from '~/components/Loadable';
 import MinimalLayout from '~/layouts/MinimalLayout';
 
 const HomePage = Loadable(lazy(() => import('~/pages/home')));
+const MePage = Loadable(lazy(() => import('~/pages/me')));
 
 const PublicRoutes: RouteObject = {
 	element: <MinimalLayout />,
@@ -12,6 +13,10 @@ const PublicRoutes: RouteObject = {
 		{
 			path: '/',
 			element: <HomePage />,
+		},
+		{
+			path: '/me',
+			element: <MePage />,
 		},
 	],
 };

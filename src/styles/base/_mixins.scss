@@ -5,55 +5,46 @@
 		flex: 0%;
 		max-width: 0%;
 		-ms-flex-preferred-size: 0%;
-		-webkit-flex-preferred-size: 0%;
 	}
 	.col-#{$type}-1 {
 		flex-basis: 8.33333333%;
 		max-width: 8.33333333%;
 		-ms-flex-preferred-size: 8.33333333%;
-		-webkit-flex-preferred-size: 8.33333333%;
 	}
 	.col-#{$type}-2 {
 		flex-basis: 16.66666667%;
 		max-width: 16.66666667%;
 		-ms-flex-preferred-size: 16.66666667%;
-		-webkit-flex-preferred-size: 16.66666667%;
 	}
 	.col-#{$type}-3 {
 		flex-basis: 25%;
 		max-width: 25%;
 		-ms-flex-preferred-size: 25%;
-		-webkit-flex-preferred-size: 25%;
 	}
 	.col-#{$type}-4 {
 		flex-basis: 33.33333333%;
 		max-width: 33.33333333%;
 		-ms-flex-preferred-size: 33.33333333%;
-		-webkit-flex-preferred-size: 33.33333333%;
 	}
 	.col-#{$type}-5 {
 		flex-basis: 41.66666667%;
 		max-width: 41.66666667%;
 		-ms-flex-preferred-size: 41.66666667%;
-		-webkit-flex-preferred-size: 41.66666667%;
 	}
 	.col-#{$type}-6 {
 		flex-basis: 50%;
 		max-width: 50%;
 		-ms-flex-preferred-size: 50%;
-		-webkit-flex-preferred-size: 50%;
 	}
 	.col-#{$type}-7 {
 		flex-basis: 58.33333333%;
 		max-width: 58.33333333%;
 		-ms-flex-preferred-size: 58.33333333%;
-		-webkit-flex-preferred-size: 58.33333333%;
 	}
 	.col-#{$type}-8 {
 		flex-basis: 66.66666667%;
 		max-width: 66.66666667%;
 		-ms-flex-preferred-size: 66.66666667%;
-		-webkit-flex-preferred-size: 66.66666667%;
 	}
 	.col-#{$type}-9 {
 		flex-basis: 75%;
@@ -65,19 +56,16 @@
 		flex-basis: 83.33333333%;
 		max-width: 83.33333333%;
 		-ms-flex-preferred-size: 83.33333333%;
-		-webkit-flex-preferred-size: 83.33333333%;
 	}
 	.col-#{$type}-11 {
 		flex-basis: 91.66666667%;
 		max-width: 91.66666667%;
 		-ms-flex-preferred-size: 91.66666667%;
-		-webkit-flex-preferred-size: 91.66666667%;
 	}
 	.col-#{$type}-12 {
 		flex-basis: 100%;
 		max-width: 100%;
 		-ms-flex-preferred-size: 100%;
-		-webkit-flex-preferred-size: 100%;
 	}
 }
 
@@ -189,7 +177,7 @@
 	color: var(--text-color);
 	text-decoration: none;
 	font-size: 0.875rem;
-	font-weight: 500;
+	font-weight: normal;
 	transition: $transition-fast;
 
 	&:hover {

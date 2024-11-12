@@ -1,9 +1,9 @@
-@use 'base/vars';
-@use 'base/base';
-@use 'base/mixins';
-@use 'base/grids';
-@use 'base/typography';
-@use 'base/utilities';
-@use 'base/animations';
+@use 'base/vars' as *;
+@use 'base/base' as *;
+@use 'base/mixins' as *;
+@use 'base/grids' as *;
+@use 'base/typography' as *;
+@use 'base/utilities' as *;
+@use 'base/animations' as *;
 
-@use 'templates/navigation';
+@use 'templates/navigation' as *;

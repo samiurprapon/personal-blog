@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
+import { clsx } from 'clsx';
+import { Loader } from 'lucide-react';
 import { ContributionCalendar } from 'react-contribution-calendar';
 
 import { ApiResponse, ApiErrorResponse, Year } from '~/interfaces/GithubAPI';
@@ -27,119 +29,116 @@ export function GitHubContributionsCalendar({ username }: CalendarProps) {
 	useEffect(fetchData, [fetchData]);
 
 	if (!data) {
-		return <p>Loading...</p>;
+		return <Loader />;
 	}
 
 	return (
-		<div className="container">
-			<div className="row">
-				<div className="col-md-10">
-					<div className="row flex-aligned">
-						<div className="col-md-6">
-							<span style={{ color: '#df6d68' }}>
-								{data.total[year] || data.total['lastYear']}
-							</span>
-							<span> contributions in </span>
-							<span style={{ color: '#df6d68' }}>
-								{year === 'last' ? 'last year' : year}
-							</span>
-						</div>
-
-						<div className="col-md-6">
-							<div className="text-right">
-								<p
-									style={{ color: '#f25c54', fontStyle: 'italic' }}
-									onClick={() => {
-										setDetails('');
-									}}
-								>
-									{details}
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div className="row">
-						<div className="col-xs-12">
-							<ContributionCalendar
-								theme={'dark_coral'}
-								startsOnSunday={true}
-								daysOfTheWeek={['', 'Mon', '', 'Wed', '', 'Fri', '']}
-								includeBoundary={true}
-								textColor="#fff"
-								cx={14}
-								cy={14}
-								cr={2}
-								scroll={false}
-								start={
-									year === 'last' || !year
-										? data.contributions[0].date
-										: startDate
-								}
-								end={
-									year === 'last' || !year
-										? data.contributions[data.contributions.length - 1].date
-										: endDate
-								}
-								data={data.contributions.map((item) => ({
-									[item.date]: {
-										level: item.level,
-										data: {
-											count: item.count,
-										},
-									},
-								}))}
-								onCellClick={(_, value) => {
-									setDetails(
-										`${(value?.data as { count: number }).count} contributions on ${formatDay(value?.date)}`,
-									);
-								}}
-							/>
-						</div>
-					</div>
-				</div>
-				<div className="col-xs-2">
-					<div className="text-center">
-						<span
-							key="last"
-							style={
-								year === 'last'
-									? { color: '#f25c54', paddingBottom: '8px' }
-									: { paddingBottom: '8px' }
-							}
-							onClick={() => {
-								setYear('last');
-								setDetails('');
-							}}
-						>
-							Overview
+		<div className="row">
+			<div className="col-xs-8 col-md-10">
+				<div className="row flex-aligned">
+					<div className="col-md-6 col-xs-12">
+						<span className="primary-text">
+							{data.total[year] || data.total['lastYear']}
+						</span>
+						<span> contributions in </span>
+						<span className="secondary-text">
+							{year === 'last' ? 'last year' : year}
 						</span>
 					</div>
 
-					{Array.from(
-						{ length: currentYear - GITHUB_JOIN_YEAR + 1 },
-						(_, i) => currentYear - i,
-					).map((selectedYear) => (
-						<div className="text-center" key={selectedYear}>
-							<span
-								key={selectedYear}
-								style={
-									year === selectedYear
-										? { color: '#f25c54', paddingBottom: '8px' }
-										: { paddingBottom: '8px' }
-								}
+					<div className="col-md-6 col-xs-12">
+						<div className={window.innerWidth > 768 ? 'text-right' : ''}>
+							<div
+								className="italic-text"
 								onClick={() => {
 									setDetails('');
-									setYear(selectedYear);
-									setStartDate(`${selectedYear}-01-01`);
-									setEndDate(`${selectedYear}-12-31`);
 								}}
 							>
-								{selectedYear}
-							</span>
+								{details}
+							</div>
 						</div>
-					))}
+					</div>
 				</div>
+
+				<div className="row">
+					<div className="col-xs-12">
+						<ContributionCalendar
+							theme={'grass'}
+							startsOnSunday={true}
+							daysOfTheWeek={['', 'Mon', '', 'Wed', '', 'Fri', '']}
+							includeBoundary={true}
+							textColor={'var(--color-text)'}
+							cx={14}
+							cy={14}
+							cr={2}
+							scroll={window.innerWidth <= 768}
+							style={
+								window.innerWidth <= 768
+									? {
+											width: '100%',
+										}
+									: undefined
+							}
+							start={
+								year === 'last' || !year
+									? data.contributions[0].date
+									: startDate
+							}
+							end={
+								year === 'last' || !year
+									? data.contributions[data.contributions.length - 1].date
+									: endDate
+							}
+							data={data.contributions.map((item) => ({
+								[item.date]: {
+									level: item.level,
+									data: {
+										count: item.count,
+									},
+								},
+							}))}
+							onCellClick={(_, value) => {
+								setDetails(
+									`${(value?.data as { count: number }).count} contributions on ${formatDay(value?.date)}`,
+								);
+							}}
+						/>
+					</div>
+				</div>
+			</div>
+			<div className="col-xs-4 col-md-2">
+				<div className="text-center">
+					<span
+						key="last"
+						className={clsx({ selected: year === 'last' })}
+						onClick={() => {
+							setYear('last');
+							setDetails('');
+						}}
+					>
+						Overview
+					</span>
+				</div>
+
+				{Array.from(
+					{ length: currentYear - GITHUB_JOIN_YEAR + 1 },
+					(_, i) => currentYear - i,
+				).map((selectedYear) => (
+					<div className="text-center" key={selectedYear}>
+						<span
+							key={selectedYear}
+							className={clsx({ selected: year === selectedYear })}
+							onClick={() => {
+								setDetails('');
+								setYear(selectedYear);
+								setStartDate(`${selectedYear}-01-01`);
+								setEndDate(`${selectedYear}-12-31`);
+							}}
+						>
+							{selectedYear}
+						</span>
+					</div>
+				))}
 			</div>
 		</div>
 	);

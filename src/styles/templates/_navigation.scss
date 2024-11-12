@@ -1,5 +1,6 @@
 @use '../base/vars' as *;
 @use '../base/mixins' as *;
+@use '../base/typography' as *;
 
 .navigation {
 	position: fixed;
@@ -16,14 +17,32 @@
 		@include flex(row, space-between, center);
 		max-width: 80rem;
 		margin: 0 auto;
-		padding: 0 $spacing-md;
+		padding: 0 $spacing-sm;
 		height: 4rem;
 	}
 
 	&__logo {
-		font-size: 1.5rem;
-		font-weight: bold;
-		@include gradient-text;
+		font-size: 1.7rem;
+		line-height: normal;
+		text-decoration: none;
+		color: var(--text-color);
+
+		.logo__brackets {
+			font-family: $font-poppins;
+			letter-spacing: 2px;
+		}
+
+		.logo__username {
+			font-family: $font-agustina;
+			font-weight: bold;
+
+			padding: 0 0.5rem;
+		}
+
+		&:hover {
+			color: $color-primary;
+			transition: $transition-default;
+		}
 	}
 
 	&__desktop-menu {

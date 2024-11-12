@@ -10,7 +10,6 @@ const Navigation = () => {
 	const toggleMenu = () => setIsOpen(!isOpen);
 
 	const getThemeIcon = () => {
-		console.log(theme);
 		switch (theme) {
 			case 'dark':
 				return <Sun className="w-5 h-5" />;
@@ -36,11 +35,15 @@ const Navigation = () => {
 	return (
 		<nav className="navigation">
 			<div className="navigation__container">
-				<div className="navigation__logo">SamiurPrapon</div>
+				<a className="navigation__logo" href="/">
+					<span className="logo__brackets">&lt;</span>
+					<span className="logo__username">SamiurPrapon</span>
+					<span className="logo__brackets">/&gt;</span>
+				</a>
 
 				<div className="navigation__desktop-menu">
 					{menuItems.map((item) => (
-						<a key={item.name} href={item.href} className="navigation__link">
+						<a key={item.name} href={item.href} className={`navigation__link`}>
 							{item.name}
 						</a>
 					))}
