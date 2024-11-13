@@ -15,7 +15,7 @@
 
 	&__container {
 		@include flex(row, space-between, center);
-		max-width: 80rem;
+		max-width: $max-width;
 		margin: 0 auto;
 		padding: 0 $spacing-sm;
 		height: 4rem;
@@ -66,7 +66,7 @@
 
 			&:hover {
 				background: var(--hover-color);
-				border-radius: 0.375rem;
+				border-radius: $border-radius;
 			}
 		}
 	}
@@ -85,6 +85,83 @@
 
 	&__link {
 		@include nav-link;
+		@include flex(row, center, center);
+		position: relative;
+		gap: $spacing-xs;
+
+		&--active {
+			color: $color-primary;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: -0.5rem;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 1.5rem;
+				height: 2px;
+				background: $color-primary;
+				border-radius: 1px;
+			}
+		}
+	}
+
+	&__tools {
+		&-dropdown {
+			position: relative;
+		}
+
+		&-button {
+			@include button-reset;
+			@include flex(row, center, center);
+			gap: $spacing-xs;
+			color: var(--text-color);
+			font-size: 0.875rem;
+			font-weight: 500;
+			padding: $spacing-xs $spacing-sm;
+			transition: $transition-fast;
+
+			&:hover {
+				color: $color-primary;
+			}
+
+			.rotate {
+				transform: rotate(180deg);
+			}
+		}
+
+		&-menu {
+			position: absolute;
+			top: 120%;
+			right: 0;
+			margin-top: $spacing-xs;
+			background: var(--bg-color);
+			border-radius: $border-radius;
+			box-shadow: $shadow-md;
+			min-width: 18rem;
+			overflow: hidden;
+		}
+
+		&-item {
+			@include flex(row, flex-start, center);
+			padding: $spacing-sm;
+			color: var(--text-color);
+			font-size: 0.875rem;
+			font-weight: normal;
+			text-decoration: none;
+			transition: $transition-fast;
+			gap: $spacing-xs;
+
+			&:hover {
+				background: var(--hover-color);
+				color: $color-primary;
+			}
+
+			&--active {
+				color: $color-primary;
+				background: var(--hover-color);
+			}
+		}
 	}
 
 	&__dropdown {
@@ -94,16 +171,40 @@
 		width: 100%;
 		background: var(--bg-color);
 		box-shadow: $shadow-md;
-		@include flex(column);
 
 		&-link {
 			@include nav-link;
+			@include flex(row, flex-start, center);
 			padding: $spacing-sm $spacing-md;
 			width: 100%;
+			gap: $spacing-xs;
 
 			&:hover {
 				background: var(--hover-color);
 			}
+
+			&--active {
+				color: $color-primary;
+				background: var(--hover-color);
+			}
+
+			&--indented {
+				padding-left: $spacing-lg * 2;
+			}
+		}
+
+		&-section {
+			border-top: 1px solid var(--hover-color);
+			width: 100%;
+		}
+
+		&-header {
+			@include flex(row, flex-start, center);
+			padding: $spacing-sm $spacing-md;
+			color: var(--text-color);
+			opacity: 0.7;
+			font-weight: 500;
+			gap: $spacing-xs;
 		}
 	}
 }

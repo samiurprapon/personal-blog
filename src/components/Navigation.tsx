@@ -1,14 +1,31 @@
-import { useContext, memo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useContext, useState, memo, Fragment } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import {
+	Menu,
+	X,
+	Sun,
+	Moon,
+	Command,
+	Blend,
+	KeyRound,
+	ChevronDown,
+} from 'lucide-react';
 
 import { ThemeContext } from '~/contexts/ThemeContext';
 
 const Navigation = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isToolsOpen, setIsToolsOpen] = useState(false);
 	const { theme, toggleTheme } = useContext(ThemeContext);
 
+	const location = useLocation();
+
 	const toggleMenu = () => setIsOpen(!isOpen);
+	const toggleTools = () => setIsToolsOpen(!isToolsOpen);
+
+	const isActive = (path: string) => location.pathname === path;
+	const isToolActive = () =>
+		toolsItems.some((item) => location.pathname === item.path);
 
 	const getThemeIcon = () => {
 		switch (theme) {
@@ -26,28 +43,83 @@ const Navigation = () => {
 		}
 	};
 	const menuItems = [
-		{ name: 'Latest', href: '/' },
-		{ name: 'Projects', href: '/projects' },
-		{ name: 'Tools', href: '/tools' },
-		{ name: 'What I use', href: '/uses' },
-		{ name: 'About', href: '/me' },
+		{ name: 'Latest', path: '/' },
+		{ name: 'Projects', path: '/projects' },
+		{ name: 'What I use', path: '/uses' },
+		{ name: 'About', path: '/me' },
+	];
+
+	const toolsItems = [
+		{
+			name: 'Markdown Editor',
+			path: '/tools/markdown-editor',
+			icon: <Command className="icon" />,
+		},
+		{
+			name: 'Color Generator',
+			path: '/tools/color-generator',
+			icon: <Blend className="icon" />,
+		},
+		{
+			name: 'Password Generator',
+			path: '/tools/password-generator',
+			icon: <KeyRound className="icon" />,
+		},
 	];
 
 	return (
 		<nav className="navigation">
 			<div className="navigation__container">
-				<a className="navigation__logo" href="/">
+				<Link className="navigation__logo" to="/">
 					<span className="logo__brackets">&lt;</span>
 					<span className="logo__username">SamiurPrapon</span>
 					<span className="logo__brackets">/&gt;</span>
-				</a>
+				</Link>
 
 				<div className="navigation__desktop-menu">
-					{menuItems.map((item) => (
-						<Link key={item.name} to={item.href} className={`navigation__link`}>
-							{item.name}
-						</Link>
+					{menuItems.map((item, index) => (
+						<Fragment key={item.name}>
+							{index === menuItems.length - 2 && (
+								<div className="navigation__tools-dropdown">
+									<button
+										onClick={toggleTools}
+										className={`navigation__link navigation__tools-button ${isToolActive() ? 'navigation__link--active' : ''}`}
+										aria-expanded={isToolsOpen}
+									>
+										{/* <Wrench className="icon" /> */}
+										<span>Tools</span>
+										<ChevronDown
+											className={`icon ${isToolsOpen ? 'rotate' : ''}`}
+										/>
+									</button>
+
+									{isToolsOpen && (
+										<div className="navigation__tools-menu fade-in">
+											{toolsItems.map((item) => (
+												<Link
+													key={item.name}
+													to={item.path}
+													className={`navigation__tools-item ${isActive(item.path) ? 'navigation__tools-item--active' : ''}`}
+												>
+													{item.icon}
+													<span>{item.name}</span>
+												</Link>
+											))}
+										</div>
+									)}
+								</div>
+							)}
+
+							<Link
+								key={item.name}
+								to={item.path}
+								className={`navigation__link ${isActive(item.path) ? 'navigation__link--active' : ''}`}
+							>
+								{item.name}
+							</Link>
+						</Fragment>
 					))}
+
 					<button
 						onClick={toggleTheme}
 						className="navigation__theme-toggle"
@@ -71,9 +143,9 @@ const Navigation = () => {
 						aria-expanded={isOpen}
 					>
 						{isOpen ? (
-							<X className="w-6 h-6" aria-hidden="true" />
+							<X className="icon" aria-hidden="true" />
 						) : (
-							<Menu className="w-6 h-6" aria-hidden="true" />
+							<Menu className="icon" aria-hidden="true" />
 						)}
 					</button>
 				</div>
@@ -81,14 +153,54 @@ const Navigation = () => {
 
 			{isOpen && (
 				<div className="navigation__dropdown slide-down">
-					{menuItems.map((item) => (
-						<a
-							key={item.name}
-							href={item.href}
-							className="navigation__dropdown-link"
-						>
-							{item.name}
-						</a>
+					{menuItems.map((item, index) => (
+						<Fragment key={item.name}>
+							{index === menuItems.length - 2 && (
+								<>
+									<div className="navigation__tools-dropdown">
+										<button
+											onClick={toggleTools}
+											className={`navigation__dropdown-link navigation__tools-button ${isToolActive() ? 'navigation__link--active' : ''}`}
+											aria-expanded={isToolsOpen}
+										>
+											{/* <Wrench className="icon" /> */}
+											<span>Tools</span>
+											<ChevronDown
+												className={`icon ${isToolsOpen ? 'rotate' : ''}`}
+											/>
+										</button>
+									</div>
+
+									{isToolsOpen && (
+										<div className="navigation__dropdown-section fade-in">
+											{toolsItems.map((item) => (
+												<Link
+													key={item.name}
+													to={item.path}
+													className={`navigation__dropdown-link navigation__dropdown-link--indented ${
+														isActive(item.path)
+															? 'navigation__dropdown-link--active'
+															: ''
+													}`}
+												>
+													{item.icon}
+													<span>{item.name}</span>
+												</Link>
+											))}
+										</div>
+									)}
+								</>
+							)}
+
+							<Link
+								key={item.name}
+								to={item.path}
+								className={`navigation__dropdown-link ${isActive(item.path) ? 'navigation__dropdown-link--active' : ''}`}
+								onClick={() => setIsOpen(false)}
+							>
+								<span>{item.name}</span>
+							</Link>
+						</Fragment>
 					))}
 				</div>
 			)}
