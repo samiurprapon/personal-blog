@@ -1,14 +1,13 @@
 import { RouterProvider } from 'react-router-dom';
 
 import router from '~/routes';
-import Navigation from '~/components/Navigation';
+import MainLayout from '~/layouts/MainLayout';
 
 function App() {
 	return (
-		<div className="main-content">
-			<Navigation />
+		<MainLayout>
 			<RouterProvider router={router} />
-		</div>
+		</MainLayout>
 	);
 }
 

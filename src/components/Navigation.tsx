@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react';
+import { useContext, memo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 
 import { ThemeContext } from '~/contexts/ThemeContext';
@@ -43,9 +44,9 @@ const Navigation = () => {
 
 				<div className="navigation__desktop-menu">
 					{menuItems.map((item) => (
-						<a key={item.name} href={item.href} className={`navigation__link`}>
+						<Link key={item.name} to={item.href} className={`navigation__link`}>
 							{item.name}
-						</a>
+						</Link>
 					))}
 					<button
 						onClick={toggleTheme}
@@ -95,4 +96,4 @@ const Navigation = () => {
 	);
 };
 
-export default Navigation;
+export default memo(Navigation);
