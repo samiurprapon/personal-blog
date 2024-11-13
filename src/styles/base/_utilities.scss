@@ -25,6 +25,21 @@
 	align-items: center;
 }
 
+.flex-justified-aligned {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.centered-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	text-align: center;
+}
+
 .selected {
 	font-weight: bold;
 }
@@ -41,4 +56,12 @@
 	font-style: italic;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+.biggest-text {
+	font-size: 6.5rem;
+}
+
+.bigger-text {
+	font-size: 2rem;
 }
