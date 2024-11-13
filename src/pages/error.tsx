@@ -1,22 +1,20 @@
+import Error404 from '~/components/Error404';
+import Navigation from '~/components/Navigation';
+
 function Error() {
 	return (
-		<div className="container">
-			<div
-				style={{
-					display: 'flex',
-					alignContent: 'center',
-					justifyContent: 'center',
-					flexDirection: 'column',
-					alignItems: 'center',
-				}}
-			>
-				<p style={{ fontSize: '8rem' }}>
-					404
-					<br />
-					Page not found!
-				</p>
-			</div>
-		</div>
+		<>
+			<Navigation />
+
+			<main className="container">
+				<div className="centered-content">
+					<div className="flex-justified-aligned">
+						<Error404 />
+						<h3 className="text-center bigger-text pt-md-4">Page not found!</h3>
+					</div>
+				</div>
+			</main>
+		</>
 	);
 }
 
