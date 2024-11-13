@@ -10,6 +10,22 @@ function MePage() {
 
 			<main className="container">
 				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
+				<br />
+				<GitHubContributionsCalendar username={GITHUB_USERNAME} />
 			</main>
 		</>
 	);
