@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 const REQUIRED_ENV_VARS = [
 	'VITE_GITHUB_API',
@@ -31,7 +32,53 @@ export default defineConfig(({ mode }) => {
 	validateEnvVars();
 
 	return {
-		plugins: [react()],
+		plugins: [
+			react(),
+			nodePolyfills({
+				include: ['crypto'],
+				exclude: [
+					'_stream_duplex',
+					'_stream_passthrough',
+					'_stream_readable',
+					'_stream_transform',
+					'_stream_writable',
+					'assert',
+					'buffer',
+					'child_process',
+					'cluster',
+					'console',
+					'constants',
+					'dgram',
+					'dns',
+					'domain',
+					'events',
+					'fs',
+					'http',
+					'http2',
+					'https',
+					'module',
+					'net',
+					'os',
+					'path',
+					'process',
+					'punycode',
+					'querystring',
+					'readline',
+					'repl',
+					'stream',
+					'string_decoder',
+					'sys',
+					'timers',
+					'timers/promises',
+					'tls',
+					'tty',
+					'url',
+					'util',
+					'vm',
+					'zlib',
+				],
+			}),
+		],
 		resolve: {
 			alias: {
 				'~': fileURLToPath(new URL('./src', import.meta.url)),

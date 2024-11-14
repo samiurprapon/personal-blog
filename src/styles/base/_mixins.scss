@@ -137,6 +137,26 @@
 	}
 }
 
+@mixin order($break-point) {
+	$properties: (
+		order: order,
+	);
+
+	$sizes: (
+		1: 1,
+		2: 2,
+		3: 3,
+	);
+
+	@each $property-name, $property in $properties {
+		@each $size-name, $size in $sizes {
+			.#{$property-name}-#{$break-point}-#{$size-name} {
+				#{$property}: #{$size};
+			}
+		}
+	}
+}
+
 @mixin fluid_grid() {
 	flex-basis: 100%;
 	max-width: 100%;

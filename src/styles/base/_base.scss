@@ -37,6 +37,10 @@
 	--hover-color: #{$color-hover-light};
 	--primary-color: #{$color-primary};
 	--secondary-color: #{$color-secondary};
+	--accent-color: #{$color-accent};
+	--success-color: #{$color-success-light};
+	--card-color: #{$color-card-light};
+	--box-shadow: #{$box-shadow-light};
 }
 
 [data-theme='dark'] {
@@ -45,12 +49,18 @@
 	--hover-color: #{$color-hover-dark};
 	--primary-color: #{$color-primary};
 	--secondary-color: #{$color-secondary};
+	--accent-color: #{$color-accent};
+	--success-color: #{$color-success-dark};
+	--card-color: #{$color-card-dark};
+	--box-shadow: #{$box-shadow-dark};
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	background-color: var(--bg-color);
 }
 
 body {
@@ -66,8 +76,8 @@ body {
 	padding-top: 5rem;
 	max-width: $max-width;
 	margin: 0 auto;
-	padding-left: $spacing-md;
-	padding-right: $spacing-md;
+	padding-left: $spacing-sm;
+	padding-right: $spacing-sm;
 
 	&__hero {
 		padding: $spacing-lg 0;
