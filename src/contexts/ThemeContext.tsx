@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, FC, ReactNode, useState, useEffect } from 'react';
 import { ThemeContextType, Theme } from '~/interfaces/ThemeContextType';
 
 export const ThemeContext = createContext<ThemeContextType>({
@@ -7,10 +7,10 @@ export const ThemeContext = createContext<ThemeContextType>({
 });
 
 interface ThemeProviderProps {
-	children: React.ReactNode;
+	children: ReactNode;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 	const [theme, setTheme] = useState<Theme>(
 		() => (localStorage.getItem('theme') as Theme) || 'system',
 	);
