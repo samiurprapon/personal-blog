@@ -6,12 +6,19 @@
 
 $color-primary: #6366f1;
 $color-secondary: #3b82f6;
-$color-text-dark: #1f2937;
-$color-text-light: #f9fafb;
+$color-accent: #14b8a6;
+
 $color-background-light: #ffffff;
-$color-background-dark: #0a0416;
+$color-text-dark: #1f2937;
 $color-hover-light: #f3f4f6;
+$color-success-light: #006b4d;
+$color-card-light: #f3f4f6; // Light Gray (slightly darker than pure white)
+
+$color-background-dark: #0a0416;
+$color-text-light: #f9fafb;
 $color-hover-dark: #1f2937;
+$color-success-dark: #368149;
+$color-card-dark: #1a1523; // Dark Gray with a hint of purple for depth
 
 /*
 |------------------------------------------------------------------|
@@ -40,6 +47,13 @@ $shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
 $shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 
+$box-shadow-light:
+	rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+	rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+$box-shadow-dark:
+	rgba(255, 255, 255, 0.1) 0px 4px 8px -2px,
+	rgba(255, 255, 255, 0.06) 0px 0px 0px 1px;
+
 /*
 |------------------------------------------------------------------|
 |                             Spacing                              |
@@ -62,7 +76,6 @@ $break-point-sm: 36rem; /* 576px */
 $break-point-md: 48rem; /* 768px */
 $break-point-lg: 64rem; /* 992px */
 $break-point-xl: 75rem; /* 1200px */
-
 
 /*
 |------------------------------------------------------------------|

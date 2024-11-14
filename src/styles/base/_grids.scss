@@ -68,30 +68,35 @@
 @include screen(xs, min, $break-point-xs) {
 	@include grids(xs);
 	@include spacing(xs);
+	@include order(xs);
 }
 
 /* tablet */
 @include screen(sm, min, $break-point-sm) {
 	@include grids(sm);
 	@include spacing(sm);
+	@include order(sm);
 }
 
 /* desktop */
 @include screen(md, min, $break-point-md) {
 	@include grids(md);
 	@include spacing(md);
+	@include order(md);
 }
 
 /* wide desktop */
 @include screen(lg, min, $break-point-lg) {
 	@include grids(lg);
 	@include spacing(lg);
+	@include order(lg);
 }
 
 /* large desktop */
 @include screen(xl, min, $break-point-xl) {
 	@include grids(xl);
 	@include spacing(xl);
+	@include order(xl);
 }
 
 /* ---------------------------------------------

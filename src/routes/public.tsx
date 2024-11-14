@@ -6,6 +6,7 @@ import MinimalLayout from '~/layouts/MinimalLayout';
 
 const HomePage = Loadable(lazy(() => import('~/pages/home')));
 const MePage = Loadable(lazy(() => import('~/pages/me')));
+const PasswordToolPage = Loadable(lazy(() => import('~/pages/password')));
 
 const PublicRoutes: RouteObject = {
 	element: <MinimalLayout />,
@@ -17,6 +18,10 @@ const PublicRoutes: RouteObject = {
 		{
 			path: '/me',
 			element: <MePage />,
+		},
+		{
+			path: '/tools/password-generator',
+			element: <PasswordToolPage />,
 		},
 	],
 };
