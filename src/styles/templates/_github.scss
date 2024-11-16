@@ -1,0 +1,89 @@
+@use '../base/vars' as *;
+
+.github {
+	text-align: start;
+	margin-bottom: 2rem;
+
+	&__sidebar {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	&__sidebar-profile {
+		display: grid;
+		place-items: center;
+
+		.github__rounded-circle {
+			border-radius: 50%;
+			max-width: 290px;
+			max-height: 290px;
+			min-width: 294px;
+			min-height: 294px;
+			filter: sepia(0.2);
+
+			padding: 0.5rem;
+		}
+	}
+
+	&__sidebar-body {
+		padding: 0.75rem;
+
+		.github__sub-title {
+			color: #aeafb0;
+			font-weight: normal;
+		}
+
+		.github__bio {
+			margin-top: 1rem;
+			font-size: 1.15rem;
+		}
+	}
+
+	&__readme-wrapper {
+		padding: 1.25rem;
+		border-radius: $border-radius;
+		border-style: solid;
+		border-width: 1px;
+		border-color: #e1e4e8;
+
+		.breadcrumb {
+			margin-bottom: 1rem;
+			text-align: start;
+			font-size: smaller;
+			letter-spacing: 1px;
+		}
+
+		article {
+			h2 {
+				padding-bottom: 0.3rem;
+				font-size: 1.5rem;
+				border-bottom: 1px solid #e1e4e8;
+			}
+
+			blockquote {
+				padding: 0 1rem;
+				margin-top: 1rem;
+
+				border-left: 0.25rem solid #dfe2e5;
+			}
+
+			p {
+				margin-top: 1rem;
+				font-size: 1rem;
+			}
+
+			h3 {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			a {
+				margin-right: 0.75rem;
+			}
+
+			img[align='left'] {
+				margin-right: 1.25rem !important;
+			}
+		}
+	}
+}
