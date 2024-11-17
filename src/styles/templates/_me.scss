@@ -1,0 +1,30 @@
+@use '~/styles/base/vars' as *;
+
+.dropdown-year {
+	display: flex;
+	align-items: end;
+	justify-content: end;
+	margin-bottom: $spacing-xl;
+	gap: $spacing-md;
+	flex-wrap: wrap;
+
+	&__select {
+		padding: $spacing-sm $spacing-lg;
+		border: 1px solid var(--text-color);
+		border-radius: $border-radius-md;
+		font-size: $font-size-md;
+		color: var(--text-primary);
+		background-color: var(--bg-color);
+		transition: border-color $transition-duration $transition-timing;
+		min-width: 150px;
+
+		&:focus {
+			outline: none;
+			border-color: var(--primary-color);
+		}
+
+		&::placeholder {
+			color: var(--text-color);
+		}
+	}
+}
