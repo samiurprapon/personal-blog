@@ -33,7 +33,7 @@
 
 :root {
 	--bg-color: #{$color-background-light};
-	--text-color: #{$color-text-dark};
+	--text-color: #{$color-text-primary-light};
 	--hover-color: #{$color-hover-light};
 	--primary-color: #{$color-primary};
 	--secondary-color: #{$color-secondary};
@@ -41,11 +41,14 @@
 	--success-color: #{$color-success-light};
 	--card-color: #{$color-card-light};
 	--box-shadow: #{$box-shadow-light};
+
+	--text-primary: #{$color-text-primary-light};
+	--text-secondary: #{$color-text-secondary-light};
 }
 
 [data-theme='dark'] {
 	--bg-color: #{$color-background-dark};
-	--text-color: #{$color-text-light};
+	--text-color: #{$color-text-primary-dark};
 	--hover-color: #{$color-hover-dark};
 	--primary-color: #{$color-primary};
 	--secondary-color: #{$color-secondary};
@@ -53,12 +56,18 @@
 	--success-color: #{$color-success-dark};
 	--card-color: #{$color-card-dark};
 	--box-shadow: #{$box-shadow-dark};
+
+	--text-primary: #{$color-text-primary-dark};
+	--text-secondary: #{$color-text-secondary-dark};
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	scrollbar-width: none;
+	-ms-overflow-style: none;
 }
 
 body {
