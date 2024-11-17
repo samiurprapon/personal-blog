@@ -3,7 +3,10 @@
 
 .github {
 	text-align: start;
-	margin-bottom: 2rem;
+
+	@media screen and (min-width: $break-point-lg) {
+		margin-bottom: 1.2rem;
+	}
 
 	&__sidebar {
 		padding-left: 0px;
@@ -50,6 +53,7 @@
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
+		padding: 0;
 
 		@media screen and (min-width: $break-point-lg) {
 			border-width: 1px;

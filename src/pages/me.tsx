@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import { GITHUB_JOIN_YEAR } from '~/configs/environment';
+import { GITHUB_USERNAME, GITHUB_JOIN_YEAR } from '~/configs/environment';
 
 import Navigation from '~/components/Navigation';
 import GithubProfile from '~/components/GithubProfile';
+import { GitHubContributionsCalendar } from '~/components/GitHubCalendar';
 
 function MePage() {
 	const [year, setYear] = useState<number | 'last'>('last');
@@ -41,6 +42,18 @@ function MePage() {
 									</option>
 								))}
 							</select>
+						</div>
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="col-md-3"></div>
+					<div className="col-xs-12 col-md-9 github__body-border mb-md-4">
+						<div className="github-contribution">
+							<GitHubContributionsCalendar
+								username={GITHUB_USERNAME}
+								year={year}
+							/>
 						</div>
 					</div>
 				</div>

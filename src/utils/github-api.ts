@@ -1,7 +1,7 @@
 import { GITHUB_API_URL, GITHUB_USERNAME } from '~/configs/environment';
 import { ApiResponse, ApiErrorResponse, Year } from '~/interfaces/GithubAPI';
 
-async function fetchCalendarData(
+export async function fetchCalendarData(
 	username: string,
 	year?: Year,
 ): Promise<ApiResponse> {
@@ -20,13 +20,19 @@ async function fetchCalendarData(
 	return data as ApiResponse;
 }
 
-export async function fetchContributionsData(username: string, year?: Year) {
+export async function fetchContributionsData(
+	username: string,
+	year: Year = 'last',
+) {
 	const data = await fetchCalendarData(username, year);
 
-	return data.contributions.map((item) => ({
-		date: item.date,
-		count: item.count,
-	}));
+	return {
+		total: year === 'last' ? data.total['lastYear'] : data.total[year],
+		contributions: data.contributions.map((item) => ({
+			date: item.date,
+			count: item.count,
+		})),
+	};
 }
 
 export async function fetchDefaultReadme() {
