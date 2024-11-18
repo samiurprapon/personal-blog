@@ -46,6 +46,7 @@ const Navigation = () => {
 		{ name: 'Latest', path: '/' },
 		{ name: 'Projects', path: '/projects' },
 		{ name: 'What I use', path: '/uses' },
+		{ name: 'Bucket', path: '/bucket' },
 		{ name: 'About', path: '/me' },
 	];
 

@@ -19,17 +19,14 @@
 
 		.github__rounded-circle {
 			border-radius: 50%;
-			max-width: 130px;
-			max-height: 130px;
-			min-width: 130px;
-			min-height: 130px;
-			filter: sepia(0.2);
+			width: 90%;
+			aspect-ratio: 1 / 1;
+			object-fit: contain;
+			filter: sepia(0.3);
+			// mix-blend-mode: luminosity;
 
 			@media screen and (min-width: $break-point-lg) {
-				max-width: 296px;
-				max-height: 296px;
-				min-width: 260px;
-				min-height: 260px;
+				width: 100%;
 				padding: 0.5rem;
 			}
 		}
