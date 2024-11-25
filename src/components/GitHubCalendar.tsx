@@ -10,7 +10,9 @@ export function GitHubContributionsCalendar({ username, year }: CalendarProps) {
 	const [data, setData] = useState<ApiResponse | null>(null);
 
 	const fetchData = useCallback(() => {
-		fetchCalendarData(username, year).then(setData);
+		fetchCalendarData(username, year).then((data) => {
+			setData(data);
+		});
 	}, [username, year]);
 
 	useEffect(fetchData, [fetchData]);
@@ -54,24 +56,24 @@ export function GitHubContributionsCalendar({ username, year }: CalendarProps) {
 					start={
 						year === 'last' || !year
 							? data.contributions[0].date
-							: `${new Date().getFullYear()}-01-01`
+							: `${year}-01-01`
 					}
 					end={
 						year === 'last' || !year
 							? data.contributions[data.contributions.length - 1].date
-							: `${new Date().getFullYear()}-12-31`
+							: `${year}-12-31`
 					}
 					data={data.contributions.map((item) => ({
 						[item.date]: {
 							level: item.level,
 							data: {
-								count: item.count,
+								count: item.count ?? 0,
 							},
 						},
 					}))}
-					// onCellClick={(_) => {
-					// 	// show tooltip
-					// }}
+					onCellClick={() => {
+						// show tooltip
+					}}
 				/>
 			</div>
 		</div>
