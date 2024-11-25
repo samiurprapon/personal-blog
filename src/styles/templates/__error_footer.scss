@@ -1,0 +1,86 @@
+@use '../base/vars' as *;
+@use '../base/typography' as *;
+@use '../base/animations' as *;
+
+.error-footer {
+	background: var(--bg-secondary);
+	padding-top: 0.5rem;
+	padding-bottom: 1rem;
+
+	&-top {
+		padding-top: 80px;
+		padding-left: 0;
+		padding-right: 0;
+		padding-bottom: 270px;
+		position: relative;
+		overflow-x: hidden;
+
+		.error-footer_bg {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 266px;
+			background-image: url('~/assets/images/footer_bg.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			object-fit: contain;
+			filter: sepia(0.6);
+
+			&__cyclist {
+				background: url('~/assets/images/cyclist.gif') no-repeat center center;
+				width: 88px;
+				height: 100px;
+				background-size: contain;
+				filter: none !important;
+				mix-blend-mode: normal;
+				position: absolute;
+				bottom: 0;
+				-webkit-animation: left-to-right-exit 30s linear infinite;
+				animation: left-to-right-exit 30s linear infinite;
+
+				// only for mobile
+				@media (max-width: $break-point-md) {
+					-webkit-animation: left-to-right-exit 10s linear infinite;
+					animation: left-to-right-exit 10s linear infinite;
+				}
+			}
+
+			// for mobile
+			@media (max-width: $break-point-md) {
+				position: absolute;
+				bottom: 0;
+				background: url('~/assets/images/footer_bg.png') no-repeat local 0;
+				width: 100%;
+				filter: sepia(0.6);
+				mix-blend-mode: normal;
+				background-size: cover;
+				object-fit: contain;
+				height: 266px;
+			}
+		}
+
+		// only for mobile
+		@media (max-width: $break-point-md) {
+			padding-top: 40px;
+			padding-bottom: 200px;
+		}
+	}
+
+	.error-footer-bottom {
+		p {
+			font-size: 1rem;
+			margin-bottom: 0;
+			font-weight: 400;
+			text-align: right;
+			align-items: center;
+			line-height: 1.25rem;
+			color: var(--text-secondary);
+
+			// only for mobile
+			@media (max-width: $break-point-md) {
+				font-size: 0.875rem;
+				line-height: 1rem;
+			}
+		}
+	}
+}

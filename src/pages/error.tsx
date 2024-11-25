@@ -1,6 +1,8 @@
 import Error404 from '~/components/Error404';
 import Navigation from '~/components/Navigation';
 
+import { ErrorFooter } from '~/components/ErrorFooter';
+
 function Error() {
 	return (
 		<>
@@ -14,6 +16,8 @@ function Error() {
 					</div>
 				</div>
 			</main>
+
+			<ErrorFooter />
 		</>
 	);
 }
