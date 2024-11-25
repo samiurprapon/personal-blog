@@ -37,11 +37,14 @@
 }
 
 .centered-content {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 70vh;
+	display: grid;
+	height: calc(56vh - 5rem);
+	place-items: center;
 	text-align: center;
+
+	@media screen and (max-width: $break-point-md) {
+		height: calc(69vh - 5rem);
+	}
 }
 
 .selected {
