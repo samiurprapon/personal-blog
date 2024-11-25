@@ -80,32 +80,13 @@ body {
 }
 
 .main-content {
-	padding-top: 5rem;
-	max-width: $max-width;
+	padding-top: 4.25rem;
+	max-width: 100%;
 	margin: 0 auto;
-	padding-left: $spacing-sm;
-	padding-right: $spacing-sm;
+	padding-left: 0;
+	padding-right: 0;
 
-	&__hero {
-		padding: $spacing-lg 0;
-		text-align: center;
-
-		h1 {
-			font-size: 2.25rem;
-			font-weight: bold;
-			margin-bottom: $spacing-md;
-
-			@include responsive($break-point-md) {
-				font-size: 3.75rem;
-			}
-		}
-
-		p {
-			font-size: 1.125rem;
-			max-width: 42rem;
-			margin: 0 auto;
-			color: var(--text-color);
-			opacity: 0.8;
-		}
+	@media screen and (max-width: $break-point-md) {
+		padding-top: 4.25rem;
 	}
 }

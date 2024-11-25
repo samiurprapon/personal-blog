@@ -39,16 +39,10 @@ export function GithubProfile() {
 			</div>
 
 			<div className="col-xs-12 col-md-9">
-				<div className="row">
-					<div className="col-xs-12">
-						<div className="github__body-border mb-md-2">
-							<div className="github__readme-wrapper">
-								<div className="breadcrumb">{GITHUB_USERNAME} / README.md</div>
-								<Markdown options={{ wrapper: 'article' }}>
-									{data || ''}
-								</Markdown>
-							</div>
-						</div>
+				<div className="github__body-border mb-md-2">
+					<div className="github__readme-wrapper">
+						<div className="breadcrumb">{GITHUB_USERNAME} / README.md</div>
+						<Markdown options={{ wrapper: 'article' }}>{data || ''}</Markdown>
 					</div>
 				</div>
 			</div>

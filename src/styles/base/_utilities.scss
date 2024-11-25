@@ -38,12 +38,17 @@
 
 .centered-content {
 	display: grid;
-	height: calc(56vh - 5rem);
+	height: calc(55vh - 4rem);
 	place-items: center;
 	text-align: center;
 
-	@media screen and (max-width: $break-point-md) {
-		height: calc(69vh - 5rem);
+	@media screen and (max-width: 376px) {
+		height: calc(51vh);
+	}
+
+	// min-height: 376 and max-height: 425
+	@media screen and (min-width: 376px) and (max-width: $break-point-md) {
+		height: calc(59vh);
 	}
 }
 
