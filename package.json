@@ -16,7 +16,7 @@
 	},
 	"dependencies": {
 		"clsx": "^2.1.1",
-		"lucide-react": "^0.456.0",
+		"lucide-react": "^0.460.0",
 		"markdown-to-jsx": "^7.6.2",
 		"react": "^18.3.1",
 		"react-contribution-calendar": "^1.5.0",
