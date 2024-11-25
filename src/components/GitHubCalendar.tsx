@@ -20,17 +20,19 @@ export function GitHubContributionsCalendar({ username, year }: CalendarProps) {
 	}
 
 	return (
-		<div className="row">
+		<div className="github__body-border">
 			<div className="col-xs-12">
-				<span className="primary-text">
-					{data.total[year] || data.total['lastYear']}
-				</span>
-				<span> contributions in </span>
-				<span className="secondary-text">
-					{year === 'last' ? 'last 12 months' : year}
-				</span>
+				<p className="github-contribution__text">
+					<span className="primary-text">
+						{data.total[year] || data.total['lastYear']}
+					</span>
+					<span> contributions in </span>
+					<span className="secondary-text">
+						{year === 'last' ? 'last 12 months' : year}
+					</span>
+				</p>
 			</div>
-			<div className="col-xs-12">
+			<div className="col-xs-12 github-contribution">
 				<ContributionCalendar
 					theme={'grass'}
 					startsOnSunday={true}
@@ -45,6 +47,7 @@ export function GitHubContributionsCalendar({ username, year }: CalendarProps) {
 						window.innerWidth <= 768
 							? {
 									width: '100%',
+									padding: '0 !important',
 								}
 							: undefined
 					}

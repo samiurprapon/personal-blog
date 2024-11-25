@@ -1,16 +1,19 @@
 @use '~/styles/base/vars' as *;
 
+.dropdown-container {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
 .dropdown-year {
 	display: flex;
-	align-items: end;
+	align-items: center;
 	justify-content: end;
-	margin-bottom: $spacing-sm;
 	gap: $spacing-md;
 	flex-wrap: wrap;
-
-	@media screen and (min-width: $break-point-lg) {
-		margin-bottom: $spacing-lg;
-	}
 
 	&__select {
 		padding: $spacing-sm $spacing-lg;
@@ -33,6 +36,20 @@
 	}
 }
 
+.github-contribution__text {
+	text-align: left;
+	padding-left: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
 .github-contribution {
-	padding: 1rem 1.25rem;
+	padding-bottom: 0.5rem;
+}
+
+.github-calendar {
+	padding-top: 0.725rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0;
+	padding-right: 0;
 }

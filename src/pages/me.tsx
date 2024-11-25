@@ -25,31 +25,33 @@ function MePage() {
 
 				<div className="row">
 					<div className="col-xs-12">
-						<div className="dropdown-year">
-							<select
-								className="dropdown-year__select"
-								value={year}
-								onChange={(e) =>
-									setYear(
-										e.target.value === 'last' ? 'last' : Number(e.target.value),
-									)
-								}
-							>
-								<option value="last">Last 12 months</option>
-								{years.map((y) => (
-									<option key={y} value={y}>
-										{y}
-									</option>
-								))}
-							</select>
+						<div className="dropdown-container">
+							<div className="dropdown-year">
+								<select
+									className="dropdown-year__select"
+									value={year}
+									onChange={(e) =>
+										setYear(
+											e.target.value === 'last'
+												? 'last'
+												: Number(e.target.value),
+										)
+									}
+								>
+									<option value="last">Last 12 months</option>
+									{years.map((y) => (
+										<option key={y} value={y}>
+											{y}
+										</option>
+									))}
+								</select>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div className="row">
 					<div className="col-md-3"></div>
-					<div className="col-xs-12 col-md-9 github__body-border mb-md-4">
-						<div className="github-contribution">
+					<div className="col-xs-12 col-md-9">
+						<div className="github-calendar">
 							<GitHubContributionsCalendar
 								username={GITHUB_USERNAME}
 								year={year}
