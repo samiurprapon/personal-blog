@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			react(),
 			nodePolyfills({
-				include: ['crypto'],
+				include: ['crypto', 'stream', 'util'],
 				exclude: [
 					'_stream_duplex',
 					'_stream_passthrough',
@@ -65,7 +65,6 @@ export default defineConfig(({ mode }) => {
 					'querystring',
 					'readline',
 					'repl',
-					'stream',
 					'string_decoder',
 					'sys',
 					'timers',
@@ -73,7 +72,6 @@ export default defineConfig(({ mode }) => {
 					'tls',
 					'tty',
 					'url',
-					'util',
 					'vm',
 					'zlib',
 				],
@@ -83,6 +81,20 @@ export default defineConfig(({ mode }) => {
 			alias: {
 				'~': fileURLToPath(new URL('./src', import.meta.url)),
 			},
+		},
+		build: {
+			chunkSizeWarningLimit: 1024,
+			rollupOptions: {
+				output: {
+					manualChunks: {
+						react: ['react', 'react-dom'],
+						include: ['crypto'],
+					},
+				},
+			},
+		},
+		optimizeDeps: {
+			include: ['crypto'],
 		},
 		css: {
 			preprocessorOptions: {
