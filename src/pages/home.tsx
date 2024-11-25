@@ -1,10 +1,13 @@
+import Hero from '~/components/HeroSection';
 import Navigation from '~/components/Navigation';
 
 function HomePage() {
 	return (
 		<>
 			<Navigation />
-			<main className="container">Hello World</main>
+			<main>
+				<Hero />
+			</main>
 		</>
 	);
 }

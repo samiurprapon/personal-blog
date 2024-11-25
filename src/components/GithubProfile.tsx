@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Loader } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 
-import { GITHUB_USERNAME } from '~/configs/environment';
+import { GITHUB_PROFILE_URL, GITHUB_USERNAME } from '~/configs/environment';
 import { fetchDefaultReadme } from '~/utils/github-api';
 
 export function GithubProfile() {
@@ -24,7 +24,7 @@ export function GithubProfile() {
 				<div className="github__sidebar-profile">
 					<img
 						className="github__rounded-circle"
-						src="https://avatars.githubusercontent.com/u/25266703?v=4"
+						src={GITHUB_PROFILE_URL}
 						alt={GITHUB_USERNAME}
 					/>
 				</div>
