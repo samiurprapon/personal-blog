@@ -4,6 +4,7 @@ import Markdown from 'markdown-to-jsx';
 
 import { GITHUB_USERNAME } from '~/configs/environment';
 import { fetchDefaultReadme } from '~/utils/github-api';
+import SpotifyNowPlaying from '~/components/spotify/NowPlaying';
 
 export function GithubProfile() {
 	const [data, setData] = useState<string | null>(null);
@@ -35,6 +36,10 @@ export function GithubProfile() {
 					</h3>
 
 					<div className="github__bio">♦️ World is Diamond Shaped.</div>
+				</div>
+
+				<div className="spotify-container">
+					<SpotifyNowPlaying />
 				</div>
 			</div>
 

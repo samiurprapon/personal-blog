@@ -18,6 +18,33 @@
 	}
 }
 
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes playingAnimation {
+	10% {
+		transform: scaleY(0.3);
+	}
+	30% {
+		transform: scaleY(1);
+	}
+	60% {
+		transform: scaleY(0.5);
+	}
+	80% {
+		transform: scaleY(0.75);
+	}
+	100% {
+		transform: scaleY(0.5);
+	}
+}
+
 .slide-down {
 	animation: slideDown 0.3s ease-out forwards;
 }

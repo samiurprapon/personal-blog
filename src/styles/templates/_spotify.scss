@@ -1,0 +1,120 @@
+@use '../base/animations' as *;
+
+.spotify {
+	&__playing {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		width: 13px;
+		height: 13px;
+
+		span {
+			width: 3px;
+			height: 100%;
+			background-color: #1ed760;
+			border-radius: 3px;
+			animation: playingAnimation 2.2s ease infinite alternate;
+			transform-origin: bottom;
+
+			&:nth-of-type(2) {
+				animation-delay: -2.2s;
+			}
+
+			&:nth-of-type(3) {
+				animation-delay: -3.7s;
+			}
+		}
+	}
+}
+
+.spotify-now-playing {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.box {
+		width: 320px;
+		text-align: center;
+
+		.loading {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 2rem;
+
+			.spinner {
+				width: 24px;
+				height: 24px;
+				border: 3px solid #e0e0e0;
+				border-top: 3px solid gray;
+				border-radius: 50%;
+				animation: spin 0.6s linear infinite;
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&.playing {
+				margin-bottom: 0.5rem;
+			}
+
+			&.offline {
+				margin-bottom: 1rem;
+			}
+
+			.header {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+
+				.status {
+					font-weight: bold;
+				}
+			}
+
+			.song-info {
+				display: flex;
+				align-items: center;
+				padding: 1rem;
+				border: 1px solid #e0e0e0;
+				border-radius: 8px;
+				margin-top: 1rem;
+
+				.album-art {
+					width: 48px;
+					height: 48px;
+					border-radius: 4px;
+				}
+
+				.song-details {
+					display: flex;
+					flex-direction: column;
+					margin-left: 1rem;
+					text-align: left;
+					overflow: hidden;
+
+					.song-title {
+						font-weight: bold;
+						color: #1ed760;
+						text-decoration: none;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+
+					.artist {
+						color: gray;
+						font-size: 0.9rem;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+				}
+			}
+		}
+	}
+}
