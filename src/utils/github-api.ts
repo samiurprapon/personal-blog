@@ -46,3 +46,70 @@ export async function fetchDefaultReadme() {
 
 	return response.text();
 }
+
+export interface GithubIssue {
+	html_url: string;
+	number: number;
+	title: string;
+	created_at: string;
+	updated_at: string;
+	repo: string;
+	labels: { name: string; color: string }[];
+}
+
+export async function fetchGithubIssues(): Promise<GithubIssue[]> {
+	const repos = ['samiurprapon/aether', 'samiurprapon/personal-blog'];
+	// const repos = ['facebook/react'];
+
+	try {
+		const cacheKey = 'github_issues_cache';
+		const cachedData = localStorage.getItem(cacheKey);
+		const cacheExpiry = 2 * 60 * 1000; // 2 minute
+
+		if (cachedData) {
+			const { data, timestamp } = JSON.parse(cachedData);
+			if (Date.now() - timestamp < cacheExpiry) {
+				return data;
+			}
+		}
+
+		const issues = await Promise.all(
+			repos.map(async (repo) => {
+				const response = await fetch(
+					`https://api.github.com/repos/${repo}/issues?state=open&per_page=6`,
+				);
+
+				if (!response.ok) {
+					return [];
+				}
+
+				const data = await response.json();
+
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
+				return data.map((issue: any) => ({
+					...issue,
+					repo,
+				}));
+			}),
+		);
+
+		const uniques: GithubIssue[] = [
+			...new Set(issues.flat().sort((a, b) => b.number - a.number)),
+		];
+
+		// check if any issues has 'dependencies' label then skip that
+		const filteredIssues = uniques
+			.flat()
+			.filter((issue) => !issue.labels.some((label) => label.name === 'blog'));
+
+		localStorage.setItem(
+			cacheKey,
+			JSON.stringify({ data: filteredIssues.flat(), timestamp: Date.now() }),
+		);
+
+		return filteredIssues;
+	} catch (error) {
+		console.error('Error fetching GitHub issues:', error);
+		return [];
+	}
+}

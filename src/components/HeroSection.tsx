@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
 							Hi, I&apos;m <span className="highlight">{FULL_NAME}</span>
 						</h1>
 						<p className="hero-subtitle">
-							Break Code • Write Story • Learn Laughorithm
+							💥 Break Code • 🤪 Write PR • 😂 Learn Laughorithm
 						</p>
 					</div>
 				</div>
