@@ -130,3 +130,104 @@
 		}
 	}
 }
+
+.github-issues {
+	max-height: calc(4 * 100px);
+	min-width: calc(2 * 100px);
+
+	scroll-behavior: smooth;
+	overflow-y: auto;
+
+	.issue-card {
+		display: block;
+		padding: 16px;
+		margin: 8px 0;
+		border-radius: 8px;
+		transition: background-color 0.3s;
+		border: 1px solid var(--hover-color);
+		text-decoration: none;
+
+		&:hover {
+			background-color: var(--hover-color);
+		}
+
+		.issue-card__content {
+			display: flex;
+			gap: 16px;
+		}
+
+		.icon {
+			width: 4rem;
+			height: 4rem;
+			background-color: var(--bg-color);
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: var(--hover-color);
+			}
+
+			.icon__svg {
+				width: 3rem;
+				height: 3rem;
+				color: var(--accent-color);
+			}
+		}
+
+		.issue-info {
+			flex: 1;
+			min-width: 0;
+
+			.issue-header {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 0.25rem;
+
+				.repo-name {
+					font-size: 14px;
+					font-weight: 500;
+					color: var(--primary-color);
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+
+				.time-ago {
+					font-size: 12px;
+					color: var(--text-secondary);
+				}
+			}
+
+			.issue-title {
+				font-size: 14px;
+				color: var(--text-color);
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				margin-bottom: 8px;
+			}
+
+			.labels {
+				display: flex;
+				color: var(--text-color);
+
+				gap: 8px;
+
+				.label {
+					padding: 4px 8px;
+					font-size: 12px;
+					border-radius: 9999px;
+				}
+			}
+		}
+	}
+
+	.no-issues {
+		color: var(--secondary-color);
+		text-align: center;
+		padding: 16px;
+	}
+}

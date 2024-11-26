@@ -3,10 +3,10 @@
 @use '../base/animations' as *;
 
 .hero {
-	min-height: 80vh;
+	padding-bottom: 4rem;
 
 	.hero-background {
-		height: 50vh;
+		height: 60vh;
 		background: linear-gradient(to bottom right, #2563eb, #7c3aed);
 		position: relative;
 		overflow: hidden;
@@ -39,7 +39,7 @@
 			}
 
 			.hero-title {
-				font-size: 2.5rem;
+				font-size: 2.25rem;
 				font-weight: bold;
 				margin-bottom: 24px;
 				animation: fadeIn 1s ease-in-out;
@@ -57,11 +57,11 @@
 			}
 
 			.hero-subtitle {
-				font-size: 1.25rem;
+				font-size: 1.125rem;
 				font-family: $font-inter;
 				color: rgba(255, 255, 255, 0.75);
 				margin-bottom: 32px;
-				max-width: 540px;
+				max-width: 640px;
 				margin-left: auto;
 				margin-right: auto;
 				animation: slideDown 1s ease-in-out;
