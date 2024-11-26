@@ -45,7 +45,7 @@ function HomePage() {
 										onClick={handleLoadMore}
 										disabled={isLoading} // Disable button while loading
 									>
-										{isLoading ? <Loader /> : 'Load More'}
+										{isLoading ? <Loader /> : 'Load More...'}
 									</button>
 								)}
 							</div>

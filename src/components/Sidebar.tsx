@@ -19,12 +19,6 @@ export const Sidebar: React.FC = () => {
 				</div>
 			</div>
 
-			{/* Open Issues */}
-			<div className="card">
-				<h3 className="card-title">🛠️ Open Issues & Pull Request</h3>
-				<GithubIssues />
-			</div>
-
 			{/* TL;DR Widget */}
 			<div className="card">
 				<h3 className="card-title">⏳ TL;DR</h3>
@@ -93,6 +87,12 @@ export const Sidebar: React.FC = () => {
 						</svg>
 					</a>
 				</div>
+			</div>
+
+			{/* Open Issues */}
+			<div className="card">
+				<h3 className="card-title">🛠️ Open Issues & Pull Request</h3>
+				<GithubIssues />
 			</div>
 
 			{/* Newsletter Widget */}
