@@ -17,3 +17,13 @@ export interface ApiResponse {
 export interface ApiErrorResponse {
 	error: string;
 }
+
+export interface GithubIssue {
+	html_url: string;
+	number: number;
+	title: string;
+	created_at: string;
+	updated_at: string;
+	repo: string;
+	labels: { name: string; color: string }[];
+}
