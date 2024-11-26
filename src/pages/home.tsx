@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Loader } from 'lucide-react';
 
-import Hero from '~/components/HeroSection';
+// import Hero from '~/components/HeroSection';
 import Navigation from '~/components/Navigation';
 import PostCard from '~/components/PostCard';
 import { Sidebar } from '~/components/Sidebar';
@@ -25,9 +25,9 @@ function HomePage() {
 		<>
 			<Navigation />
 			<main>
-				<Hero />
+				{/* <Hero /> */}
 
-				<div className="container-fluid">
+				<div className="container-fluid pt-sm-8">
 					<div className="row">
 						<div className="col-md-9">
 							<div className="post-container">
