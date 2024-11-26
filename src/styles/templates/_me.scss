@@ -47,6 +47,25 @@
 	padding-bottom: 0.5rem;
 }
 
+.github-contribution,
+[class*='_container_'] {
+	width: 100% !important;
+
+	[class*='_calendar_'] {
+		padding-top: 0px !important;
+		padding-bottom: 0px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+
+	[class*='_description_'] {
+		padding-top: 8px !important;
+		padding-bottom: 0px !important;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
+	}
+}
+
 .github-calendar {
 	padding-top: 0.725rem;
 	padding-bottom: 0.5rem;
