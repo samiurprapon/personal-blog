@@ -27,7 +27,7 @@ function HomePage() {
 			<main>
 				{/* <Hero /> */}
 
-				<div className="container-fluid pt-sm-8">
+				<div className="container-fluid">
 					<div className="row">
 						<div className="col-md-9">
 							<div className="post-container">

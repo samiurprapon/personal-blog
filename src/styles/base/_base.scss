@@ -80,13 +80,13 @@ body {
 }
 
 .main-content {
-	padding-top: calc(4.25rem - 4px);
+	padding-top: 4.25rem;
 	max-width: 100%;
 	margin: 0 auto;
 	padding-left: 0;
 	padding-right: 0;
 
-	@media screen and (max-width: $break-point-md) {
-		padding-top: 4.25rem;
+	@media screen and (min-width: $break-point-md) {
+		padding-top: calc(5.25rem - 4px);
 	}
 }
