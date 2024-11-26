@@ -1,5 +1,10 @@
 import { GITHUB_API_URL, GITHUB_USERNAME } from '~/configs/environment';
-import { ApiResponse, ApiErrorResponse, Year } from '~/interfaces/GithubAPI';
+import {
+	ApiResponse,
+	ApiErrorResponse,
+	Year,
+	GithubIssue,
+} from '~/interfaces/GithubAPI';
 
 export async function fetchCalendarData(
 	username: string,
@@ -45,16 +50,6 @@ export async function fetchDefaultReadme() {
 	}
 
 	return response.text();
-}
-
-export interface GithubIssue {
-	html_url: string;
-	number: number;
-	title: string;
-	created_at: string;
-	updated_at: string;
-	repo: string;
-	labels: { name: string; color: string }[];
 }
 
 export async function fetchGithubIssues(): Promise<GithubIssue[]> {
