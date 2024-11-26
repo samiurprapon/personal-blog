@@ -3,10 +3,12 @@
 @use '../base/animations' as *;
 
 .hero {
-	padding-bottom: 4rem;
+	@media screen and (min-width: $break-point-md) {
+		padding-bottom: 2.75rem;
+	}
 
 	.hero-background {
-		height: 60vh;
+		height: 0;
 		background: linear-gradient(to bottom right, #2563eb, #7c3aed);
 		position: relative;
 		overflow: hidden;
@@ -15,6 +17,10 @@
 			position: absolute;
 			inset: 0;
 			opacity: 0.2;
+		}
+
+		@media screen and (min-width: $break-point-md) {
+			height: 60vh;
 		}
 	}
 

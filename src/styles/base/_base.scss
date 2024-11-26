@@ -80,7 +80,7 @@ body {
 }
 
 .main-content {
-	padding-top: 4.25rem;
+	padding-top: calc(4.25rem - 4px);
 	max-width: 100%;
 	margin: 0 auto;
 	padding-left: 0;
