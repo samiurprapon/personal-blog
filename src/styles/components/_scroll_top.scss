@@ -1,0 +1,26 @@
+@use '../base/vars' as *;
+
+.scroll-up__container {
+	display: flex;
+	padding: 0.625rem;
+	position: fixed;
+	right: 2rem;
+	bottom: 2rem;
+	z-index: 10;
+	cursor: pointer;
+	background: var(--text-color);
+	text-align: center;
+	align-items: center;
+	border-radius: 0.25rem;
+	transition: all 0.3s ease-in-out;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: var(--accent-color);
+	}
+
+	@media screen and (max-width: $break-point-xs) {
+		display: none;
+	}
+}

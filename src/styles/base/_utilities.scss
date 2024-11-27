@@ -12,6 +12,16 @@
 	display: none;
 }
 
+.visible {
+	visibility: visible;
+	opacity: 0.7;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+
 .text-center {
 	text-align: center;
 }
