@@ -17,7 +17,7 @@
 	"dependencies": {
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
-		"lucide-react": "^0.461.0",
+		"lucide-react": "^0.462.0",
 		"markdown-to-jsx": "^7.7.0",
 		"react": "^18.3.1",
 		"react-contribution-calendar": "^1.5.0",
