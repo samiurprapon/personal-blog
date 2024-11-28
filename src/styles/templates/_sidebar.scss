@@ -90,16 +90,28 @@
 
 			.tag {
 				background: var(--color-background-hover);
+				text-decoration: none;
 				padding: 0.375rem 0.75rem;
 				border-radius: 0.75rem;
 				font-size: 0.8rem;
 				color: var(--color-text);
+				transition: text 0.3s;
 				cursor: pointer;
 
 				&:hover {
 					background: var(--color-primary-hover);
 					color: var(--color-text-dark);
 					font-weight: bold;
+				}
+
+				&-selected {
+					background: var(--color-primary);
+					color: var(--color-text-dark);
+					font-weight: bold;
+
+					&:hover {
+						background: var(--color-primary-hover);
+					}
 				}
 			}
 		}
