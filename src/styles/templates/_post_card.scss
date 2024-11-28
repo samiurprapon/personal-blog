@@ -2,12 +2,12 @@
 @use '../base/typography' as *;
 
 .post-card {
-	background-color: var(--bg-color);
+	background-color: var(--color-background);
 	border-radius: 1rem;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
 	transition: box-shadow 0.3s ease;
-	border: 1px solid var(--hover-color);
+	border: 1px solid var(--color-background-hover);
 
 	&:hover {
 		box-shadow: var(--box-shadow);
@@ -36,16 +36,16 @@
 		gap: 8px;
 
 		.tag {
-			background: var(--hover-color);
+			background: var(--color-background-hover);
 			padding: 0.375rem 0.75rem;
 			border-radius: 0.5rem;
 			font-size: 0.8rem;
-			color: var(--text-color);
+			color: var(--color-text);
 			cursor: pointer;
 
 			&:hover {
-				background: var(--primary-color);
-				color: $color-text-light;
+				background: var(--color-primary);
+				color: var(--color-text-dark);
 			}
 		}
 	}
@@ -74,7 +74,7 @@
 		transition: color 0.2s ease;
 
 		&:hover {
-			color: var(--primary-color);
+			color: var(--color-primary);
 		}
 	}
 }

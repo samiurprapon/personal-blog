@@ -67,11 +67,11 @@
 }
 
 .primary-text {
-	color: $color-primary;
+	color: var(--color-primary);
 }
 
 .secondary-text {
-	color: $color-secondary;
+	color: var(--color-secondary);
 }
 
 .italic-text {

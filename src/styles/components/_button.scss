@@ -3,3 +3,18 @@
 |                         All button styles                        |
 |------------------------------------------------------------------|
 */
+
+// Button Base Mixins
+@mixin button-reset {
+	appearance: none;
+	border: none;
+	background: none;
+	cursor: pointer;
+	outline: none;
+	user-select: none;
+	transition:
+		background-color var(--transition-speed, 0.3s),
+		color var(--transition-speed, 0.3s),
+		border-color var(--transition-speed, 0.3s),
+		box-shadow var(--transition-speed, 0.3s);
+}

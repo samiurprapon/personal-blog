@@ -51,7 +51,6 @@
 		flex-basis: 75%;
 		max-width: 75%;
 		-ms-flex-preferred-size: 75%;
-		-webkit-flex-preferred-size: 75%;
 	}
 	.col-#{$type}-10 {
 		flex-basis: 83.33333333%;
@@ -153,7 +152,6 @@
 	flex-basis: 100%;
 	max-width: 100%;
 	-ms-flex-preferred-size: 100%;
-	-webkit-flex-preferred-size: 100%;
 }
 
 @mixin responsive($breakpoint) {
@@ -170,30 +168,25 @@
 }
 
 @mixin gradient-text {
-	background: linear-gradient(to right, $color-primary, $color-secondary);
+	background: linear-gradient(
+		to right,
+		var(--color-primary),
+		var(--color-secondary)
+	);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
 }
 
-@mixin button-reset {
-	background: none;
-	border: none;
-	padding: 0;
-	margin: 0;
-	cursor: pointer;
-	outline: none;
-}
-
 @mixin nav-link {
 	padding: $spacing-xs $spacing-sm;
-	color: var(--text-color);
+	color: var(--color-text);
 	text-decoration: none;
 	font-size: 0.875rem;
 	font-weight: normal;
 	transition: $transition-fast;
 
 	&:hover {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 }

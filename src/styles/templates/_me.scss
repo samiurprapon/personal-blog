@@ -1,4 +1,4 @@
-@use '~/styles/base/vars' as *;
+@use '../base/vars' as *;
 
 .dropdown-container {
 	display: flex;
@@ -17,21 +17,21 @@
 
 	&__select {
 		padding: $spacing-sm $spacing-lg;
-		border: 1px solid var(--text-color);
+		border: 1px solid var(--color-text);
 		border-radius: $border-radius-md;
 		font-size: $font-size-md;
 		color: var(--text-primary);
-		background-color: var(--bg-color);
+		background-color: var(--color-background);
 		transition: border-color $transition-duration $transition-timing;
 		min-width: 150px;
 
 		&:focus {
 			outline: none;
-			border-color: var(--primary-color);
+			border-color: var(--color-primary);
 		}
 
 		&::placeholder {
-			color: var(--text-color);
+			color: var(--color-text);
 		}
 	}
 }

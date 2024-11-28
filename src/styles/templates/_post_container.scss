@@ -37,8 +37,8 @@
 		margin: 2rem auto 0;
 		padding: 0.75rem 1.5rem;
 		font-size: 1rem;
-		color: var(--text-color);
-		background-color: var(--bg-color);
+		color: var(--color-text);
+		background-color: var(--color-background);
 		// border-radius: 0.25rem;
 		border: none;
 		cursor: pointer;
@@ -47,12 +47,12 @@
 
 		&:hover {
 			opacity: 1;
-			border: var(--primary-color) 1px solid;
+			border: var(--color-primary) 1px solid;
 			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 		}
 
 		&:disabled {
-			background-color: var(--bg-color);
+			background-color: var(--color-background);
 			border: none;
 			cursor: not-allowed;
 		}

@@ -46,7 +46,7 @@ const ScrollToTop = () => {
 					d="M6502.544,2805l3.529,3.53-3.529,3.529"
 					transform="translate(-2803.586 6507.073) rotate(-90)"
 					fill="none"
-					stroke="var(--bg-color)"
+					stroke="var(--color-background)"
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					strokeWidth="2"

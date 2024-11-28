@@ -16,7 +16,7 @@ const Error404 = () => (
 				id="Strips2_1"
 			>
 				<rect
-					style={{ fill: 'var(--text-color)', stroke: 'none' }}
+					style={{ fill: 'var(--color-text)', stroke: 'none' }}
 					x="0"
 					y="-0.5"
 					width="1"
@@ -28,7 +28,7 @@ const Error404 = () => (
 				<stop
 					id="stop6094"
 					offset="0"
-					style={{ stopColor: 'var(--hover-color)', stopOpacity: 1 }}
+					style={{ stopColor: 'var(--color-background-hover)', stopOpacity: 1 }}
 				/>
 			</linearGradient>
 		</defs>
@@ -39,7 +39,7 @@ const Error404 = () => (
 					style={{
 						display: 'inline',
 						fillOpacity: 1,
-						stroke: 'var(--text-color)',
+						stroke: 'var(--color-text)',
 						strokeWidth: '0.1px',
 						strokeLinecap: 'butt',
 						strokeLinejoin: 'miter',
@@ -61,7 +61,7 @@ const Error404 = () => (
 							fill: 'none',
 							fillOpacity: 0.4627451,
 							fillRule: 'nonzero',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1.08691013',
 							strokeMiterlimit: 4,
 							strokeDasharray: 'none',
@@ -73,7 +73,7 @@ const Error404 = () => (
 						d="m 84.984382,-0.03816399 c 0.911733,-5.0186e-4 1.661858,18.47051499 1.674386,41.22988399 0.0069,12.610431 -0.214009,23.904598 -0.56753,31.469836 -0.282878,6.088471 -0.652275,9.761785 -1.058838,9.762119 -0.406564,3.33e-4 -0.78198,-3.672386 -1.074838,-9.760657 -0.36185,-7.564779 -0.595233,-18.858715 -0.602175,-31.469228 -0.01253,-22.759565 0.717262,-41.23145213 1.628995,-41.23195399 z"
 						style={{
 							display: 'inline',
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							stroke: 'none',
 							strokeWidth: '0.23743393px',
 							strokeLinecap: 'butt',
@@ -86,9 +86,9 @@ const Error404 = () => (
 						d="m 85.115421,100.5729 c -0.0036,3.37532 -0.0071,6.75165 -0.0107,10.12897 m 0.512159,0.18258 c -1.914603,-0.23621 -3.505591,1.17801 -4.861444,2.68113 -1.355853,1.50312 -2.473764,3.09173 -3.387866,4.59538 -0.914103,1.50365 -1.620209,2.91586 -2.416229,4.41952 -0.79602,1.50365 -1.67928,3.09352 -0.808656,3.24054 0.870624,0.14702 3.490408,-1.14815 5.700074,-1.91396 2.209666,-0.76581 4.001473,-1.00079 5.922125,-0.86765 1.920652,0.13314 3.947462,0.6325 6.245357,1.6195 2.297896,0.98701 4.861161,2.46015 4.9051,0.91309 0.04394,-1.54706 -2.430929,-6.11379 -4.787811,-9.33976 -2.356882,-3.22597 -4.596047,-5.11158 -6.51065,-5.34779 z"
 						style={{
 							display: 'inline',
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -105,10 +105,10 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							opacity: 1,
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
 							fillRule: 'nonzero',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1.00157475',
 							strokeMiterlimit: 4,
 							strokeDasharray: 'none',
@@ -121,7 +121,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -134,7 +134,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -147,7 +147,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -160,7 +160,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -173,7 +173,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -186,7 +186,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -199,7 +199,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -212,7 +212,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -225,7 +225,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -238,7 +238,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -251,7 +251,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1.00614154px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -264,7 +264,7 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -280,10 +280,10 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							opacity: 1,
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
 							fillRule: 'nonzero',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1.00157475',
 							strokeMiterlimit: 4,
 							strokeDasharray: 'none',
@@ -299,10 +299,10 @@ const Error404 = () => (
 						style={{
 							display: 'inline',
 							opacity: 1,
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
 							fillRule: 'nonzero',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '0.82170224',
 							strokeMiterlimit: 4,
 							strokeDasharray: 'none',
@@ -318,10 +318,10 @@ const Error404 = () => (
 						id="path4565"
 						style={{
 							opacity: 1,
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
 							fillRule: 'nonzero',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1.00157475',
 							strokeMiterlimit: 4,
 							strokeDasharray: 'none',
@@ -334,10 +334,10 @@ const Error404 = () => (
 						d="m 321.74355,168.0687 c -1e-5,3.3913 -3.42414,11.26702 -8.73834,11.26702 -5.3142,0 -18.59463,27.24606 -8.38477,3.759 1.35199,-3.11016 5.69513,-12.89881 10.50609,-15.15612 8.05545,-3.77965 6.61702,-3.26121 6.61702,0.1301 z"
 						style={{
 							opacity: 1,
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
 							fillRule: 'nonzero',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1.00157475',
 							strokeMiterlimit: 4,
 							strokeDasharray: 'none',
@@ -350,7 +350,7 @@ const Error404 = () => (
 						d="m 325,163.45184 c 1.66722,0.62594 3.33388,1.25167 3.33438,1.56444 5e-4,0.31276 -1.66671,0.31276 -3.33438,0.31276"
 						style={{
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -363,7 +363,7 @@ const Error404 = () => (
 						d="m 314.72098,177.37003 c -0.21488,1.64138 -0.42965,3.28197 0.28484,3.96351 0.71449,0.68155 2.35396,0.39999 3.99418,0.1183"
 						style={{
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -376,7 +376,7 @@ const Error404 = () => (
 						d="m 316,176.45184 c -0.29612,1.41007 -0.59214,2.81967 -0.25801,3.48764 0.33413,0.66798 1.29605,0.59017 2.25801,0.51236"
 						style={{
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -389,7 +389,7 @@ const Error404 = () => (
 						d="m 318,180.45184 c 0.66667,0 1.33434,0 1.501,0.16616 0.16667,0.16617 -0.16667,0.49951 0.001,0.66667 0.16767,0.16717 0.68771,0.16717 0.89053,0.36949 0.20282,0.20233 -0.0582,0.46335 -0.39253,0.79768"
 						style={{
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -401,7 +401,7 @@ const Error404 = () => (
 						d="m 155,199.59998 34.15106,6.52318 v 11.49049 l -1.06066,13.43503 -3.88908,19.44543 -3.00521,10.42983 -4.06586,12.19759 -17.14734,-4.94975 -14.92431,-4.65869 v 0 L 155,199.59998"
 						style={{
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -413,7 +413,7 @@ const Error404 = () => (
 						d="m 172.53405,202.94118 -2.65165,33.23402 -3.53553,16.97056 -5.12652,15.73313"
 						style={{
 							fill: 'none',
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',
@@ -424,9 +424,9 @@ const Error404 = () => (
 						id="path4579"
 						d="m 187.2662,239.00256 c 0.76634,-0.82482 2.12163,-2.00333 3.50552,-2.26818 1.38389,-0.26485 2.79921,0.38383 3.2412,1.53192 0.442,1.14808 -0.0885,2.79852 -1.5624,3.24089 -1.4739,0.44236 -3.88809,-0.32312 -3.7995,0.001 0.0886,0.32427 2.68064,1.73812 4.00626,3.12221 1.32563,1.38408 1.38456,2.73956 0.79537,3.38822 -0.5892,0.64866 -1.82576,0.58977 -2.53349,0.11762 -0.70773,-0.47215 -0.88437,-1.35536 -1.59092,-2.65068 -0.70656,-1.29532 -1.94507,-3.00565 -2.47512,-4.09626 -0.53005,-1.09062 -0.35326,-1.56206 0.41308,-2.38689 z"
 						style={{
-							fill: 'var(--text-color)',
+							fill: 'var(--color-text)',
 							fillOpacity: 1,
-							stroke: 'var(--text-color)',
+							stroke: 'var(--color-text)',
 							strokeWidth: '1px',
 							strokeLinecap: 'butt',
 							strokeLinejoin: 'miter',

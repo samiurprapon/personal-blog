@@ -49,7 +49,7 @@ const GithubIssues: React.FC = () => {
 						) : (
 							<div className="icon">
 								<svg
-									fill="var(--primary-color)"
+									fill="var(--color-primary)"
 									width="64px"
 									height="64px"
 									viewBox="-102.4 -102.4 716.80 716.80"

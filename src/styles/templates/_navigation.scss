@@ -1,5 +1,6 @@
 @use '../base/vars' as *;
 @use '../base/mixins' as *;
+@use '../components/button' as *;
 @use '../base/typography' as *;
 
 .navigation {
@@ -8,7 +9,7 @@
 	left: 0;
 	width: 100%;
 	z-index: $z-nav;
-	background: var(--bg-color);
+	background: var(--color-background);
 	// backdrop-filter: blur(8px);
 	box-shadow: $shadow-md;
 	transition: $transition-default;
@@ -25,7 +26,7 @@
 		font-size: 1.7rem;
 		line-height: normal;
 		text-decoration: none;
-		color: var(--text-color);
+		color: var(--color-text);
 
 		.logo__brackets {
 			font-family: $font-poppins;
@@ -40,7 +41,7 @@
 		}
 
 		&:hover {
-			color: $color-primary;
+			color: var(--color-primary);
 			transition: $transition-default;
 		}
 	}
@@ -62,10 +63,10 @@
 		&-button {
 			@include button-reset;
 			padding: $spacing-xs;
-			color: var(--text-color);
+			color: var(--color-text);
 
 			&:hover {
-				background: var(--hover-color);
+				background: var(--color-background-hover);
 				border-radius: $border-radius;
 			}
 		}
@@ -74,11 +75,11 @@
 	&__theme-toggle {
 		@include button-reset;
 		padding: $spacing-xs;
-		color: var(--text-color);
+		color: var(--color-text);
 		margin-right: $spacing-xs;
 
 		&:hover {
-			background: var(--hover-color);
+			background: var(--color-background-hover);
 			border-radius: 50%;
 		}
 	}
@@ -90,7 +91,7 @@
 		gap: $spacing-xs;
 
 		&--active {
-			color: $color-primary;
+			color: var(--color-primary);
 
 			&::after {
 				content: '';
@@ -100,7 +101,7 @@
 				transform: translateX(-50%);
 				width: 1.5rem;
 				height: 2px;
-				background: $color-primary;
+				background: var(--color-primary);
 				border-radius: 1px;
 			}
 		}
@@ -115,14 +116,14 @@
 			@include button-reset;
 			@include flex(row, center, center);
 			gap: $spacing-xs;
-			color: var(--text-color);
+			color: var(--color-text);
 			font-size: 0.875rem;
 			font-weight: 500;
 			padding: $spacing-xs $spacing-sm;
 			transition: $transition-fast;
 
 			&:hover {
-				color: $color-primary;
+				color: var(--color-primary);
 			}
 
 			.rotate {
@@ -135,7 +136,7 @@
 			top: 120%;
 			right: 0;
 			margin-top: $spacing-xs;
-			background: var(--bg-color);
+			background: var(--color-background);
 			border-radius: $border-radius;
 			box-shadow: $shadow-md;
 			min-width: 18rem;
@@ -145,7 +146,7 @@
 		&-item {
 			@include flex(row, flex-start, center);
 			padding: $spacing-sm;
-			color: var(--text-color);
+			color: var(--color-text);
 			font-size: 0.875rem;
 			font-weight: normal;
 			text-decoration: none;
@@ -153,13 +154,13 @@
 			gap: $spacing-xs;
 
 			&:hover {
-				background: var(--hover-color);
-				color: $color-primary;
+				background: var(--color-background-hover);
+				color: var(--color-primary);
 			}
 
 			&--active {
-				color: $color-primary;
-				background: var(--hover-color);
+				color: var(--color-primary);
+				background: var(--color-background-hover);
 			}
 		}
 	}
@@ -169,7 +170,7 @@
 		top: 100%;
 		left: 0;
 		width: 100%;
-		background: var(--bg-color);
+		background: var(--color-background);
 		box-shadow: $shadow-md;
 
 		&-link {
@@ -180,12 +181,12 @@
 			gap: $spacing-xs;
 
 			&:hover {
-				background: var(--hover-color);
+				background: var(--color-background-hover);
 			}
 
 			&--active {
-				color: $color-primary;
-				background: var(--hover-color);
+				color: var(--color-primary);
+				background: var(--color-background-hover);
 			}
 
 			&--indented {
@@ -194,14 +195,14 @@
 		}
 
 		&-section {
-			border-top: 1px solid var(--hover-color);
+			border-top: 1px solid var(--color-background-hover);
 			width: 100%;
 		}
 
 		&-header {
 			@include flex(row, flex-start, center);
 			padding: $spacing-sm $spacing-md;
-			color: var(--text-color);
+			color: var(--color-text);
 			opacity: 0.7;
 			font-weight: 500;
 			gap: $spacing-xs;

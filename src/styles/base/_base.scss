@@ -31,52 +31,23 @@
 @use 'animations' as *;
 @use 'typography' as *;
 
-:root {
-	--bg-color: #{$color-background-light};
-	--text-color: #{$color-text-primary-light};
-	--hover-color: #{$color-hover-light};
-	--primary-color: #{$color-primary};
-	--secondary-color: #{$color-secondary};
-	--accent-color: #{$color-accent};
-	--success-color: #{$color-success-light};
-	--card-color: #{$color-card-light};
-	--box-shadow: #{$box-shadow-light};
-
-	--text-primary: #{$color-text-primary-light};
-	--text-secondary: #{$color-text-secondary-light};
-}
-
-[data-theme='dark'] {
-	--bg-color: #{$color-background-dark};
-	--text-color: #{$color-text-primary-dark};
-	--hover-color: #{$color-hover-dark};
-	--primary-color: #{$color-primary};
-	--secondary-color: #{$color-secondary};
-	--accent-color: #{$color-accent};
-	--success-color: #{$color-success-dark};
-	--card-color: #{$color-card-dark};
-	--box-shadow: #{$box-shadow-dark};
-
-	--text-primary: #{$color-text-primary-dark};
-	--text-secondary: #{$color-text-secondary-dark};
-}
-
-* {
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
-
-	scrollbar-width: none;
-	-ms-overflow-style: none;
 }
 
 body {
-	margin: 0;
-	padding: 0;
 	font-family: $font-poppins;
-	background: var(--bg-color);
-	color: var(--text-color);
-	transition: $transition-default;
+	background-color: var(--color-background);
+	color: var(--color-text);
+	line-height: 1.6;
+	transition:
+		background-color var(--transition-speed),
+		color var(--transition-speed);
 }
 
 .main-content {
