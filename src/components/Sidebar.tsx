@@ -1,20 +1,29 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+
 import { GITHUB_USERNAME } from '~/configs/environment';
 
 import tags from '~/configs/tags';
-import GithubIssues from './GithubIssues';
+import GithubIssues from '~/components/GithubIssues';
 
 export const Sidebar: React.FC = () => {
+	// get tag from the URL
+	const { tag } = useParams<{ tag: string }>();
+
 	return (
 		<div className="sidebar">
 			{/* Tags */}
 			<div className="card">
 				<h3 className="card-title">🏷️ Tags</h3>
 				<div className="tags">
-					{tags.map((tag) => (
-						<span key={tag} className="tag">
-							{tag}
-						</span>
+					{tags.map((tagName) => (
+						<Link
+							key={tagName}
+							className={`tag ${tag === tagName ? 'tag-selected' : ''}`}
+							to={`/tags/${tagName}`}
+						>
+							{tagName}
+						</Link>
 					))}
 				</div>
 			</div>
