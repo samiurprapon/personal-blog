@@ -8,7 +8,7 @@ const fakePosts: Post[] = [
 		tags: ['🐋 Docker', '🔥 Cloudflare', '🐧 linux'],
 		slug: 'getting-started-with-docker',
 		readTime: '5 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&1',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&1',
 	},
 	{
 		title: 'Mastering Redis for High Performance Caching',
@@ -17,7 +17,7 @@ const fakePosts: Post[] = [
 		tags: ['redis', '🐘 postgres'],
 		slug: 'mastering-redis-caching',
 		readTime: '7 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&2',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&2',
 	},
 	{
 		title: 'Monorepo Management with Nx 📂',
@@ -26,7 +26,7 @@ const fakePosts: Post[] = [
 		tags: ['📂 monorepo', 'nestjs'],
 		slug: 'monorepo-management-nx',
 		readTime: '6 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&3',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&3',
 	},
 	{
 		title: 'Linux Survival Guide for Beginners 🐧',
@@ -35,7 +35,7 @@ const fakePosts: Post[] = [
 		tags: ['🐧 linux', 'arch-btw'],
 		slug: 'linux-survival-guide',
 		readTime: '8 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&4',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&4',
 	},
 	{
 		title: 'Exploring Aether: The Learning Management System 🌀',
@@ -44,7 +44,7 @@ const fakePosts: Post[] = [
 		tags: ['🌀 aether', '🎓 nsu'],
 		slug: 'exploring-aether-lms',
 		readTime: '9 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&5',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&5',
 	},
 	{
 		title: 'Secure APIs with JWE and JWT 🔐',
@@ -53,7 +53,7 @@ const fakePosts: Post[] = [
 		tags: ['🔑 jwt', '🔐 jwe', 'nestjs'],
 		slug: 'secure-apis-jwe-jwt',
 		readTime: '4 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&6',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&6',
 	},
 	{
 		title: 'Writing Clean Code in Java ☕',
@@ -62,7 +62,7 @@ const fakePosts: Post[] = [
 		tags: ['☕ Java', '📝 vs-code'],
 		slug: 'clean-code-java',
 		readTime: '6 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&8',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&8',
 	},
 	{
 		title: 'Building Secure APIs with JSON Web Encryption (🔐 JWE)',
@@ -71,7 +71,7 @@ const fakePosts: Post[] = [
 		tags: ['🔐 jwe', 'nestjs', '🔑 jwt'],
 		slug: 'building-secure-apis-jwe',
 		readTime: '8 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&7',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&7',
 	},
 	{
 		title: 'Arch Linux: BTW, I Use It 🐧',
@@ -80,7 +80,7 @@ const fakePosts: Post[] = [
 		tags: ['arch-btw', '🐧 linux'],
 		slug: 'arch-linux-btw',
 		readTime: '6 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&9',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&9',
 	},
 	{
 		title: 'Journey Through Rangpur 🏡',
@@ -89,7 +89,7 @@ const fakePosts: Post[] = [
 		tags: ['🏡 rangpur'],
 		slug: 'journey-through-rangpur',
 		readTime: '4 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&10',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&10',
 	},
 	{
 		title: 'Supercharging Development with Aether 🌀',
@@ -98,7 +98,7 @@ const fakePosts: Post[] = [
 		tags: ['🌀 aether', 'nestjs', '🐘 postgres'],
 		slug: 'aether-supercharging-development',
 		readTime: '9 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&11',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&11',
 	},
 	{
 		title: 'Cloudflare Worker Basics 🔥',
@@ -107,7 +107,7 @@ const fakePosts: Post[] = [
 		tags: ['🔥 Cloudflare', '🐋 Docker', '🔑 jwt'],
 		slug: 'cloudflare-worker-basics',
 		readTime: '5 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&12',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&12',
 	},
 	{
 		title: 'When Your Code is Trash 🗑️',
@@ -116,7 +116,7 @@ const fakePosts: Post[] = [
 		tags: ['🗑️ trash', 'git'],
 		slug: 'refactoring-trash-code',
 		readTime: '4 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&14',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&14',
 	},
 	{
 		title: 'The Ex Factor in Code Reviews 💔',
@@ -125,7 +125,7 @@ const fakePosts: Post[] = [
 		tags: ['💔 ex'],
 		slug: 'code-reviews-emotions',
 		readTime: '7 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&15',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&15',
 	},
 	{
 		title: 'Postgres Beyond Basics 🐘',
@@ -134,7 +134,7 @@ const fakePosts: Post[] = [
 		tags: ['🐘 postgres'],
 		slug: 'postgres-beyond-basics',
 		readTime: '10 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&16',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&16',
 	},
 	{
 		title: 'VS Code Productivity Hacks 📝',
@@ -143,7 +143,7 @@ const fakePosts: Post[] = [
 		tags: ['📝 vs-code', 'git'],
 		slug: 'vs-code-productivity-hacks',
 		readTime: '5 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=regular&17',
+		coverImage: 'https://random.danielpetrica.com/api/random?format=small&17',
 	},
 ];
 
