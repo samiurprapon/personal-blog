@@ -5,21 +5,26 @@ import { Loader } from 'lucide-react';
 import Navigation from '~/components/Navigation';
 import PostCard from '~/components/PostCard';
 import { Sidebar } from '~/components/Sidebar';
-
-import fakePosts from '~/utils/fake';
+import { useGetPostsQuery } from '~/store/apis/posts';
 
 function HomePage() {
 	const [visiblePosts, setVisiblePosts] = useState<number>(3);
-	const [isLoading, setIsLoading] = useState<boolean>(false);
+
+	const { isLoading, data, error } = useGetPostsQuery();
 
 	const handleLoadMore = () => {
-		setIsLoading(true);
-
 		setTimeout(() => {
 			setVisiblePosts(visiblePosts + 3);
-			setIsLoading(false);
 		}, 600);
 	};
+
+	if (isLoading) {
+		return <Loader />;
+	}
+
+	if (error) {
+		return <div>Error: {(error as Error).message}</div>;
+	}
 
 	return (
 		<>
@@ -34,12 +39,12 @@ function HomePage() {
 								<h2 className="post-container__title">Latest Articles</h2>
 
 								<div className="post-container__grid">
-									{fakePosts.slice(0, visiblePosts).map((post, index) => (
+									{(data || []).slice(0, visiblePosts).map((post, index) => (
 										<PostCard post={post} key={index} />
 									))}
 								</div>
 
-								{visiblePosts < fakePosts.length && (
+								{visiblePosts < (data || []).length && (
 									<button
 										className="post-container__load-more"
 										onClick={handleLoadMore}
