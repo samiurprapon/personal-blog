@@ -15,7 +15,7 @@
 		"commmitmsg": "npx commitlint -x @commitlint/config-conventional -E HUSKY_GIT_PARAMS"
 	},
 	"dependencies": {
-		"@reduxjs/toolkit": "^2.3.0",
+		"@reduxjs/toolkit": "^2.4.0",
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
 		"lucide-react": "^0.462.0",
