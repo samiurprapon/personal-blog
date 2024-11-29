@@ -5,6 +5,7 @@ import Loadable from '~/components/Loadable';
 import MinimalLayout from '~/layouts/MinimalLayout';
 
 const HomePage = Loadable(lazy(() => import('~/pages/home')));
+const EditorPage = Loadable(lazy(() => import('~/pages/editor')));
 const TagPage = Loadable(lazy(() => import('~/pages/tag')));
 const MePage = Loadable(lazy(() => import('~/pages/me')));
 const PasswordToolPage = Loadable(lazy(() => import('~/pages/password')));
@@ -15,6 +16,10 @@ const PublicRoutes: RouteObject = {
 		{
 			path: '/',
 			element: <HomePage />,
+		},
+		{
+			path: '/write',
+			element: <EditorPage />,
 		},
 		{
 			path: '/tags/:tag',

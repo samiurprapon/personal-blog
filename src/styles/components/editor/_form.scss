@@ -1,0 +1,69 @@
+@use '../../base/vars' as *;
+
+.form-input,
+.form-textarea {
+	width: 100%;
+	padding: var(--spacing-xs);
+	border: 1px solid var(--color-border);
+	border-radius: var(--border-radius-sm);
+	background: var(--color-background);
+	color: var(--color-text);
+	margin-bottom: var(--spacing-xs);
+	font-family: inherit;
+	font-size: 0.875rem;
+
+	@media (min-width: $break-point-md) {
+		padding: var(--spacing-sm);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1rem;
+	}
+
+	&:focus {
+		outline: none;
+		border-color: var(--color-primary);
+	}
+}
+
+.form-textarea {
+	min-height: 80px;
+	resize: vertical;
+
+	@media (min-width: $break-point-md) {
+		min-height: 100px;
+	}
+}
+
+.select-container {
+	margin-bottom: var(--spacing-xs);
+
+	@media (min-width: $break-point-md) {
+		margin-bottom: var(--spacing-sm);
+	}
+}
+
+// React Select custom styles for mobile
+.select__control {
+	min-height: 36px !important;
+	font-size: 0.875rem !important;
+
+	@media (min-width: $break-point-md) {
+		min-height: 38px !important;
+		font-size: 1rem !important;
+	}
+}
+
+.select__value-container {
+	padding: var(--spacing-xs) !important;
+
+	@media (min-width: $break-point-md) {
+		padding: var(--spacing-sm) !important;
+	}
+}
+
+.select__menu {
+	font-size: 0.875rem !important;
+
+	@media (min-width: $break-point-md) {
+		font-size: 1rem !important;
+	}
+}

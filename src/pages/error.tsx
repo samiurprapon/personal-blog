@@ -1,7 +1,7 @@
-import Error404 from '~/components/Error404';
-import Navigation from '~/components/Navigation';
+import Error404 from '~/components/error/Error404';
+import Navigation from '~/layouts/Navigation';
 
-import { ErrorFooter } from '~/components/ErrorFooter';
+import { ErrorFooter } from '~/components/error/ErrorFooter';
 
 function Error() {
 	return (

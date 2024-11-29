@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 
 import { GITHUB_USERNAME } from '~/configs/environment';
 
-import tags from '~/configs/tags';
-import GithubIssues from '~/components/GithubIssues';
+import tags from '~/mocks/tags';
+import GithubIssues from '~/components/github/GithubIssues';
 
 export const Sidebar: React.FC = () => {
 	// get tag from the URL

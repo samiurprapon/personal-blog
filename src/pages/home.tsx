@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Loader } from 'lucide-react';
 
 // import Hero from '~/components/HeroSection';
-import Navigation from '~/components/Navigation';
+import Navigation from '~/layouts/Navigation';
 import PostCard from '~/components/PostCard';
-import { Sidebar } from '~/components/Sidebar';
+import { Sidebar } from '~/components/sidebar/Sidebar';
 import { useGetPostsQuery } from '~/store/apis/posts';
 
 function HomePage() {

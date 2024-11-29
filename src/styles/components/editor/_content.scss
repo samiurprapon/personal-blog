@@ -1,0 +1,74 @@
+@use '../../base/vars' as *;
+@use '../../base/typography' as *;
+
+.title-editor {
+	margin-bottom: var(--spacing-md);
+
+	&__input {
+		width: 100%;
+		font-size: 1.5rem;
+		border: none;
+		background: transparent;
+		color: var(--color-text);
+		padding: var(--spacing-xs) 0;
+
+		@media (min-width: $break-point-md) {
+			font-size: 2rem;
+			padding: var(--spacing-sm) 0;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__slug {
+		font-size: 0.75rem;
+		color: var(--color-secondary);
+
+		@media (min-width: $break-point-md) {
+			font-size: 0.875rem;
+		}
+	}
+}
+
+.content-editor {
+	.w-md-editor {
+		font-size: 1.25rem;
+		height: calc(100vh - 250px) !important;
+		background: var(--color-background);
+
+		@media (min-width: $break-point-md) {
+			height: calc(100vh - 300px) !important;
+		}
+
+		.w-md-editor-input {
+			scrollbar-width: none;
+			font-size: 1.25rem;
+			font-family: $font-poppins;
+		}
+
+		w-md-editor-preview {
+			scrollbar-width: none;
+		}
+	}
+
+	.w-md-editor-toolbar {
+		flex-wrap: wrap;
+		padding: var(--spacing-xs);
+		display: none;
+
+		@media (min-width: $break-point-md) {
+			flex-wrap: nowrap;
+			padding: var(--spacing-sm);
+		}
+
+		li {
+			margin: 2px;
+
+			@media (min-width: $break-point-md) {
+				margin: 0;
+			}
+		}
+	}
+}

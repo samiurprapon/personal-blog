@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { GITHUB_USERNAME, GITHUB_JOIN_YEAR } from '~/configs/environment';
 
-import Navigation from '~/components/Navigation';
-import GithubProfile from '~/components/GithubProfile';
-import { GitHubContributionsCalendar } from '~/components/GitHubCalendar';
+import Navigation from '~/layouts/Navigation';
+import GithubProfile from '~/components/github/GithubProfile';
+import { GitHubContributionsCalendar } from '~/components/github/GitHubCalendar';
 
 function MePage() {
 	const [year, setYear] = useState<number | 'last'>('last');
