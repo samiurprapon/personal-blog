@@ -6,12 +6,14 @@ import { EditorStore, EditorState } from '~/interfaces/EditorState';
 import { calculateReadingTime } from '~/utils/readingTime';
 import { generateSlug } from '~/utils/slugify';
 
+import { postPlaceholder } from '~/mocks/placehohlder';
+
 const initialState: EditorState = {
 	post: {
 		id: '',
 		title: '',
 		slug: '',
-		content: '',
+		content: postPlaceholder,
 		excerpt: '',
 		featuredImage: '',
 		publishedDate: new Date().toISOString(),
@@ -28,7 +30,6 @@ const initialState: EditorState = {
 	isDirty: false,
 	lastSaved: null,
 	isPreviewMode: false,
-	theme: 'light',
 };
 
 export const useEditorStore = create<EditorStore>()(

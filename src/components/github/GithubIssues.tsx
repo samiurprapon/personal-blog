@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
-import { fetchGithubIssues, GithubIssue } from '~/utils/github-api';
+
+import { fetchGithubIssues } from '~/utils/github-api';
+import { GithubIssue } from '~/interfaces/GithubAPI';
 
 const GithubIssues: React.FC = () => {
 	const [issues, setIssues] = useState<GithubIssue[]>([]);

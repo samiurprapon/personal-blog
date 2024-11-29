@@ -1,11 +1,10 @@
-import { Post } from './Post.interface';
+import { Post } from '~/interfaces/Post.interface';
 
 export interface EditorState {
 	post: Post;
 	isDirty: boolean;
 	lastSaved: string | null;
 	isPreviewMode: boolean;
-	theme: 'light' | 'dark';
 }
 
 export interface EditorStore {

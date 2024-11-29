@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Eye, Save, Send } from 'lucide-react';
 
 import { toast } from 'react-hot-toast';
@@ -25,6 +25,26 @@ const EditorHeader: React.FC = () => {
 			toast.error('Failed to publish post');
 		}
 	};
+
+	const handleSaveShortcut = (event: KeyboardEvent) => {
+		if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+			event.preventDefault();
+			handleSaveDraft();
+		}
+
+		if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+			event.preventDefault();
+			handleSaveDraft();
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener('keydown', handleSaveShortcut);
+
+		return () => {
+			document.removeEventListener('keydown', handleSaveShortcut);
+		};
+	}, []);
 
 	return (
 		<header className="editor-header">

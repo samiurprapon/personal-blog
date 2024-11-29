@@ -34,9 +34,9 @@
 
 .content-editor {
 	.w-md-editor {
-		font-size: 1.25rem;
+		font-size: 1.25rem !important;
 		height: calc(100vh - 250px) !important;
-		background: var(--color-background);
+		background: var(--color-background) !important;
 
 		@media (min-width: $break-point-md) {
 			height: calc(100vh - 300px) !important;
@@ -44,19 +44,22 @@
 
 		.w-md-editor-input {
 			scrollbar-width: none;
-			font-size: 1.25rem;
 			font-family: $font-poppins;
+			color: var(--color-text) !important;
 		}
 
-		w-md-editor-preview {
+		.w-md-editor-preview {
+			padding-left: var(--spacing-md);
+			padding-right: var(--spacing-md);
 			scrollbar-width: none;
+			background: var(--color-background) !important;
 		}
 	}
 
 	.w-md-editor-toolbar {
 		flex-wrap: wrap;
 		padding: var(--spacing-xs);
-		display: none;
+		background: var(--color-background) !important;
 
 		@media (min-width: $break-point-md) {
 			flex-wrap: nowrap;
@@ -64,10 +67,11 @@
 		}
 
 		li {
-			margin: 2px;
+			margin: auto 0.25rem !important;
+			padding: 0.25rem !important;
 
 			@media (min-width: $break-point-md) {
-				margin: 0;
+				margin: auto 0.125rem !important;
 			}
 		}
 	}
