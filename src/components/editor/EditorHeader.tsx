@@ -47,37 +47,37 @@ const EditorHeader: React.FC = () => {
 	}, []);
 
 	return (
-		<header className="editor-header">
-			<div className="editor-header__left">
-				<h1 className="editor-header__title">
-					{state.post.title || 'Untitled Post'}
-				</h1>
+		<div className="editor-header-container">
+			<div className="editor-header">
+				<div className="editor-header__actions">
+					<button
+						className="btn btn--icon"
+						onClick={togglePreviewMode}
+						title="Toggle Preview"
+					>
+						<Eye />
+					</button>
+					<button
+						className="btn btn--secondary"
+						onClick={handleSaveDraft}
+						disabled={!state.isDirty}
+					>
+						<Save />
+					</button>
+					<button className="btn btn--primary" onClick={handlePublish}>
+						<Send />
+					</button>
+				</div>
+			</div>
+
+			<div className="last-save">
 				{state.lastSaved && (
 					<span className="editor-header__saved">
 						Last saved: {new Date(state.lastSaved).toLocaleTimeString()}
 					</span>
 				)}
 			</div>
-			<div className="editor-header__actions">
-				<button
-					className="btn btn--icon"
-					onClick={togglePreviewMode}
-					title="Toggle Preview"
-				>
-					<Eye />
-				</button>
-				<button
-					className="btn btn--secondary"
-					onClick={handleSaveDraft}
-					disabled={!state.isDirty}
-				>
-					<Save /> Save Draft
-				</button>
-				<button className="btn btn--primary" onClick={handlePublish}>
-					<Send /> Publish
-				</button>
-			</div>
-		</header>
+		</div>
 	);
 };
 

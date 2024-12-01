@@ -15,38 +15,38 @@
 	background: var(--color-background);
 }
 
-.editor-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.editor-header-container {
 	padding: var(--spacing-md);
 	border-bottom: 1px solid var(--color-border);
-	background: var(--color-background);
 
-	&__left {
+	.editor-header {
 		display: flex;
-		flex-direction: column;
+		justify-content: end;
+		align-items: center;
+		background: var(--color-background);
+
+		&__saved {
+			font-size: 0.875rem;
+			color: var(--color-primary);
+		}
+
+		&__actions {
+			display: flex;
+			gap: var(--spacing-md);
+		}
 	}
 
-	&__title {
-		font-size: 1.25rem;
-		color: var(--color-text);
-		margin: 0;
-	}
-
-	&__saved {
+	.last-save {
+		text-align: right;
 		font-size: 0.875rem;
 		color: var(--color-secondary);
-	}
-
-	&__actions {
-		display: flex;
-		gap: var(--spacing-sm);
+		padding-top: 0.25rem;
 	}
 }
 
 .title-editor {
 	padding: var(--spacing-md);
+	padding-top: 0;
 	border-bottom: 1px solid var(--color-border);
 
 	&__input {

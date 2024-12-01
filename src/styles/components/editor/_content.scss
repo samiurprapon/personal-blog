@@ -1,37 +1,6 @@
 @use '../../base/vars' as *;
 @use '../../base/typography' as *;
 
-.title-editor {
-	margin-bottom: var(--spacing-md);
-
-	&__input {
-		width: 100%;
-		font-size: 1.5rem;
-		border: none;
-		background: transparent;
-		color: var(--color-text);
-		padding: var(--spacing-xs) 0;
-
-		@media (min-width: $break-point-md) {
-			font-size: 2rem;
-			padding: var(--spacing-sm) 0;
-		}
-
-		&:focus {
-			outline: none;
-		}
-	}
-
-	&__slug {
-		font-size: 0.75rem;
-		color: var(--color-secondary);
-
-		@media (min-width: $break-point-md) {
-			font-size: 0.875rem;
-		}
-	}
-}
-
 .content-editor {
 	.w-md-editor {
 		font-size: 1.25rem !important;
