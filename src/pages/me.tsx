@@ -1,21 +1,25 @@
 import { useState } from 'react';
+import Select from 'react-select';
 
 import { GITHUB_USERNAME, GITHUB_JOIN_YEAR } from '~/configs/environment';
 
 import Navigation from '~/layouts/Navigation';
 import GithubProfile from '~/components/github/GithubProfile';
 import { GitHubContributionsCalendar } from '~/components/github/GitHubCalendar';
+import { Year } from '~/interfaces/GithubAPI';
 
 function MePage() {
 	const [year, setYear] = useState<number | 'last'>('last');
 
 	const currentYear = new Date().getFullYear();
 
-	const years = Array.from(
-		{ length: currentYear - GITHUB_JOIN_YEAR + 1 },
-		(_, i) => currentYear - i,
-	);
-
+	const years: Year[] = [
+		'last',
+		...Array.from(
+			{ length: currentYear - GITHUB_JOIN_YEAR + 1 },
+			(_, i) => currentYear - i,
+		),
+	];
 	return (
 		<>
 			<Navigation />
@@ -27,24 +31,27 @@ function MePage() {
 					<div className="col-xs-12">
 						<div className="dropdown-container">
 							<div className="dropdown-year">
-								<select
-									className="dropdown-year__select"
-									value={year}
-									onChange={(e) =>
+								<Select
+									value={
+										year === 'last'
+											? { value: 'last', label: 'Last 12 months' }
+											: { value: year, label: year }
+									}
+									onChange={(selected) =>
+										selected &&
 										setYear(
-											e.target.value === 'last'
+											selected.value === 'last'
 												? 'last'
-												: Number(e.target.value),
+												: Number(selected.value),
 										)
 									}
-								>
-									<option value="last">Last 12 months</option>
-									{years.map((y) => (
-										<option key={y} value={y}>
-											{y}
-										</option>
-									))}
-								</select>
+									options={years.map((y) => ({
+										value: typeof y === 'string' ? y : y.toString(),
+										label: y.toString(),
+									}))}
+									className="select-container"
+									classNamePrefix="select"
+								/>
 							</div>
 						</div>
 					</div>

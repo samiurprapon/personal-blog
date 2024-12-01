@@ -39,31 +39,65 @@
 	@media (min-width: $break-point-md) {
 		margin-bottom: var(--spacing-sm);
 	}
-}
 
-// React Select custom styles for mobile
-.select__control {
-	min-height: 36px !important;
-	font-size: 0.875rem !important;
+	.react-select {
+		&__control {
+			background: var(--color-background) !important;
+			min-height: 36px !important;
+			font-size: 0.875rem !important;
 
-	@media (min-width: $break-point-md) {
-		min-height: 38px !important;
-		font-size: 1rem !important;
-	}
-}
+			@media (min-width: $break-point-md) {
+				min-height: 38px !important;
+				font-size: 1rem !important;
+			}
+		}
 
-.select__value-container {
-	padding: var(--spacing-xs) !important;
+		&__option {
+			background: transparent;
 
-	@media (min-width: $break-point-md) {
-		padding: var(--spacing-sm) !important;
-	}
-}
+			&:hover {
+				background: var(--color-background-hover);
+			}
+		}
 
-.select__menu {
-	font-size: 0.875rem !important;
+		&__multi-value {
+			background-color: var(--color-background-hover);
 
-	@media (min-width: $break-point-md) {
-		font-size: 1rem !important;
+			&__label {
+				color: var(--text-color);
+			}
+		}
+
+		&__placeholder,
+		&__single-value {
+			color: var(--text-color);
+		}
+
+		&__indicator {
+			color: var(--text-color);
+
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+
+		&__value-container {
+			padding: var(--spacing-xs) !important;
+			background: var(--color-background) !important;
+		}
+
+		&__menu {
+			font-size: 0.875rem !important;
+			color: var(--color-text) !important;
+			background: var(--color-background) !important;
+
+			@media (min-width: $break-point-md) {
+				font-size: 1rem !important;
+			}
+		}
+
+		&__menu-list {
+			background: var(--color-background);
+		}
 	}
 }

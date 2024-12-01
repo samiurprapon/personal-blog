@@ -20,7 +20,7 @@ const TagsSection: React.FC = () => {
 					options={tags.map((tag) => ({ value: tag, label: tag }))}
 					placeholder="Add tags..."
 					className="select-container"
-					classNamePrefix="select"
+					classNamePrefix="react-select"
 					// isCreatable
 				/>
 			</div>
