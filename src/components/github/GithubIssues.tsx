@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 
-import { fetchGithubIssues } from '~/utils/github-api';
-import { GithubIssue } from '~/interfaces/GithubAPI';
+import { useGetGithubIssuesQuery } from '~/store/apis/github';
 
 const GithubIssues: React.FC = () => {
-	const [issues, setIssues] = useState<GithubIssue[]>([]);
+	const { isLoading, data, error } = useGetGithubIssuesQuery();
 
-	useEffect(() => {
-		const loadIssues = async () => {
-			const fetchedIssues = await fetchGithubIssues();
-			setIssues(fetchedIssues);
-		};
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
 
-		loadIssues();
-	}, []);
+	if (error) {
+		return <div>Error: {(error as Error).message}</div>;
+	}
 
-	if (!issues.length) {
+	if (!data?.length) {
 		return <div className="no-issues">No issues available at the moment</div>;
 	}
 
 	return (
 		<div className="github-issues">
-			{issues.map((issue) => (
+			{data.map((issue) => (
 				<a
 					key={issue.html_url}
 					href={issue.html_url}
