@@ -13,6 +13,7 @@
 	--color-success-light: #{$color-success-light};
 	--color-warning-light: #{$color-warning-light};
 	--color-info-light: #{$color-info-light};
+	--color-border-light: rgba(0, 0, 0, 0.3);
 
 	/* Dark Theme Colors */
 	--color-primary-dark: #{$color-primary-dark};
@@ -25,6 +26,7 @@
 	--color-success-dark: #{$color-success-dark};
 	--color-warning-dark: #{$color-warning-dark};
 	--color-info-dark: #{$color-info-dark};
+	--color-border-dark: rgba(255, 255, 255, 0.3);
 
 	/* Transition */
 	--transition-speed: 0.3s;
@@ -55,8 +57,6 @@
 	--border-radius-md: #{$border-radius-md};
 	--border-radius-lg: #{$border-radius-lg};
 	--border-radius-full: #{$border-radius-full};
-
-	--color-border: rgba(0, 0, 0, 0.1);
 
 	/* Box Shadows */
 	--shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -103,6 +103,7 @@
 	--color-success: var(--color-success-light);
 	--color-warning: var(--color-warning-light);
 	--color-info: var(--color-info-light);
+	--color-border: var(--color-border-light);
 
 	--color-primary-50: var(--color-primary-50-light);
 	--color-primary-100: var(--color-primary-100-light);
@@ -126,6 +127,7 @@
 	--color-success: var(--color-success-dark);
 	--color-warning: var(--color-warning-dark);
 	--color-info: var(--color-info-dark);
+	--color-border: var(--color-border-dark);
 
 	--color-primary-50: var(--color-primary-50-dark);
 	--color-primary-100: var(--color-primary-100-dark);
