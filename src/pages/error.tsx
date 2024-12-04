@@ -1,5 +1,5 @@
 import Error404 from '~/components/error/Error404';
-import Navigation from '~/layouts/Navigation';
+import Navigation from '~/components/header/Navigation';
 
 import { ErrorFooter } from '~/components/error/ErrorFooter';
 

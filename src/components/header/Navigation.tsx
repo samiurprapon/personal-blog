@@ -9,9 +9,11 @@ import {
 	Blend,
 	KeyRound,
 	ChevronDown,
+	User,
 } from 'lucide-react';
 
 import { ThemeContext } from '~/contexts/ThemeContext';
+import ProfileButton from '~/components/header/ProfileButton';
 
 const Navigation = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -128,6 +130,8 @@ const Navigation = () => {
 					>
 						{getThemeIcon()}
 					</button>
+
+					<ProfileButton />
 				</div>
 
 				<div className="navigation__mobile-menu">
@@ -138,6 +142,15 @@ const Navigation = () => {
 					>
 						{getThemeIcon()}
 					</button>
+
+					<Link
+						className="navigation__theme-toggle"
+						aria-label="Toggle theme"
+						to={'/me'}
+					>
+						<User width={24} height={24} />
+					</Link>
+
 					<button
 						onClick={toggleMenu}
 						className="navigation__mobile-menu-button"

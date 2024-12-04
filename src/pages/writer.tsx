@@ -1,7 +1,7 @@
-import Navigation from '~/layouts/Navigation';
+import Navigation from '~/components/header/Navigation';
 import Editor from '~/components/editor/Editor';
 
-function EditorPage() {
+function WriterPage() {
 	return (
 		<>
 			<Navigation />
@@ -12,4 +12,4 @@ function EditorPage() {
 	);
 }
 
-export default EditorPage;
+export default WriterPage;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Loader } from 'lucide-react';
 
 // import Hero from '~/components/HeroSection';
-import Navigation from '~/layouts/Navigation';
+import Navigation from '~/components/header/Navigation';
 import PostCard from '~/components/PostCard';
 import { Sidebar } from '~/components/sidebar/Sidebar';
 import { useGetPostsByTagQuery } from '~/store/apis/posts';

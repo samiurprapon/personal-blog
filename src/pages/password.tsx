@@ -4,7 +4,7 @@ import { Copy, RefreshCw } from 'lucide-react';
 import PasswordGenerator from '~/utils/password';
 import { GenerateOptions } from '~/interfaces/PasswordGenerateOptions';
 
-import Navigation from '~/layouts/Navigation';
+import Navigation from '~/components/header/Navigation';
 
 interface OptionConfig {
 	id: keyof GenerateOptions;

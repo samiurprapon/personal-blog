@@ -3,7 +3,7 @@ import Select from 'react-select';
 
 import { GITHUB_USERNAME, GITHUB_JOIN_YEAR } from '~/configs/environment';
 
-import Navigation from '~/layouts/Navigation';
+import Navigation from '~/components/header/Navigation';
 import GithubProfile from '~/components/github/GithubProfile';
 import { GitHubContributionsCalendar } from '~/components/github/GitHubCalendar';
 import { Year } from '~/interfaces/GithubAPI';
