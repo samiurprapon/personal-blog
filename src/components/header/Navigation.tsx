@@ -55,7 +55,7 @@ const Navigation = () => {
 	const toolsItems = [
 		{
 			name: 'Markdown Editor',
-			path: '/tools/markdown-editor',
+			path: '/tools/markdown',
 			icon: <Command className="icon" />,
 		},
 		{
