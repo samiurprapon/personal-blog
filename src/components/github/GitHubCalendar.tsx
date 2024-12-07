@@ -1,21 +1,22 @@
-import { useCallback, useEffect, useState } from 'react';
 import { Loader } from 'lucide-react';
 import { ContributionCalendar } from 'react-contribution-calendar';
 
 import { CalendarProps } from '~/interfaces/ContributionsCalendarProps';
-import { fetchCalendarData } from '~/utils/github-api';
-import { ApiResponse } from '~/interfaces/GithubAPI';
+import { useGetContributionsCalendarQuery } from '~/store/apis/github';
 
 export function GitHubContributionsCalendar({ username, year }: CalendarProps) {
-	const [data, setData] = useState<ApiResponse | null>(null);
+	const { isLoading, data, error } = useGetContributionsCalendarQuery({
+		username,
+		year,
+	});
 
-	const fetchData = useCallback(() => {
-		fetchCalendarData(username, year).then((data) => {
-			setData(data);
-		});
-	}, [username, year]);
+	if (isLoading) {
+		return <Loader />;
+	}
 
-	useEffect(fetchData, [fetchData]);
+	if (error) {
+		return <div>Error: {(error as Error).message}</div>;
+	}
 
 	if (!data) {
 		return <Loader />;
