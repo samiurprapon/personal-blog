@@ -3,12 +3,12 @@ import { Loader } from 'lucide-react';
 
 // import Hero from '~/components/HeroSection';
 import Navigation from '~/components/header/Navigation';
-import PostCard from '~/components/PostCard';
+import PostCard from '~/components/post/PostCard';
 import { Sidebar } from '~/components/sidebar/Sidebar';
 import { useGetPostsQuery } from '~/store/apis/posts';
 
 function HomePage() {
-	const [visiblePosts, setVisiblePosts] = useState<number>(3);
+	const [visiblePosts, setVisiblePosts] = useState<number>(6);
 
 	const { isLoading, data, error } = useGetPostsQuery();
 

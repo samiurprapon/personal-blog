@@ -5,6 +5,7 @@ import Loadable from '~/components/Loadable';
 import MinimalLayout from '~/layouts/MinimalLayout';
 
 const HomePage = Loadable(lazy(() => import('~/pages/home')));
+const BlogPage = Loadable(lazy(() => import('~/pages/blog')));
 const WriterPage = Loadable(lazy(() => import('~/pages/writer')));
 const TagPage = Loadable(lazy(() => import('~/pages/tag')));
 const MePage = Loadable(lazy(() => import('~/pages/me')));
@@ -38,6 +39,10 @@ const PublicRoutes: RouteObject = {
 		{
 			path: '/tools/markdown',
 			element: <MarkdownToolPage />,
+		},
+		{
+			path: '/blog/:slug',
+			element: <BlogPage />,
 		},
 	],
 };

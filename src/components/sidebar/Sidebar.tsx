@@ -11,7 +11,7 @@ export const Sidebar: React.FC = () => {
 	const { tag } = useParams<{ tag: string }>();
 
 	return (
-		<div className="sidebar">
+		<aside className="sidebar">
 			{/* Tags */}
 			<div className="card">
 				<h3 className="card-title">🏷️ Tags</h3>
@@ -120,6 +120,6 @@ export const Sidebar: React.FC = () => {
 					<button className="btn-submit">Subscribe</button>
 				</form>
 			</div>
-		</div>
+		</aside>
 	);
 };

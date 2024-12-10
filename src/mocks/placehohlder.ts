@@ -5,6 +5,10 @@ export const postPlaceholder = `
 
 \`<Briefly describe the new tool or feature and its overall vision.>\`
 
+\`\`\`bash
+  console.log('Hello World');
+\`\`\`
+
 Here are the proposed phases for development, including individual features and milestones:
 
 ### 1️⃣ **Phase 1: Strategic Planning**
@@ -84,11 +88,11 @@ Here are the proposed phases for development, including individual features and 
 
 #### 🐞 Bugs Identified
 
-- [] **Bug 1** <!-- - mention the bug report issue -->
+- [x] **Bug 1** <!-- - mention the bug report issue -->
 
 #### 🚫 Couldn't Fix (Yet)
 
-- [] **Bug 2** <!-- - mention the bug report issue -->
+- [x] **Bug 2** <!-- - mention the bug report issue -->
 
 ***
 

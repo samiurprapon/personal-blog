@@ -128,6 +128,49 @@
 				}
 			}
 		}
+
+		ul {
+			display: block;
+			list-style-type: disc;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-start: 40px;
+			unicode-bidi: isolate;
+
+			li {
+				display: list-item;
+				text-align: -webkit-match-parent;
+				unicode-bidi: isolate;
+			}
+		}
+
+		hr {
+			display: block;
+			margin-block-start: 0.5em;
+			margin-block-end: 0.5em;
+			margin-inline-start: auto;
+			margin-inline-end: auto;
+			unicode-bidi: isolate;
+			overflow: hidden;
+			border-style: inset;
+			border-width: 1px;
+		}
+
+		pre {
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			line-height: 1.45;
+			background-color: var(--color-canvas-subtle);
+			border-radius: 6px;
+		}
+
+		pre > code {
+			padding: 16px;
+			overflow: auto;
+			display: block;
+		}
 	}
 }
 

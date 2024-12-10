@@ -1,149 +1,247 @@
 import { Post } from '~/interfaces/Post.interface';
+import { postPlaceholder } from './placehohlder';
+import { author } from './author';
 
 const fakePosts: Post[] = [
 	{
+		id: '1',
 		title: 'Getting Started with Docker 🐋',
 		excerpt:
 			'Learn the basics of containerization with Docker and how it simplifies application deployment.',
 		tags: ['🐋 Docker', '🔥 Cloudflare', '🐧 linux'],
-		slug: 'getting-started-with-docker',
+		slug: '/blog/getting-started-with-docker',
 		readTime: '5 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&1',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&1',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '2',
 		title: 'Mastering Redis for High Performance Caching',
 		excerpt:
 			'An in-depth guide to leveraging Redis for building scalable, high-performance applications.',
 		tags: ['redis', '🐘 postgres'],
-		slug: 'mastering-redis-caching',
+		slug: '/blog/mastering-redis-caching',
 		readTime: '7 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&2',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&2',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '3',
 		title: 'Monorepo Management with Nx 📂',
 		excerpt:
 			'Explore the benefits and strategies for managing your codebase using a monorepo structure.',
 		tags: ['📂 monorepo', 'nestjs'],
-		slug: 'monorepo-management-nx',
+		slug: '/blog/monorepo-management-nx',
 		readTime: '6 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&3',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&3',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '4',
 		title: 'Linux Survival Guide for Beginners 🐧',
 		excerpt:
 			'A beginner-friendly guide to navigating and using Linux effectively for everyday tasks.',
 		tags: ['🐧 linux', 'arch-btw'],
-		slug: 'linux-survival-guide',
+		slug: '/blog/linux-survival-guide',
 		readTime: '8 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&4',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&4',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '5',
 		title: 'Exploring Aether: The Learning Management System 🌀',
 		excerpt:
 			'Dive into the features and innovations behind Aether, a modern LMS built for educators and learners.',
 		tags: ['🌀 aether', '🎓 nsu'],
-		slug: 'exploring-aether-lms',
+		slug: '/blog/exploring-aether-lms',
 		readTime: '9 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&5',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&5',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '6',
 		title: 'Secure APIs with JWE and JWT 🔐',
 		excerpt:
 			'Learn how to secure your APIs using JSON Web Encryption (JWE) and JSON Web Tokens (JWT).',
 		tags: ['🔑 jwt', '🔐 jwe', 'nestjs'],
-		slug: 'secure-apis-jwe-jwt',
+		slug: '/blog/secure-apis-jwe-jwt',
 		readTime: '4 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&6',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&6',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '7',
 		title: 'Writing Clean Code in Java ☕',
 		excerpt:
 			'Best practices and techniques for writing maintainable and efficient Java code.',
 		tags: ['☕ Java', '📝 vs-code'],
-		slug: 'clean-code-java',
+		slug: '/blog/clean-code-java',
 		readTime: '6 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&8',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&8',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '8',
 		title: 'Building Secure APIs with JSON Web Encryption (🔐 JWE)',
 		excerpt:
 			'Learn how to secure your APIs using JSON Web Encryption for encrypted payloads.',
 		tags: ['🔐 jwe', 'nestjs', '🔑 jwt'],
-		slug: 'building-secure-apis-jwe',
+		slug: '/blog/building-secure-apis-jwe',
 		readTime: '8 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&7',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&7',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '9',
 		title: 'Arch Linux: BTW, I Use It 🐧',
 		excerpt:
 			'A guide to installing and customizing Arch Linux for your workflow.',
 		tags: ['arch-btw', '🐧 linux'],
-		slug: 'arch-linux-btw',
+		slug: '/blog/arch-linux-btw',
 		readTime: '6 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&9',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&9',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '10',
 		title: 'Journey Through Rangpur 🏡',
 		excerpt:
 			'Exploring the vibrant culture, history, and tech potential of Rangpur.',
 		tags: ['🏡 rangpur'],
-		slug: 'journey-through-rangpur',
+		slug: '/blog/journey-through-rangpur',
 		readTime: '4 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&10',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&10',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '11',
 		title: 'Supercharging Development with Aether 🌀',
 		excerpt:
 			'How the Aether LMS can transform e-learning and simplify workflows for educators.',
 		tags: ['🌀 aether', 'nestjs', '🐘 postgres'],
-		slug: 'aether-supercharging-development',
+		slug: '/blog/aether-supercharging-development',
 		readTime: '9 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&11',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&11',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '12',
 		title: 'Cloudflare Worker Basics 🔥',
 		excerpt:
 			'Get started with Cloudflare Workers to build serverless applications effortlessly.',
 		tags: ['🔥 Cloudflare', '🐋 Docker', '🔑 jwt'],
-		slug: 'cloudflare-worker-basics',
+		slug: '/blog/cloudflare-worker-basics',
 		readTime: '5 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&12',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&12',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '13',
 		title: 'When Your Code is Trash 🗑️',
 		excerpt:
 			'A lighthearted take on refactoring bad code and learning from mistakes.',
 		tags: ['🗑️ trash', 'git'],
-		slug: 'refactoring-trash-code',
+		slug: '/blog/refactoring-trash-code',
 		readTime: '4 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&14',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&14',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '14',
 		title: 'The Ex Factor in Code Reviews 💔',
 		excerpt:
 			'How to manage emotional detachment from code during pull request reviews.',
 		tags: ['💔 ex'],
-		slug: 'code-reviews-emotions',
+		slug: '/blog/code-reviews-emotions',
 		readTime: '7 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&15',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&15',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '15',
 		title: 'Postgres Beyond Basics 🐘',
 		excerpt:
 			'A deeper dive into advanced features of PostgreSQL for modern applications.',
 		tags: ['🐘 postgres'],
-		slug: 'postgres-beyond-basics',
+		slug: '/blog/postgres-beyond-basics',
 		readTime: '10 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&16',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&16',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 	{
+		id: '16',
 		title: 'VS Code Productivity Hacks 📝',
 		excerpt:
 			'Discover tips and extensions to maximize your productivity in Visual Studio Code.',
 		tags: ['📝 vs-code', 'git'],
-		slug: 'vs-code-productivity-hacks',
+		slug: '/blog/vs-code-productivity-hacks',
 		readTime: '5 min read',
-		coverImage: 'https://random.danielpetrica.com/api/random?format=small&17',
+		featuredImage:
+			'https://random.danielpetrica.com/api/random?format=medium&17',
+		publishedDate: new Date().toISOString(),
+		content: postPlaceholder,
+		status: 'published',
+		author: author,
 	},
 ];
 

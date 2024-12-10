@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Loader } from 'lucide-react';
 
 // import Hero from '~/components/HeroSection';
+import PostCard from '~/components/post/PostCard';
+
 import Navigation from '~/components/header/Navigation';
-import PostCard from '~/components/PostCard';
 import { Sidebar } from '~/components/sidebar/Sidebar';
+
 import { useGetPostsByTagQuery } from '~/store/apis/posts';
-import { Link, useParams } from 'react-router-dom';
 
 function TagsPage() {
 	const { tag } = useParams<{ tag: string }>();
