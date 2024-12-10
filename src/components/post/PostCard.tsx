@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import { Post } from '~/interfaces/Post.interface';
 
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
 	return (
-		<article className="post-card" key={post.slug}>
+		<article className="post-card" key={post.id}>
 			<img
-				src={post.coverImage}
+				src={post.featuredImage}
 				alt={post.title}
 				loading="lazy"
 				className="post-card__image"
@@ -21,11 +23,13 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
 					</span>
 					<span className="post-card__read-time">{post.readTime}</span>
 				</div>
-				<h3 className="post-card__title">{post.title}</h3>
+				<Link className="card__title-link" to={post.slug}>
+					<h3 className="post-card__title">{post.title}</h3>
+				</Link>
 				<p className="post-card__excerpt">{post.excerpt}</p>
-				<a href="#" className="post-card__read-more">
+				<Link to={post.slug} className="post-card__read-more">
 					Read More →
-				</a>
+				</Link>
 			</div>
 		</article>
 	);

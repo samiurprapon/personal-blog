@@ -25,5 +25,6 @@ export interface GithubIssue {
 	created_at: string;
 	updated_at: string;
 	repo: string;
+	repository_url: string;
 	labels: { name: string; color: string }[];
 }

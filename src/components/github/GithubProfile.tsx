@@ -1,21 +1,23 @@
-import { useCallback, useEffect, useState } from 'react';
 import { Loader } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 
 import { GITHUB_PROFILE_URL, GITHUB_USERNAME } from '~/configs/environment';
-import { fetchDefaultReadme } from '~/utils/github-api';
+
+import { useGetDefaultReadmeQuery } from '~/store/apis/github';
 
 export function GithubProfile() {
-	const [data, setData] = useState<string | null>(null);
+	const { isLoading, data, error } = useGetDefaultReadmeQuery();
 
-	const fetchData = useCallback(() => {
-		fetchDefaultReadme().then(setData);
-	}, []);
+	if (isLoading) {
+		return <Loader />;
+	}
 
-	useEffect(fetchData, [fetchData]);
+	if (error) {
+		return <div>Error: {(error as Error).message}</div>;
+	}
 
 	if (!data) {
-		return <Loader />;
+		return <div>No data found</div>;
 	}
 
 	return (
@@ -42,7 +44,7 @@ export function GithubProfile() {
 				<div className="github__body-border mb-md-2">
 					<div className="github__readme-wrapper">
 						<div className="breadcrumb">{GITHUB_USERNAME} / README.md</div>
-						<Markdown options={{ wrapper: 'article' }}>{data || ''}</Markdown>
+						<Markdown options={{ wrapper: 'article' }}>{data}</Markdown>
 					</div>
 				</div>
 			</div>
