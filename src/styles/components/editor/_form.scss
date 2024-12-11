@@ -58,6 +58,16 @@
 			&:hover {
 				background: var(--color-background-hover);
 			}
+
+			&--is-selected {
+				color: var(--color-primary);
+				background: var(--color-background-hover);
+			}
+
+			&--is-focused {
+				color: var(--text-color);
+				background: var(--color-background-hover);
+			}
 		}
 
 		&__multi-value {
@@ -97,6 +107,7 @@
 		}
 
 		&__menu-list {
+			color: var(--color-text);
 			background: var(--color-background);
 		}
 	}

@@ -42,8 +42,8 @@ export function GitHubContributionsCalendar({ username, year }: CalendarProps) {
 					daysOfTheWeek={['', 'Mon', '', 'Wed', '', 'Fri', '']}
 					includeBoundary={true}
 					textColor={'var(--color-text)'}
-					cx={12}
-					cy={12}
+					cx={11.4}
+					cy={11.4}
 					cr={2}
 					scroll={window.innerWidth <= 768}
 					style={

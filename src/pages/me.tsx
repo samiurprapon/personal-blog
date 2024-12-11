@@ -50,7 +50,7 @@ function MePage() {
 										label: y.toString(),
 									}))}
 									className="select-container"
-									classNamePrefix="select"
+									classNamePrefix="react-select"
 								/>
 							</div>
 						</div>
