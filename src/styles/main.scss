@@ -17,7 +17,6 @@
 @use 'components/editor/button' as *;
 @use 'components/editor/form' as *;
 
-
 @use 'templates/navigation' as *;
 @use 'templates/error_footer' as *;
 @use 'templates/error' as *;
@@ -27,6 +26,7 @@
 @use 'templates/post_card' as *;
 @use 'templates/post_container' as *;
 @use 'templates/blog' as *;
+@use 'templates/reaction' as *;
 
 @use 'templates/me' as *;
 @use 'templates/editor' as *;

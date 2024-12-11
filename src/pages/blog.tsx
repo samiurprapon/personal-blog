@@ -1,10 +1,11 @@
 import { Loader } from 'lucide-react';
 import { useParams } from 'react-router-dom';
-// import Hero from '~/components/HeroSection';
+import Error404 from '~/components/error/Error404';
+
 import Navigation from '~/components/header/Navigation';
 import PostContent from '~/components/post/PostContent';
 import PostHeader from '~/components/post/PostHeader';
-import PostSidebar from '~/components/post/PostSidebar';
+import ReactionContainer from '~/components/post/ReactionContainer';
 
 import { useGetPostBySlugQuery } from '~/store/apis/posts';
 
@@ -25,34 +26,24 @@ function BlogPage() {
 			<Navigation />
 			<main>
 				<div className="blog-container">
-					<div className="row">
-						<div className="col-md-1"></div>
-						<div className="col-md-8">
-							{data ? (
-								<div>
-									<PostHeader post={data} />
-								</div>
-							) : null}
+					{data ? (
+						<div>
+							<PostHeader post={data} />
+							<PostContent content={data.content} />
+							<div className="col-xs-12">
+								<ReactionContainer post={data} />
+							</div>
 						</div>
-						<div className="col-md-3">
-							<PostSidebar />
+					) : (
+						<div className="centered-content">
+							<div className="flex-justified-aligned">
+								<Error404 />
+								<h3 className="text-center bigger-text pt-md-4">
+									Content not found!
+								</h3>
+							</div>
 						</div>
-					</div>
-					<div className="row">
-						<div className="col-md-1"></div>
-						<div className="col-md-8">
-							{data ? (
-								<div>
-									<PostContent content={data.content} />
-								</div>
-							) : (
-								<div className="text-center">Content not found</div>
-							)}
-						</div>
-						<div className="col-md-3">
-							<PostSidebar />
-						</div>
-					</div>
+					)}
 				</div>
 			</main>
 		</>

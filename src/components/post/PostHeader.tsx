@@ -1,6 +1,5 @@
 import React from 'react';
 import { Post } from '~/interfaces/Post.interface';
-import ShareButtons from './ShareButtons';
 
 interface PostProps {
 	post: Post;
@@ -25,9 +24,6 @@ const PostHeader: React.FC<PostProps> = ({ post }) => {
 						))}
 					</span>
 					<span className="blog-container__read-time">{post.readTime}</span>
-					<span className="blog-container__share-buttons">
-						<ShareButtons post={post} />
-					</span>
 				</div>
 				<h2 className="blog-container__title">{post.title}</h2>
 			</div>

@@ -2,6 +2,9 @@
 @use '../base/typography' as *;
 
 .blog-container {
+	max-width: 90rem;
+	margin: 0 auto;
+	padding: 0 0.5rem;
 	overflow: hidden;
 
 	&__image {
@@ -18,6 +21,7 @@
 	&__meta {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		gap: 1rem;
 		margin-bottom: 1rem;
 	}
