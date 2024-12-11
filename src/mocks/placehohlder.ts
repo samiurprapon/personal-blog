@@ -1,5 +1,5 @@
 export const postPlaceholder = `
-## 🚀 Purpose : **idea**
+### 🚀 Purpose : **idea**
 
 🏷 Version: \`X.0.0\`
 

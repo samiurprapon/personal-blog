@@ -7,7 +7,7 @@ interface PostContentProps {
 
 const PostContent: React.FC<PostContentProps> = ({ content }) => {
 	return (
-		<div className="github__readme-wrapper">
+		<div className="blog-container__wrapper">
 			<Markdown options={{ wrapper: 'article' }}>{content}</Markdown>
 		</div>
 	);
