@@ -32,3 +32,8 @@ dist-ssr
 
 # playground
 play
+
+
+.nx/cache
+.nx/workspace-data
+vite.config.*.timestamp*
