@@ -6,7 +6,7 @@ import { store } from '~/store';
 
 import '~/styles/main.scss';
 
-import { ThemeProvider } from '~/contexts/ThemeContext';
+import { ThemeProvider } from '~/providers/ThemeProvider';
 import App from '~/App';
 
 createRoot(document.getElementById('root')!).render(

@@ -1,0 +1,114 @@
+@use '../../base/vars' as *;
+
+.form-input,
+.form-textarea {
+	width: 100%;
+	padding: var(--spacing-xs);
+	border: 1px solid var(--color-border);
+	border-radius: var(--border-radius-sm);
+	background: var(--color-background);
+	color: var(--color-text);
+	margin-bottom: var(--spacing-xs);
+	font-family: inherit;
+	font-size: 0.875rem;
+
+	@media (min-width: $break-point-md) {
+		padding: var(--spacing-sm);
+		margin-bottom: var(--spacing-sm);
+		font-size: 1rem;
+	}
+
+	&:focus {
+		outline: none;
+		border-color: var(--color-primary);
+	}
+}
+
+.form-textarea {
+	min-height: 80px;
+	resize: vertical;
+
+	@media (min-width: $break-point-md) {
+		min-height: 100px;
+	}
+}
+
+.select-container {
+	margin-bottom: var(--spacing-xs);
+
+	@media (min-width: $break-point-md) {
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.react-select {
+		&__control {
+			background: var(--color-background) !important;
+			min-height: 36px !important;
+			font-size: 0.875rem !important;
+
+			@media (min-width: $break-point-md) {
+				min-height: 38px !important;
+				font-size: 1rem !important;
+			}
+		}
+
+		&__option {
+			background: transparent;
+
+			&:hover {
+				background: var(--color-background-hover);
+			}
+
+			&--is-selected {
+				color: var(--color-primary);
+				background: var(--color-background-hover);
+			}
+
+			&--is-focused {
+				color: var(--text-color);
+				background: var(--color-background-hover);
+			}
+		}
+
+		&__multi-value {
+			background-color: var(--color-background-hover);
+
+			&__label {
+				color: var(--text-color);
+			}
+		}
+
+		&__placeholder,
+		&__single-value {
+			color: var(--text-color);
+		}
+
+		&__indicator {
+			color: var(--text-color);
+
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+
+		&__value-container {
+			padding: var(--spacing-xs) !important;
+			background: var(--color-background) !important;
+		}
+
+		&__menu {
+			font-size: 0.875rem !important;
+			color: var(--color-text) !important;
+			background: var(--color-background) !important;
+
+			@media (min-width: $break-point-md) {
+				font-size: 1rem !important;
+			}
+		}
+
+		&__menu-list {
+			color: var(--color-text);
+			background: var(--color-background);
+		}
+	}
+}

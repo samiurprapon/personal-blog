@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Loader } from 'lucide-react';
 
 // import Hero from '~/components/HeroSection';
-import Navigation from '~/components/Navigation';
-import PostCard from '~/components/PostCard';
-import { Sidebar } from '~/components/Sidebar';
+import PostCard from '~/components/post/PostCard';
+
+import Navigation from '~/components/header/Navigation';
+import { Sidebar } from '~/components/sidebar/Sidebar';
+
 import { useGetPostsByTagQuery } from '~/store/apis/posts';
-import { Link, useParams } from 'react-router-dom';
 
 function TagsPage() {
 	const { tag } = useParams<{ tag: string }>();
@@ -40,7 +42,7 @@ function TagsPage() {
 								<h2 className="post-container__title_tag">
 									{tag?.replace(
 										/(\p{Emoji}|\p{Letter})/gu,
-										(match, p1, offset, string) => {
+										(match, _p1, offset, string) => {
 											if (offset === 0) {
 												return match.toUpperCase();
 											} else if (string[offset - 1] === ' ') {

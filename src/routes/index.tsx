@@ -1,12 +1,9 @@
-import { lazy } from 'react';
-
 import { createBrowserRouter } from 'react-router-dom';
 
-import Loadable from '~/components/Loadable';
 import MinimalLayout from '~/layouts/MinimalLayout';
 import PublicRoutes from '~/routes/public';
 
-const Error = Loadable(lazy(() => import('~/pages/error')));
+import Error from '~/routes/ErrorRoute';
 
 const router = createBrowserRouter(
 	[

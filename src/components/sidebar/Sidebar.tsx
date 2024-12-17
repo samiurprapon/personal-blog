@@ -3,15 +3,15 @@ import { Link, useParams } from 'react-router-dom';
 
 import { GITHUB_USERNAME } from '~/configs/environment';
 
-import tags from '~/configs/tags';
-import GithubIssues from '~/components/GithubIssues';
+import tags from '~/mocks/tags';
+import GithubIssues from '~/components/github/GithubIssues';
 
 export const Sidebar: React.FC = () => {
 	// get tag from the URL
 	const { tag } = useParams<{ tag: string }>();
 
 	return (
-		<div className="sidebar">
+		<aside className="sidebar">
 			{/* Tags */}
 			<div className="card">
 				<h3 className="card-title">🏷️ Tags</h3>
@@ -120,6 +120,6 @@ export const Sidebar: React.FC = () => {
 					<button className="btn-submit">Subscribe</button>
 				</form>
 			</div>
-		</div>
+		</aside>
 	);
 };

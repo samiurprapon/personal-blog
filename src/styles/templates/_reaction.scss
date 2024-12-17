@@ -1,0 +1,41 @@
+.reaction-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.love-button {
+		position: relative;
+		border-radius: 2rem;
+		padding: 0.5rem 0.5rem;
+		display: flex;
+		flex-direction: row;
+		gap: 12px;
+		font-weight: 500;
+		transition:
+			color 0.25s,
+			border-color 0.25s,
+			background-color 0.25s;
+		border-color: transparent;
+
+		&:hover {
+			svg {
+				fill: #ff6881;
+				stroke: #ff6881;
+			}
+		}
+
+		.reaction-count {
+			position: absolute;
+			top: 0;
+			right: 0;
+			translate: 33% -33%;
+			font-size: 0.75rem;
+			color: var(--color-text);
+			background-color: var(--color-background-hover);
+			border-radius: 50%;
+			padding: 0 4px;
+			min-width: 20px;
+			min-height: 20px;
+		}
+	}
+}
