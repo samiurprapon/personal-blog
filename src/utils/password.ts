@@ -1,4 +1,4 @@
-import * as crypto from 'crypto';
+import toast from 'react-hot-toast';
 
 import { GenerateOptions } from '~/interfaces/PasswordGenerateOptions';
 
@@ -19,10 +19,12 @@ export class PasswordGenerator {
 	] as const;
 
 	private randomIndex?: number;
-	private randomBytes: Buffer;
+	private randomBytes: Uint8Array;
 
 	private constructor() {
-		this.randomBytes = crypto.randomBytes(PasswordGenerator.RANDOM_BATCH_SIZE);
+		this.randomBytes = this.generateRandomBytes(
+			PasswordGenerator.RANDOM_BATCH_SIZE,
+		);
 		this.randomIndex = undefined;
 	}
 
@@ -34,13 +36,31 @@ export class PasswordGenerator {
 		return PasswordGenerator.instance;
 	}
 
+	private generateRandomBytes(size: number): Uint8Array {
+		if (typeof window !== 'undefined' && window.crypto) {
+			// Use Web Crypto API for browser
+			const array = new Uint8Array(size);
+			window.crypto.getRandomValues(array);
+			return array;
+		} else if (typeof globalThis !== 'undefined' && globalThis.crypto) {
+			// Fallback for environments like Node.js with Web Crypto API support
+			const array = new Uint8Array(size);
+			globalThis.crypto.getRandomValues(array);
+			return array;
+		} else {
+			// Use Node.js crypto for server environments
+			toast.error('No secure random number generator available');
+			return new Uint8Array(size);
+		}
+	}
+
 	private getNextRandomValue(): number {
 		if (
 			this.randomIndex === undefined ||
 			this.randomIndex >= this.randomBytes.length
 		) {
 			this.randomIndex = 0;
-			this.randomBytes = crypto.randomBytes(
+			this.randomBytes = this.generateRandomBytes(
 				PasswordGenerator.RANDOM_BATCH_SIZE,
 			);
 		}

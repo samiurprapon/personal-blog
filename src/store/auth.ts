@@ -50,8 +50,9 @@ export const useAuthStore = create<AuthStore>()(
 
 			try {
 				window.location.href = `https://github.com/login/oauth/authorize?client_id=${VITE_GITHUB_CLIENT_ID}&scope=user`;
-			} catch (error) {
-				console.error(error);
+			} catch {
+				// } catch (error) {
+				// console.error(error);
 
 				set((state) => {
 					state.setError('Failed to initiate GitHub login');

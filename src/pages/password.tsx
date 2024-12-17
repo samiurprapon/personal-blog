@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Copy, RefreshCw } from 'lucide-react';
+import { toast } from 'react-hot-toast';
 
 import PasswordGenerator from '~/utils/password';
 import { GenerateOptions } from '~/interfaces/PasswordGenerateOptions';
@@ -56,8 +57,8 @@ const PasswordGeneratorPage = () => {
 				setCopied(true);
 				setTimeout(() => setCopied(false), 2000);
 			}
-		} catch (error) {
-			console.error('Failed to copy password:', error);
+		} catch {
+			toast.error('Failed to copy password');
 		}
 	};
 

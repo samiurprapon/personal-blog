@@ -11,11 +11,11 @@ const PublishSection: React.FC = () => {
 			<div className="sidebar-section__content">
 				<input
 					type="datetime-local"
+					className="form-input"
 					value={state.post.publishedDate.slice(0, 16)}
 					onChange={(e) =>
 						setPublishedDate(new Date(e.target.value).toISOString())
 					}
-					className="form-input"
 				/>
 			</div>
 		</section>

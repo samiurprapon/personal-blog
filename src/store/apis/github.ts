@@ -115,7 +115,7 @@ export const githubApi = createApi({
 
 					return { data: filteredIssues };
 				} catch (error) {
-					console.error('Error fetching GitHub issues:', error);
+					// console.error('Error fetching GitHub issues:', error);
 					return { error: { status: 'FETCH_ERROR', error: String(error) } };
 				}
 			},

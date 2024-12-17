@@ -44,6 +44,7 @@ const EditorHeader: React.FC = () => {
 		return () => {
 			document.removeEventListener('keydown', handleSaveShortcut);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

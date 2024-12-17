@@ -83,13 +83,83 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		build: {
+			outDir: 'dist',
+			emptyOutDir: true,
 			chunkSizeWarningLimit: 1024,
 			rollupOptions: {
 				output: {
-					manualChunks: {
-						react: ['react', 'react-dom'],
-						include: ['crypto'],
+					// Improved manual chunking strategy
+					manualChunks: (id) => {
+						// Split node_modules into separate chunks
+						if (id.includes('node_modules')) {
+							// Core libraries get their own chunks
+							if (
+								id.includes('react') ||
+								id.includes('react-dom') ||
+								id.includes('react-redux') ||
+								id.includes('@reduxjs/toolkit') ||
+								id.includes('redux')
+							) {
+								return 'react';
+							}
+
+							if (
+								id.includes('lucide-react') ||
+								id.includes('cmdk') ||
+								id.includes('clsx')
+							) {
+								return 'ui-helpers';
+							}
+
+							if (
+								id.includes('browser-image-compression') ||
+								id.includes('react-dropzone')
+							) {
+								return 'file-utils';
+							}
+
+							// Markdown and editors
+							if (
+								id.includes('markdown') ||
+								id.includes('markdown-to-jsx') ||
+								id.includes('@uiw/react-md-editor')
+							) {
+								return 'markdown';
+							}
+
+							if (
+								id.includes('asn1.js') ||
+								id.includes('hash') ||
+								id.includes('parse-asn1') ||
+								id.includes('des') ||
+								id.includes('sha') ||
+								id.includes('browserify-des') ||
+								id.includes('browserify-*') ||
+								id.includes('browserify-aes')
+							) {
+								return 'crypto';
+							}
+
+							// Date utilities
+							if (
+								id.includes('date-fns') ||
+								id.includes('react-contribution-calendar') ||
+								id.includes('react-dropzone')
+							) {
+								return 'date-utils';
+							}
+
+							if (id.includes('refractor')) {
+								return 'syntax-highlighting';
+							}
+
+							// Default fallback for other node_modules
+							return 'vendor';
+						}
 					},
+					// Chunk size and naming
+					chunkFileNames: 'assets/[name]-[hash].js',
+					entryFileNames: 'assets/[name]-[hash].js',
 				},
 			},
 		},

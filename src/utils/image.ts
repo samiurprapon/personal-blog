@@ -1,4 +1,5 @@
 import imageCompression from 'browser-image-compression';
+import { toast } from 'react-hot-toast';
 
 export const optimizeImage = async (file: File): Promise<Blob> => {
 	const options = {
@@ -9,8 +10,8 @@ export const optimizeImage = async (file: File): Promise<Blob> => {
 
 	try {
 		return await imageCompression(file, options);
-	} catch (error) {
-		console.error('Error optimizing image:', error);
+	} catch {
+		toast.error('Failed to optimize image');
 		return file;
 	}
 };
