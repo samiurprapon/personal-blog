@@ -6,13 +6,44 @@
 		"type-enum": [
 			2,
 			"always",
-          ["feat", "fix", "docs", "style", "refactor", "test", "chore", "wip", "release"]
-      ],
-
-    "subject-case": [
+			[
+				"feat",
+				"fix",
+				"docs",
+				"style",
+				"refactor",
+				"test",
+				"chore",
+				"wip",
+				"release"
+			]
+		],
+		"scope-enum": [
+			2,
+			"always",
+			[
+				"deps",
+				"deps-api",
+				"deps-web",
+				"api",
+				"web",
+				"docker",
+				"config",
+				"core",
+				"ui",
+				"ci",
+				"test",
+				"release"
+			]
+		],
+		"subject-case": [
 			2,
 			"never",
-			    [ "start-case", "pascal-case", "upper-case"]
-    ]
-  }
+			[
+				"start-case",
+				"pascal-case",
+				"upper-case"
+			]
+		]
+	}
 }

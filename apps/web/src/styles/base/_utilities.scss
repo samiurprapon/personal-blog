@@ -1,0 +1,94 @@
+@use 'vars' as *;
+
+.no-padding {
+	padding: 0;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.hide {
+	display: none;
+}
+
+.visible {
+	visibility: visible;
+	opacity: 0.7;
+}
+
+.hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: end;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.flex-aligned {
+	display: flex;
+	align-items: center;
+}
+
+.flex-justified-aligned {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.centered-content {
+	display: grid;
+	height: calc(55vh - 4rem);
+	place-items: center;
+	text-align: center;
+
+	@media screen and (max-width: 376px) {
+		height: calc(51vh);
+	}
+
+	// min-height: 376 and max-height: 425
+	@media screen and (min-width: 376px) and (max-width: $break-point-md) {
+		height: calc(59vh);
+	}
+}
+
+.selected {
+	font-weight: bold;
+}
+
+.primary-text {
+	color: var(--color-primary);
+}
+
+.secondary-text {
+	color: var(--color-secondary);
+}
+
+.italic-text {
+	font-style: italic;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.biggest-text {
+	font-size: 6.5rem;
+}
+
+.bigger-text {
+	font-size: 2rem;
+}
+
+.small-text {
+	font-size: 0.725rem;
+	font-weight: 400;
+}
