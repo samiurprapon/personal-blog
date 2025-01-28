@@ -24,24 +24,39 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: 📥 Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
+
+      - name: 📦 Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
       - name: ⚡ Cache Node.js modules
         uses: actions/cache@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: |
+            ${{ env.STORE_PATH }}
+            **/node_modules
+            **/.node_modules
+            **/.pnpm-store
+          key: ${{ runner.os }}-pnpm-workspace-${{ hashFiles('**/pnpm-lock.yaml', '**/pnpm-workspace.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-pnpm-workspace-
 
       - name: 📦 Install dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile --recursive
 
       - name: 🔒 Run Security Audit
-        run: npm audit --audit-level=high
+        run: pnpm audit --audit-level=high
 
       - name: 🔨 Build the project
         env:
           VITE_APP_API_URL: ${{ secrets.VITE_APP_API_URL }}
-        run: npm run build --if-present
+        run: pnpm -r --if-present build
 
       - name: 🚀 Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
@@ -49,10 +64,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           packageManager: npm
-          command: pages deploy ./dist --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-
-      - name: 💻 Health Check
-        run: curl -f ${{ secrets.VITE_APP_API_URL }}/health || exit 1
+          command: pages deploy ./dist/apps/web --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
 
         # Use slack, email, or other notification service to alert the team of the deployment.
         # - name: 🚨 Notify team

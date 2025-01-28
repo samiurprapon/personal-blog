@@ -1,0 +1,282 @@
+@use '../base/vars' as *;
+@use '../base/mixins' as *;
+
+.github {
+	text-align: start;
+
+	@media screen and (min-width: $break-point-lg) {
+		margin-bottom: 0.5rem;
+	}
+
+	&__sidebar {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	&__sidebar-profile {
+		display: grid;
+		place-items: center;
+
+		.github__rounded-circle {
+			border-radius: 50%;
+			width: 90%;
+			aspect-ratio: 1 / 1;
+			object-fit: contain;
+			filter: sepia(0.3);
+			// mix-blend-mode: luminosity;
+
+			@media screen and (min-width: $break-point-lg) {
+				width: 100%;
+				padding: 0.5rem;
+			}
+		}
+	}
+
+	&__sidebar-body {
+		padding: 0.75rem;
+
+		.github__title {
+			@media screen and (max-width: $break-point-md) {
+				text-align: center;
+			}
+		}
+
+		.github__sub-title {
+			color: #aeafb0;
+			font-weight: normal;
+
+			@media screen and (max-width: $break-point-md) {
+				text-align: center;
+			}
+		}
+
+		.github__bio {
+			margin-top: 1rem;
+			font-size: 1.15rem;
+
+			@media screen and (max-width: $break-point-md) {
+				text-align: center;
+			}
+		}
+	}
+
+	&__body-border {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		@media screen and (min-width: $break-point-lg) {
+			border-width: 1px;
+			border-width: 0px;
+			border-radius: $border-radius;
+			transition: box-shadow 0.3s ease;
+			border: 1px solid var(--color-background-hover);
+			box-shadow: var(--box-shadow);
+		}
+	}
+
+	&__readme-wrapper {
+		padding: 1.25rem;
+
+		.breadcrumb {
+			margin-bottom: 1rem;
+			text-align: start;
+			font-size: smaller;
+			letter-spacing: 1px;
+		}
+
+		article {
+			flex-basis: content;
+
+			h2 {
+				padding-bottom: 0.3rem;
+				font-size: 1.5rem;
+				border-bottom: 1px solid #e1e4e8;
+			}
+
+			blockquote {
+				padding: 0 1rem;
+				margin-top: 1rem;
+
+				border-left: 0.25rem solid #dfe2e5;
+			}
+
+			p {
+				margin-top: 1rem;
+				font-size: 1rem;
+				letter-spacing: 0.25px;
+			}
+
+			code {
+				background: var(--color-background-hover);
+			}
+
+			h3 {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			a {
+				margin-right: 0.75rem;
+			}
+
+			img[align='left'] {
+				margin: 0.215rem;
+
+				@media screen and (min-width: $break-point-md) {
+					margin: 0.5rem;
+				}
+			}
+		}
+
+		ul {
+			display: block;
+			list-style-type: disc;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			padding-inline-start: 40px;
+			unicode-bidi: isolate;
+
+			li {
+				display: list-item;
+				text-align: -webkit-match-parent;
+				unicode-bidi: isolate;
+			}
+		}
+
+		hr {
+			display: block;
+			margin-block-start: 0.5em;
+			margin-block-end: 0.5em;
+			margin-inline-start: auto;
+			margin-inline-end: auto;
+			unicode-bidi: isolate;
+			overflow: hidden;
+			border-style: inset;
+			border-width: 1px;
+		}
+
+		pre {
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			line-height: 1.45;
+			background-color: var(--color-canvas-subtle);
+			border-radius: 6px;
+		}
+
+		pre > code {
+			padding: 16px;
+			overflow: auto;
+			display: block;
+		}
+	}
+}
+
+.github-issues {
+	max-height: calc(4 * 100px);
+	min-width: calc(2 * 100px);
+
+	scroll-behavior: smooth;
+	overflow-y: auto;
+
+	.issue-card {
+		display: block;
+		padding: 16px;
+		margin: 8px 0;
+		border-radius: 8px;
+		transition: background-color 0.3s;
+		border: 1px solid var(--color-background-hover);
+		text-decoration: none;
+
+		&:hover {
+			background-color: var(--color-background-hover);
+		}
+
+		.issue-card__content {
+			display: flex;
+			gap: 16px;
+		}
+
+		.icon {
+			width: 4rem;
+			height: 4rem;
+			background-color: var(--color-background);
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background-color 0.3s;
+
+			&:hover {
+				background-color: var(--color-background-hover);
+			}
+
+			.icon__svg {
+				width: 3rem;
+				height: 3rem;
+				color: var(--color-accent);
+			}
+		}
+
+		.issue-info {
+			flex: 1;
+			min-width: 0;
+
+			.issue-header {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 0.25rem;
+
+				.repo-name {
+					font-size: 14px;
+					font-weight: 500;
+					color: var(--color-text);
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+
+				.time-ago {
+					font-size: 12px;
+					color: var(--color-text);
+				}
+			}
+
+			.issue-title {
+				font-size: 14px;
+				color: var(--color-text);
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				margin-bottom: 8px;
+			}
+
+			.labels {
+				display: flex;
+				color: var(--color-text);
+
+				gap: 8px;
+
+				.label {
+					padding: 4px 8px;
+					font-size: 12px;
+					border-radius: 9999px;
+				}
+			}
+		}
+	}
+
+	.no-issues {
+		color: var(--secondary-color);
+		text-align: center;
+		padding: 16px;
+	}
+}
+
+.github-issues__scroll {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,139 @@
+@use 'vars' as *;
+
+// Theme Colors
+:root {
+	/* Light Theme Colors */
+	--color-primary-light: #{$color-primary-light};
+	--color-background-light: #{$color-background-light};
+	--color-background-hover-light: #{$color-hover-light};
+	--color-text-light: #{$color-text-light};
+	--color-secondary-light: #{$color-secondary-light};
+	--color-accent-light: #{$color-accent-light};
+	--color-error-light: #{$color-error-light};
+	--color-success-light: #{$color-success-light};
+	--color-warning-light: #{$color-warning-light};
+	--color-info-light: #{$color-info-light};
+	--color-border-light: rgba(0, 0, 0, 0.3);
+
+	/* Dark Theme Colors */
+	--color-primary-dark: #{$color-primary-dark};
+	--color-background-dark: #{$color-background-dark};
+	--color-background-hover-dark: #{$color-hover-dark};
+	--color-text-dark: #{$color-text-dark};
+	--color-secondary-dark: #{$color-secondary-dark};
+	--color-accent-dark: #{$color-accent-dark};
+	--color-error-dark: #{$color-error-dark};
+	--color-success-dark: #{$color-success-dark};
+	--color-warning-dark: #{$color-warning-dark};
+	--color-info-dark: #{$color-info-dark};
+	--color-border-dark: rgba(255, 255, 255, 0.3);
+
+	/* Transition */
+	--transition-speed: 0.3s;
+
+	/* Extended Color Variations */
+	--color-primary-50-light: #{$color-primary-50};
+	--color-primary-100-light: #{$color-primary-100};
+	--color-primary-200-light: #{$color-primary-200};
+	--color-primary-hover-light: #{$color-primary-hover};
+	--color-primary-active-light: #{$color-primary-active};
+
+	--color-primary-50-dark: #{$color-primary-50-dark};
+	--color-primary-100-dark: #{$color-primary-100-dark};
+	--color-primary-200-dark: #{$color-primary-200-dark};
+	--color-primary-hover-dark: #{$color-primary-hover-dark};
+	--color-primary-active-dark: #{$color-primary-active-dark};
+
+	/* Spacing */
+	--spacing-xs: #{$spacing-xs};
+	--spacing-sm: #{$spacing-sm};
+	--spacing-md: #{$spacing-md};
+	--spacing-lg: #{$spacing-lg};
+	--spacing-xl: #{$spacing-xl};
+	--spacing-2xl: #{$spacing-2xl};
+
+	/* Border Radius */
+	--border-radius-sm: #{$border-radius-sm};
+	--border-radius-md: #{$border-radius-md};
+	--border-radius-lg: #{$border-radius-lg};
+	--border-radius-full: #{$border-radius-full};
+
+	/* Box Shadows */
+	--shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--shadow-dark: 0 10px 15px rgba(0, 0, 0, 0.2);
+
+	/* Z-Index */
+	--z-index-dropdown: 10;
+	--z-index-sticky: 20;
+	--z-index-fixed: 30;
+	--z-index-modal: 50;
+	--z-index-popover: 60;
+	--z-index-tooltip: 70;
+
+	/* Opacity */
+	--opacity-hover: 0.8;
+	--opacity-disabled: 0.5;
+	--opacity-muted: 0.6;
+
+	/* Input Sizes */
+	--input-height-sm: 2rem;
+	--input-height-md: 2.5rem;
+	--input-height-lg: 3rem;
+
+	/* Responsive Breakpoints */
+	--breakpoint-xs: #{$border-radius-xs};
+	--breakpoint-sm: #{$break-point-sm};
+	--breakpoint-md: #{$break-point-md};
+	--breakpoint-lg: #{$break-point-lg};
+	--breakpoint-xl: #{$break-point-xl};
+	--breakpoint-xxl: #{$break-point-2xl};
+}
+
+/* Theme Selector */
+[data-theme='light'] {
+	--color-primary: var(--color-primary-light);
+	--color-background: var(--color-background-light);
+	--color-background-hover: var(--color-background-hover-light);
+	--color-text: var(--color-text-light);
+	--color-text-revert: var(--color-text-dark);
+	--color-secondary: var(--color-secondary-light);
+	--color-accent: var(--color-accent-light);
+	--color-error: var(--color-error-light);
+	--color-success: var(--color-success-light);
+	--color-warning: var(--color-warning-light);
+	--color-info: var(--color-info-light);
+	--color-border: var(--color-border-light);
+
+	--color-primary-50: var(--color-primary-50-light);
+	--color-primary-100: var(--color-primary-100-light);
+	--color-primary-200: var(--color-primary-200-light);
+	--color-primary-hover: var(--color-primary-hover-light);
+	--color-primary-active: var(--color-primary-active);
+
+	--box-shadow: $box-shadow-light;
+}
+
+[data-theme='dark'] {
+	--color-primary: var(--color-primary-dark);
+	--color-background: var(--color-background-dark);
+	--color-background-hover: var(--color-background-hover-dark);
+
+	--color-text: var(--color-text-dark);
+	--color-text-revert: var(--color-text-light);
+	--color-secondary: var(--color-secondary-dark);
+	--color-accent: var(--color-accent-dark);
+	--color-error: var(--color-error-dark);
+	--color-success: var(--color-success-dark);
+	--color-warning: var(--color-warning-dark);
+	--color-info: var(--color-info-dark);
+	--color-border: var(--color-border-dark);
+
+	--color-primary-50: var(--color-primary-50-dark);
+	--color-primary-100: var(--color-primary-100-dark);
+	--color-primary-200: var(--color-primary-200-dark);
+	--color-primary-hover: var(--color-primary-hover-dark);
+	--color-primary-active: var(--color-primary-active-dark);
+
+	--box-shadow: $box-shadow-dark;
+}

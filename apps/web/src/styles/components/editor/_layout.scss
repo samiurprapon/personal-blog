@@ -1,0 +1,46 @@
+@use '../../base/vars' as *;
+
+.editor {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background: var(--color-background);
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		overflow: hidden;
+
+		@media (min-width: $break-point-md) {
+			flex-direction: row;
+		}
+	}
+
+	&__main {
+		flex: 1;
+		overflow-y: auto;
+		padding: var(--spacing-sm);
+
+		scrollbar-width: none;
+
+		@media (min-width: $break-point-md) {
+			padding: var(--spacing-md);
+		}
+	}
+
+	&__sidebar {
+		width: 100%;
+		background: var(--color-background-alt);
+		border-top: 1px solid var(--color-border);
+		overflow-y: auto;
+		max-height: 50vh;
+
+		@media (min-width: $break-point-md) {
+			width: 320px;
+			border-top: none;
+			border-left: 1px solid var(--color-border);
+			max-height: none;
+		}
+	}
+}

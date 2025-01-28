@@ -1,33 +1,41 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import prettierRecommended from 'eslint-plugin-prettier/recommended';
 import tseslint from 'typescript-eslint';
+import prettier from 'eslint-plugin-prettier';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default tseslint.config(
-	{ ignores: ['dist', 'node_modules'] },
 	{
-		extends: [js.configs.recommended, ...tseslint.configs.recommended],
-		files: ['src/**/*.{ts,tsx}'],
+		ignores: ['**/dist', '**/node_modules', '**/play'],
+	},
+	{
+		extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierRecommended],
+		plugins: {
+			prettier,
+		},
 		languageOptions: {
 			ecmaVersion: 2020,
-			globals: globals.browser,
-		},
-		plugins: {
-			'react-hooks': reactHooks,
-			'react-refresh': reactRefresh,
+			sourceType: 'module',
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
 		},
 		rules: {
-			'@typescript-eslint/semi': ['warn'],
+			// Base TypeScript and general rules
+			'@/semi': ['warn'],
+			'@typescript-eslint/no-explicit-any': 'warn',
+			'@typescript-eslint/no-unused-vars': [
+				'warn',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_',
+				},
+			],
 			eqeqeq: 'error',
 			quotes: ['warn', 'single'],
-			...reactHooks.configs.recommended.rules,
-			'react-refresh/only-export-components': [
-				'warn',
-				{ allowConstantExport: true },
-			],
+			'no-console': 'warn',
+			'prefer-const': 'warn',
 		},
-		...prettierRecommended,
 	},
 );

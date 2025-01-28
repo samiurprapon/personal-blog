@@ -1,0 +1,64 @@
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// 	text-rendering: optimizeLegibility;
+
+// 	-ms-text-size-adjust: 100%;
+// 	-webkit-text-size-adjust: 100%;
+// 	-webkit-font-smoothing: antialiased;
+// 	-moz-osx-font-smoothing: grayscale;
+// 	-webkit-box-sizing: border-box;
+
+// 	// set background color to dark mode [Temporary]
+// 	background-color: #0a0416;
+// 	color: white;
+
+// 	//to avoid default blue border on focus
+// 	&:focus {
+// 		outline: 0 !important;
+// 	}
+
+// 	&:before,
+// 	&:after {
+// 		box-sizing: border-box;
+// 		-webkit-box-sizing: border-box;
+// 	}
+// }
+
+@use 'vars' as *;
+@use 'mixins' as *;
+@use 'animations' as *;
+@use 'typography' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
+	margin: 0;
+	padding: 0;
+	scrollbar-width: none;
+}
+
+body {
+	font-family: $font-poppins;
+	background-color: var(--color-background);
+	color: var(--color-text);
+	line-height: 1.6;
+	transition:
+		background-color var(--transition-speed),
+		color var(--transition-speed);
+}
+
+.main-content {
+	padding-top: 4.25rem;
+	max-width: 100%;
+	margin: 0 auto;
+	padding-left: 0;
+	padding-right: 0;
+
+	@media screen and (min-width: $break-point-md) {
+		padding-top: calc(5.25rem - 4px);
+	}
+}

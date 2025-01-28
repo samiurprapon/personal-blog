@@ -1,0 +1,68 @@
+@use '../../base/vars' as *;
+
+.sidebar-section {
+	padding: var(--spacing-sm);
+	border-bottom: 1px solid var(--color-border);
+
+	@media (min-width: $break-point-md) {
+		padding: var(--spacing-md);
+	}
+
+	&__title {
+		font-size: 0.875rem;
+		font-weight: 600;
+		margin-bottom: var(--spacing-sm);
+
+		@media (min-width: $break-point-md) {
+			font-size: 1rem;
+			margin-bottom: var(--spacing-md);
+		}
+	}
+
+	&__content {
+		> * + * {
+			margin-top: var(--spacing-xs);
+
+			@media (min-width: $break-point-md) {
+				margin-top: var(--spacing-sm);
+			}
+		}
+	}
+}
+
+.image-dropzone {
+	border: 2px dashed var(--color-border);
+	border-radius: var(--border-radius-sm);
+	padding: var(--spacing-sm);
+	text-align: center;
+	cursor: pointer;
+	transition: border-color var(--transition-speed);
+	min-height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (min-width: $break-point-md) {
+		padding: var(--spacing-md);
+		min-height: 150px;
+	}
+
+	&:hover {
+		border-color: var(--color-primary);
+	}
+
+	p {
+		font-size: 0.875rem;
+		margin: 0;
+
+		@media (min-width: $break-point-md) {
+			font-size: 1rem;
+		}
+	}
+}
+
+.image-preview {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-sm);
+}

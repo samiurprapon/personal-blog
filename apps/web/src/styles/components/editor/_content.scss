@@ -1,0 +1,48 @@
+@use '../../base/vars' as *;
+@use '../../base/typography' as *;
+
+.content-editor {
+	.w-md-editor {
+		font-size: 1.25rem !important;
+		min-height: calc(100vh - 250px) !important;
+		background: var(--color-background) !important;
+
+		@media (min-width: $break-point-md) {
+			height: calc(100vh - 300px) !important;
+		}
+
+		.w-md-editor-input {
+			scrollbar-width: none;
+			font-family: $font-poppins;
+			color: var(--color-text) !important;
+			min-height: 100% !important;
+		}
+
+		.w-md-editor-preview {
+			padding-left: var(--spacing-md);
+			padding-right: var(--spacing-md);
+			scrollbar-width: none;
+			background: var(--color-background) !important;
+		}
+	}
+
+	.w-md-editor-toolbar {
+		flex-wrap: wrap;
+		padding: var(--spacing-xs);
+		background: var(--color-background) !important;
+
+		@media (min-width: $break-point-md) {
+			flex-wrap: nowrap;
+			padding: var(--spacing-sm);
+		}
+
+		li {
+			margin: auto 0.25rem !important;
+			padding: 0.25rem !important;
+
+			@media (min-width: $break-point-md) {
+				margin: auto 0.125rem !important;
+			}
+		}
+	}
+}

@@ -1,12 +1,39 @@
 version: 2
 
 updates:
+  # Root package.json dependencies
   - package-ecosystem: 'npm'
-    directory: './'
+    directory: '/'
     schedule:
       interval: 'daily'
     versioning-strategy: 'increase'
-    open-pull-requests-limit: 20
+    open-pull-requests-limit: 10
     target-branch: 'main'
     commit-message:
-      prefix: 'Node Package Update: '
+      prefix: 'chore(deps)'
+      prefix-development: 'chore(deps)'
+      include: 'scope'
+
+  # API app dependencies
+  - package-ecosystem: 'npm'
+    directory: '/apps/api'
+    schedule:
+      interval: 'daily'
+    versioning-strategy: 'increase'
+    target-branch: 'main'
+    commit-message:
+      prefix: 'chore(deps-api)'
+      prefix-development: 'chore(deps-api)'
+      include: 'scope'
+
+  # Web app dependencies
+  - package-ecosystem: 'npm'
+    directory: '/apps/web'
+    schedule:
+      interval: 'daily'
+    versioning-strategy: 'increase'
+    target-branch: 'main'
+    commit-message:
+      prefix: 'chore(deps-web)'
+      prefix-development: 'chore(deps-web)'
+      include: 'scope'
