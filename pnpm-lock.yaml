@@ -79,8 +79,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1
       lucide-react:
-        specifier: ^0.468.0
-        version: 0.468.0(react@18.3.1)
+        specifier: ^0.474.0
+        version: 0.474.0(react@18.3.1)
       markdown-to-jsx:
         specifier: ^7.7.1
         version: 7.7.3(react@18.3.1)
@@ -88,8 +88,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
       react-contribution-calendar:
-        specifier: ^1.5.3
-        version: 1.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.0.1
+        version: 2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
@@ -2601,10 +2601,10 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
-  lucide-react@0.468.0:
-    resolution: {integrity: sha512-6koYRhnM2N0GGZIdXzSeiNwguv1gt/FAjZOiPl76roBi3xKEXa4WmfpxgQwTTL4KipXjefrnf3oV4IsYhi4JFA==}
+  lucide-react@0.474.0:
+    resolution: {integrity: sha512-CmghgHkh0OJNmxGKWc0qfPJCYHASPMVSyGY8fj3xgk4v84ItqDg64JNKFZn5hC6E0vHi6gxnbCgwhyVB09wQtA==}
     peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -3139,8 +3139,8 @@ packages:
   randomfill@1.0.4:
     resolution: {integrity: sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==}
 
-  react-contribution-calendar@1.5.3:
-    resolution: {integrity: sha512-XImSo3QHUGdAXO4IqtJI2RdUR9t7MAWo71lNRMNCE5tkbf1nfWnLMs+5Ngl768hk8TXYpo6UVu2pEdWp72u9uA==}
+  react-contribution-calendar@2.0.1:
+    resolution: {integrity: sha512-ICbCN62hFfU6HAUDrtLLRhu7ChCmJfN8n2kQSvCFBOId1ASebNzrHZmhyV5Ig5auVSzVLCztdSpOR421KvlHHA==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -6700,7 +6700,7 @@ snapshots:
     dependencies:
       yallist: 4.0.0
 
-  lucide-react@0.468.0(react@18.3.1):
+  lucide-react@0.474.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
@@ -7462,7 +7462,7 @@ snapshots:
       randombytes: 2.1.0
       safe-buffer: 5.2.1
 
-  react-contribution-calendar@1.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-contribution-calendar@2.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
