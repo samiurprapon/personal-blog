@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import { store } from '~/store';
 
+import '~/styles/style.css';
 import '~/styles/main.scss';
 
 import { ThemeProvider } from '~/providers/ThemeProvider';

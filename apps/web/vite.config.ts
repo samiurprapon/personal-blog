@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
+import react from '@vitejs/plugin-react-swc';
+import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 const REQUIRED_ENV_VARS = ['VITE_GITHUB_API', 'VITE_GITHUB_USERNAME', 'VITE_GITHUB_JOIN_YEAR'];
@@ -30,6 +31,7 @@ export default defineConfig(({ mode }) => {
 	return {
 		plugins: [
 			react(),
+			tailwindcss(),
 			nodePolyfills({
 				include: ['crypto', 'stream', 'util'],
 				exclude: [
