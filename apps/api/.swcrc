@@ -1,0 +1,35 @@
+{
+	"minify": true,
+	"jsc": {
+		"parser": {
+			"syntax": "typescript",
+			"tsx": false,
+			"dynamicImport": true,
+			"decoratorsBeforeExport": true,
+			"decorators": true,
+			"skipLibCheck": true
+		},
+		"transform": {
+			"legacyDecorator": false,
+			"decoratorMetadata": true
+		},
+		"target": "es5",
+		"externalHelpers": false, // Ensure helpers are inlined rather than external
+		"keepClassNames": false,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"] // Match paths from tsconfig
+		},
+		"loose": false,
+		"minify": {
+			"compress": {
+				"unused": true
+			},
+			"mangle": false // Do not mangle variable names for readability
+		}
+	},
+	"sourceMaps": true, // Keep source maps for debugging
+	"module": {
+		"type": "commonjs" // Consistent with tsconfig
+	}
+}

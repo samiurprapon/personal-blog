@@ -28,6 +28,7 @@
 		"build": "pnpm run --parallel build",
 		"preview": "pnpm run --prefix apps/web preview",
 		"dev": "pnpm run --parallel dev",
+		"start": "pnpm run --parallel start",
 		"web:dev": "pnpm run --prefix apps/web dev",
 		"web:build": "pnpm run --prefix apps/web build"
 	},
@@ -35,7 +36,7 @@
 		"@commitlint/cli": "^19.6.1",
 		"@commitlint/config-conventional": "^19.6.0",
 		"@eslint/js": "^9.19.0",
-		"@types/node": "^22.10.7",
+		"@types/node": "^22.13.0",
 		"cross-env": "^7.0.3",
 		"dotenv": "^16.4.7",
 		"eslint": "^9.19.0",
@@ -46,6 +47,6 @@
 		"standard-version": "^9.5.0",
 		"tslib": "^2.8.1",
 		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.18.1"
+		"typescript-eslint": "^8.19.1"
 	}
 }
