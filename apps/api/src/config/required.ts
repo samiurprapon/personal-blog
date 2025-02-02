@@ -22,12 +22,17 @@ export const config = {
 	NODE_ENV: process.env.NODE_ENV || 'development',
 	HOST: process.env.HOST || 'localhost',
 	PORT: +(process.env.PORT || 3001),
+
+	// Database
 	APP_DB_NAME: process.env.APP_DB_NAME || 'diary',
 	APP_DB_PASSWORD: process.env.APP_DB_PASSWORD || '',
 	APP_DB_USER: process.env.APP_DB_USER || '',
 	APP_DB_HOST: process.env.APP_DB_HOST || '',
 	APP_DB_PORT: +(process.env.APP_DB_PORT || 5432),
 	APP_DB_SSL: process.env.APP_DB_SSL || '',
+
+	// Redis
+	REDIS_URI: process.env.REDIS_URI || 'redis://localhost:6379',
 
 	// Security
 	PASSWORD_SALT: +(process.env.PASSWORD_SALT || 10),
