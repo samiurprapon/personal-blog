@@ -13,7 +13,7 @@ dx: ## Create database migrations
 	  echo "Usage: make create <migration_name>"; \
 	  exit 0; \
 	fi; \
-	pnpm -F @samiurprapon/api exec typeorm migration:create ./src/providers/database/migrations/$(word 2, $(MAKECMDGOALS))
+	pnpm -F @samiurprapon/api exec typeorm migration:create ./src/providers/postgres/migrations/$(word 2, $(MAKECMDGOALS))
 
 migration: ## Generate database migrations
 	@if [ -z "$(word 2, $(MAKECMDGOALS))" ]; then \
@@ -21,17 +21,17 @@ migration: ## Generate database migrations
 	  exit 0; \
 	fi; \
 	pnpm -F @samiurprapon/api exec pnpm typeorm migration:generate \
-	  -d ./src/providers/database/AppDataProvider.ts \
-	  ./src/providers/database/migrations/$(word 2, $(MAKECMDGOALS))
+	  -d ./src/providers/postgres/DataSource.ts \
+	  ./src/providers/postgres/migrations/$(word 2, $(MAKECMDGOALS))
 
 migrate: ## Run database migrations
-	pnpm -F @samiurprapon/api exec pnpm typeorm migration:run -d ./src/providers/database/AppDataProvider.ts
+	pnpm -F @samiurprapon/api exec pnpm typeorm migration:run -d ./src/providers/postgres/DataSource.ts
 
 show:
-	pnpm -F @samiurprapon/api exec pnpm typeorm migration:show -d src/providers/database/AppDataProvider.ts
+	pnpm -F @samiurprapon/api exec pnpm typeorm migration:show -d src/providers/postgres/DataSource.ts
 
 rollback: ## Revert database migrations
-	pnpm -F @samiurprapon/api exec pnpm typeorm migration:revert -d src/providers/database/AppDataProvider.ts
+	pnpm -F @samiurprapon/api exec pnpm typeorm migration:revert -d src/providers/postgres/DataSource.ts
 
 #-- Environment
 dev: ## Run Development environment for required services (Postgres, Redis, etc)
