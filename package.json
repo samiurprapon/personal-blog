@@ -1,5 +1,5 @@
 {
-	"name": "@samiurprapon/blog",
+	"name": "@samiurprapon/personal-blog",
 	"private": true,
 	"version": "0.2.1",
 	"description": "",
@@ -47,6 +47,6 @@
 		"standard-version": "^9.5.0",
 		"tslib": "^2.8.1",
 		"typescript": "^5.7.3",
-		"typescript-eslint": "^8.22.0"
+		"typescript-eslint": "^8.23.0"
 	}
 }

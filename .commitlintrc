@@ -24,9 +24,11 @@
 			[
 				"deps",
 				"deps-api",
+				"deps-blog",
 				"deps-web",
 				"api",
 				"web",
+				"blog",
 				"docker",
 				"config",
 				"core",
