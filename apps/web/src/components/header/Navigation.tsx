@@ -21,15 +21,15 @@ const Navigation = () => {
 	const getThemeIcon = () => {
 		switch (theme) {
 			case 'dark':
-				return <Sun className="w-5 h-5" />;
+				return <Sun className="h-5 w-5" />;
 			case 'light':
-				return <Moon className="w-5 h-5" />;
+				return <Moon className="h-5 w-5" />;
 			case 'system':
 				// check if system theme is dark
 				if (matchMedia('(prefers-color-scheme: dark)').matches) {
-					return <Sun className="w-5 h-5" />;
+					return <Sun className="h-5 w-5" />;
 				} else {
-					return <Moon className="w-5 h-5" />;
+					return <Moon className="h-5 w-5" />;
 				}
 		}
 	};
