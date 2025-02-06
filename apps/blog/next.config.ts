@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
 	experimental: {
 		forceSwcTransforms: true,
 	},
+	output: 'export',
+	distDir: '../../dist/apps/blog',
 };
 
 export default nextConfig;
