@@ -75,3 +75,15 @@ body {
     @apply bg-background text-foreground;
   }
 } */
+
+@font-face {
+	font-family: 'Agustina Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/Agustina.woff') format('woff');
+	font-display: swap;
+}
+
+@theme {
+	--font-agustina: 'Agustina Regular', sans-serif;
+}
