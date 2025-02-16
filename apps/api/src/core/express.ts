@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import express, { json, urlencoded, Express as ExpressApp, Request, Response } from 'express';
+import express, { json, urlencoded, Express as ExpressApp, Request, Response, NextFunction } from 'express';
 
 import compression from '@/core/compression';
 import cors from '@/core/cors';
@@ -41,7 +40,7 @@ export class Express {
 	}
 
 	protected async setRoutes(): Promise<void> {
-		this.createRoutes([SystemController /* Add controllers here */]);
+		this.createRoutes([SystemController /* Add controllers here */], '/api/v1');
 	}
 
 	protected setErrorHandler(): void {
@@ -56,17 +55,21 @@ export class Express {
 		return this.app;
 	}
 
-	protected createRoutes(controllers: any[]) {
-		controllers.forEach((controllerClass) => {
-			const controllerInstance = new controllerClass();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	protected createRoutes(controllers: any[], apiPrefix: string) {
+		controllers.forEach((Controller) => {
+			const controllerInstance = new Controller();
 
-			const prefix = Reflect.getMetadata('prefix', controllerClass);
+			const prefix = Reflect.getMetadata('prefix', Controller) || ''; // Get controller prefix
+			const fullPrefix = apiPrefix + prefix; // Apply global prefix
 
 			const routes: RouteDefinition[] = controllerInstance.getRoutes();
 
 			routes.forEach((route) => {
-				const path = prefix + route.path;
-				this.app[route.method](path, (req: Request, res: Response) => controllerInstance[route.methodName](req, res));
+				const path = fullPrefix + route.path; // Final route path
+				this.app[route.method](path, (req: Request, res: Response, next: NextFunction) =>
+					controllerInstance[route.methodName](req, res, next),
+				);
 			});
 		});
 	}

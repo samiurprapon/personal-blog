@@ -479,6 +479,18 @@ class RedisClient<T extends Redis> implements IEnhancedRedis {
 	}
 
 	/**
+	 * Gets all keys matching a pattern
+	 * @example
+	 * const keys = await redis.keys('user:*');
+	 *
+	 * @returns Array of matching keys
+	 *
+	 */
+	async keys(pattern: string): Promise<string[]> {
+		return await this.redisInstance.keys(pattern);
+	}
+
+	/**
 	 * Creates a duplicate Redis connection
 	 * @returns New Redis instance with same configuration
 	 * @example

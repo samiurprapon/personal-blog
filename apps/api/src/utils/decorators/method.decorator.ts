@@ -20,13 +20,19 @@ const createMethodDecorator = (method: string) => {
 			});
 
 			Reflect.defineMetadata(ROUTES_KEY, routes, target.constructor);
+
+			// console.log(`[DEBUG] Registered route: ${method.toUpperCase()} ${path} -> ${String(propertyKey)}`);
+			// console.log(`[DEBUG] Routes metadata:`, routes);
+
 			return descriptor;
 		};
 	};
 };
 
-export const Get = createMethodDecorator('get');
-export const Post = createMethodDecorator('post');
-export const Put = createMethodDecorator('put');
-export const Delete = createMethodDecorator('delete');
-export const Patch = createMethodDecorator('patch');
+export const Method = {
+	Get: createMethodDecorator('get'),
+	Post: createMethodDecorator('post'),
+	Put: createMethodDecorator('put'),
+	Delete: createMethodDecorator('delete'),
+	Patch: createMethodDecorator('patch'),
+};

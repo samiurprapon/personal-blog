@@ -23,5 +23,6 @@ export interface IEnhancedRedis {
 	ping(): Promise<string>;
 	flushdb(): Promise<void>;
 	quit(): Promise<void>;
+	keys(pattern: string): Promise<string[]>;
 	duplicate(): Redis;
 }
