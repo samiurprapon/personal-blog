@@ -1,0 +1,12 @@
+{
+	"name": "@samiurprapon/auth",
+	"private": true,
+	"version": "0.0.1",
+	"scripts": {
+		"preinstall": "go version",
+		"install": "go mod tidy",
+		"dev": "go run main.go",
+		"prebuild": "rimraf ../../dist/apps/auth",
+		"build": "go build -o ../../dist/apps/auth main.go"
+	}
+}
