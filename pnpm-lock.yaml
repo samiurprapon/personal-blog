@@ -87,8 +87,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
       react-contribution-calendar:
-        specifier: ^1.5.3
-        version: 1.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.0.4
+        version: 2.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
@@ -3153,8 +3153,8 @@ packages:
   randomfill@1.0.4:
     resolution: {integrity: sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==}
 
-  react-contribution-calendar@1.5.3:
-    resolution: {integrity: sha512-XImSo3QHUGdAXO4IqtJI2RdUR9t7MAWo71lNRMNCE5tkbf1nfWnLMs+5Ngl768hk8TXYpo6UVu2pEdWp72u9uA==}
+  react-contribution-calendar@2.0.4:
+    resolution: {integrity: sha512-OxVrhWJYPhsN4aTU82WTOWAgcrwEsQDy4EVR3dn2VM5OD+jGqbY4JEu9Ze4SBh5HtM5Si0wa1PvbSw5cf6ENAQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -7493,7 +7493,7 @@ snapshots:
       randombytes: 2.1.0
       safe-buffer: 5.2.1
 
-  react-contribution-calendar@1.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-contribution-calendar@2.0.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
