@@ -111,8 +111,8 @@ importers:
         specifier: ^5.9.0
         version: 5.10.0(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-share:
-        specifier: ^5.1.1
-        version: 5.1.2(react@18.3.1)
+        specifier: ^5.2.1
+        version: 5.2.1(react@18.3.1)
       redux:
         specifier: ^5.0.1
         version: 5.0.1
@@ -3249,8 +3249,8 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  react-share@5.1.2:
-    resolution: {integrity: sha512-qwMT72LrGvDsg3E5lKlvUcXH4YWqjLcqlinxIomGaey2SoS/1/DBkTpan3TyzX9gDr0dcp1bl+z5LbdOOE4bmA==}
+  react-share@5.2.1:
+    resolution: {integrity: sha512-M69VhqBLpY89zgkOmuXz67EfVYHNTcVALMUirTRpVAUxRrkJicYl3OKp6ZM8dNYl86VrzXrArzoiwbyubJRYqg==}
     peerDependencies:
       react: ^17 || ^18 || ^19
 
@@ -7607,7 +7607,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  react-share@5.1.2(react@18.3.1):
+  react-share@5.2.1(react@18.3.1):
     dependencies:
       classnames: 2.5.1
       jsonp: 0.2.1
