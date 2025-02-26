@@ -1,0 +1,54 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"composite": true,
+		"incremental": true,
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"lib": ["es2015", "es5", "es6", "dom", "ES2021"],
+		"types": ["node", "express"],
+		"moduleResolution": "node",
+		"module": "CommonJS",
+		"skipLibCheck": true,
+		/* Bundler mode */
+		"outDir": "../../dist/apps/api",
+		"rootDir": ".",
+		"sourceMap": false,
+		// "declaration": true,
+		// "allowJs": false,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"isolatedModules": false,
+		"noEmit": false,
+		"removeComments": true,
+		/* Linting */
+		"strict": true,
+		"strictNullChecks": true,
+		"noUnusedLocals": true,
+		"noImplicitAny": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		/* Other */
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"importHelpers": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		},
+		// typeorm
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"strictPropertyInitialization": false
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.json",
+		".env",
+		".env.development.local",
+		".env.test.local",
+		".env.production.local",
+		"package.json"
+	],
+	"exclude": ["node_modules", "build", "dist"]
+}

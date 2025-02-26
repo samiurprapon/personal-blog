@@ -1,0 +1,6 @@
+{
+	"watch": ["src", ".env", ".env.development.local", "tsconfig.json", "nodemon.json"],
+	"ext": "js,ts,json",
+	"ignore": ["build", "node_modules", "src/logs/*", "src/**/*.{spec,test}.ts"],
+	"exec": "tsx --tsconfig ./tsconfig.json ./src/index.ts"
+}
