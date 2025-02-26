@@ -9,7 +9,7 @@ export function Logo() {
 			href="/"
 		>
 			<span className="tracking-widest">&lt;</span>
-			<span className="font-agustina text-au px-2 font-bold">SamiurPrapon</span>
+			<span className="font-agustina text-au px-2 font-bold transition-all hover:text-[#3b82f6]">SamiurPrapon</span>
 			<span className="tracking-widest">/&gt;</span>
 		</Link>
 	);

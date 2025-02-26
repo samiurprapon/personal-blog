@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/ThemeProvider';
-import { DevelopmentBanner } from '@/components/DevelopmentBanner';
+// import { DevelopmentBanner } from '@/components/DevelopmentBanner';
 import Footer from '@/sections/footer';
 import Header from '@/sections/header';
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${poppins.className} antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-					<DevelopmentBanner />
+					{/* <DevelopmentBanner /> */}
 					<Header />
 					<main>{children}</main>
 					<Footer />

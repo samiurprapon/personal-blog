@@ -9,6 +9,7 @@ interface IMenuItem {
 
 export const MENU_ITEMS: IMenuItem[] = [
 	{ name: 'Latest', path: '/' },
+	{ name: 'Use?', path: '/uses' }, // for a weird dropdown error
 	{ name: 'Projects', path: '/projects' },
 	{ name: 'Use?', path: '/uses' },
 	{ name: 'Bucket', path: '/bucket' },
