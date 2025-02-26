@@ -38,7 +38,7 @@ function BlogPage() {
 						<div className="centered-content">
 							<div className="flex-justified-aligned">
 								<Error404 />
-								<h3 className="text-center bigger-text pt-md-4">Content not found!</h3>
+								<h3 className="bigger-text pt-md-4 text-center">Content not found!</h3>
 							</div>
 						</div>
 					)}

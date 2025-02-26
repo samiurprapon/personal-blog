@@ -6,6 +6,7 @@
 		"wix.vscode-import-cost",
 		"christian-kohler.path-intellisense",
 		"oouo-diogo-perdigao.docthis",
-		"tbeseda.toggle-js-inlayhints"
+		"tbeseda.toggle-js-inlayhints",
+		"bradlc.vscode-tailwindcss"
 	]
 }

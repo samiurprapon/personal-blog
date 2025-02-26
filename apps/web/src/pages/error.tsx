@@ -12,7 +12,7 @@ function Error() {
 				<div className="centered-content">
 					<div className="flex-justified-aligned">
 						<Error404 />
-						<h3 className="text-center bigger-text pt-md-4">Page not found!</h3>
+						<h3 className="bigger-text pt-md-4 text-center">Page not found!</h3>
 					</div>
 				</div>
 			</main>
