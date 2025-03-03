@@ -37,3 +37,15 @@ updates:
       prefix: 'chore(deps-web)'
       prefix-development: 'chore(deps-web)'
       include: 'scope'
+
+  # auth app dependencies
+  - package-ecosystem: 'gomod'
+    directory: '/apps/auth'
+    schedule:
+      interval: 'daily'
+    versioning-strategy: 'increase'
+    target-branch: 'main'
+    commit-message:
+      prefix: 'chore(deps-auth)'
+      prefix-development: 'chore(deps-auth)'
+      include: 'scope'

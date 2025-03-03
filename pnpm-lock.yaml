@@ -151,6 +151,8 @@ importers:
         specifier: ^4.19.3
         version: 4.19.3
 
+  apps/auth: {}
+
   apps/blog:
     dependencies:
       '@radix-ui/react-avatar':
