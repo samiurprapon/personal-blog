@@ -25,20 +25,20 @@ function BlogPage() {
 		<>
 			<Navigation />
 			<main>
-				<div className="blog-container">
+				<div className='blog-container'>
 					{data ? (
 						<div>
 							<PostHeader post={data} />
 							<PostContent content={data.content} />
-							<div className="col-xs-12">
+							<div className='col-xs-12'>
 								<ReactionContainer post={data} />
 							</div>
 						</div>
 					) : (
-						<div className="centered-content">
-							<div className="flex-justified-aligned">
+						<div className='centered-content'>
+							<div className='flex-justified-aligned'>
 								<Error404 />
-								<h3 className="text-center bigger-text pt-md-4">Content not found!</h3>
+								<h3 className='text-center bigger-text pt-md-4'>Content not found!</h3>
 							</div>
 						</div>
 					)}

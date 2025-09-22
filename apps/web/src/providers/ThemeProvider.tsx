@@ -1,6 +1,6 @@
-import { FC, ReactNode, useState, useEffect } from 'react';
+import { type FC, type ReactNode, useState, useEffect, useCallback } from 'react';
 import { ThemeContext } from '~/contexts/ThemeContext';
-import { Theme } from '~/interfaces/ThemeContextType';
+import type { Theme } from '~/interfaces/ThemeContextType';
 
 interface ThemeProviderProps {
 	children: ReactNode;
@@ -9,7 +9,7 @@ interface ThemeProviderProps {
 export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 	const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem('theme') as Theme) || 'system');
 
-	const updateTheme = (newTheme: Theme) => {
+	const updateTheme = useCallback((newTheme: Theme) => {
 		const root = document.documentElement;
 		root.classList.remove('light', 'dark');
 
@@ -17,7 +17,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 			newTheme === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : newTheme;
 
 		root.setAttribute('data-theme', effectiveTheme);
-	};
+	}, []);
 
 	useEffect(() => {
 		localStorage.setItem('theme', theme);
@@ -36,19 +36,20 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
 		return () => {
 			mediaQuery.removeEventListener('change', handleSystemThemeChange);
 		};
-	}, [theme]);
+	}, [theme, updateTheme]);
 
 	const toggleTheme = () => {
 		setTheme((prevTheme: Theme) => {
 			if (prevTheme === 'light') {
 				return 'dark';
-			} else if (prevTheme === 'dark') {
-				return 'light';
-			} else if (prevTheme === 'system') {
-				return matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
-			} else {
-				return 'system';
 			}
+			if (prevTheme === 'dark') {
+				return 'light';
+			}
+			if (prevTheme === 'system') {
+				return matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
+			}
+			return 'system';
 		});
 	};
 

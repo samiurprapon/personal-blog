@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import {
 	FacebookShareButton,
 	TwitterShareButton,
@@ -7,7 +7,7 @@ import {
 	TwitterIcon,
 	LinkedinIcon,
 } from 'react-share';
-import { Post } from '~/interfaces/Post.interface';
+import type { Post } from '~/interfaces/Post.interface';
 
 interface ShareButtonsProps {
 	post: Post;
@@ -15,7 +15,7 @@ interface ShareButtonsProps {
 
 const ShareButtons: React.FC<ShareButtonsProps> = ({ post }) => {
 	return (
-		<div className="blog-container__tags">
+		<div className='blog-container__tags'>
 			<FacebookShareButton url={post.slug} title={post.title}>
 				<FacebookIcon size={32} round />
 			</FacebookShareButton>

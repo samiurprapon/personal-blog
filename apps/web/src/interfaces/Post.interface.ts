@@ -1,5 +1,5 @@
-import { postStatus } from '~/types/status.type';
-import { Author } from './Author';
+import type { postStatus } from '~/types/status.type';
+import type { Author } from './Author';
 
 export interface Post {
 	id: string;

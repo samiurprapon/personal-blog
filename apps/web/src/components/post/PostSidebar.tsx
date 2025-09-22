@@ -1,5 +1,5 @@
 function PostSidebar() {
-	return <aside className="post-sidebar"></aside>;
+	return <aside className='post-sidebar' />;
 }
 
 export default PostSidebar;

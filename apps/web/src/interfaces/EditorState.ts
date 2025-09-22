@@ -1,4 +1,4 @@
-import { Post } from '~/interfaces/Post.interface';
+import type { Post } from '~/interfaces/Post.interface';
 
 export interface EditorState {
 	post: Post;

@@ -1,4 +1,4 @@
-import { Post } from '~/interfaces/Post.interface';
+import type { Post } from '~/interfaces/Post.interface';
 import { postPlaceholder } from './placehohlder';
 import { author } from './author';
 

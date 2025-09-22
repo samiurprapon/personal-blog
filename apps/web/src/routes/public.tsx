@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { RouteObject } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom';
 
 import Loadable from '~/components/Loadable';
 import MinimalLayout from '~/layouts/MinimalLayout';

@@ -1,4 +1,4 @@
-import { Year } from '~/interfaces//GithubAPI';
+import type { Year } from '~/interfaces//GithubAPI';
 
 export interface CalendarProps {
 	username: string;

@@ -35,15 +35,16 @@ function TagsPage() {
 			<main>
 				{/* <Hero /> */}
 
-				<div className="container-fluid">
-					<div className="row">
-						<div className="col-md-9">
-							<div className="post-container">
-								<h2 className="post-container__title_tag">
+				<div className='container-fluid'>
+					<div className='row'>
+						<div className='col-md-9'>
+							<div className='post-container'>
+								<h2 className='post-container__title_tag'>
 									{tag?.replace(/(\p{Emoji}|\p{Letter})/gu, (match, _p1, offset, string) => {
 										if (offset === 0) {
 											return match.toUpperCase();
-										} else if (string[offset - 1] === ' ') {
+										}
+										if (string[offset - 1] === ' ') {
 											return match.toUpperCase();
 										}
 										return match;
@@ -51,15 +52,15 @@ function TagsPage() {
 									Posts
 								</h2>
 								{/* add a breadcrum */}
-								<div className="post-container__breadcrumb">
+								<div className='post-container__breadcrumb'>
 									<span>~/</span>
-									<Link to="/">🏠 Home</Link> <span>/</span> <span>{tag}</span>
+									<Link to='/'>🏠 Home</Link> <span>/</span> <span>{tag}</span>
 								</div>
 
 								<br />
 
-								{data?.length === 0 && <h3 className="post-container__notfound">No posts found for tag: {tag}</h3>}
-								<div className="post-container__grid">
+								{data?.length === 0 && <h3 className='post-container__notfound'>No posts found for tag: {tag}</h3>}
+								<div className='post-container__grid'>
 									{(data || []).slice(0, visiblePosts).map((post, index) => (
 										<PostCard post={post} key={index} />
 									))}
@@ -67,7 +68,8 @@ function TagsPage() {
 
 								{visiblePosts < (data || []).length && (
 									<button
-										className="post-container__load-more"
+										type='button'
+										className='post-container__load-more'
 										onClick={handleLoadMore}
 										disabled={isLoading} // Disable button while loading
 									>
@@ -76,7 +78,7 @@ function TagsPage() {
 								)}
 							</div>
 						</div>
-						<div className="col-md-3">
+						<div className='col-md-3'>
 							<Sidebar />
 						</div>
 					</div>

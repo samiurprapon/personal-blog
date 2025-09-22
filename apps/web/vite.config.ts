@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
@@ -96,7 +96,7 @@ export default defineConfig(({ mode }) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					api: 'modern-compiler',
+					// Add valid Sass options here if needed
 				},
 			},
 		},

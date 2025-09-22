@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
-import { EditorStore, EditorState } from '~/interfaces/EditorState';
+import type { EditorStore, EditorState } from '~/interfaces/EditorState';
 
 import { calculateReadingTime } from '~/utils/readingTime';
 import { generateSlug } from '~/utils/slugify';

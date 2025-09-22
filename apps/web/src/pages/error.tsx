@@ -3,16 +3,16 @@ import Navigation from '~/components/header/Navigation';
 
 import { ErrorFooter } from '~/components/error/ErrorFooter';
 
-function Error() {
+function ErrorPage() {
 	return (
 		<>
 			<Navigation />
 
-			<main className="container">
-				<div className="centered-content">
-					<div className="flex-justified-aligned">
+			<main className='container'>
+				<div className='centered-content'>
+					<div className='flex-justified-aligned'>
 						<Error404 />
-						<h3 className="text-center bigger-text pt-md-4">Page not found!</h3>
+						<h3 className='text-center bigger-text pt-md-4'>Page not found!</h3>
 					</div>
 				</div>
 			</main>
@@ -22,4 +22,4 @@ function Error() {
 	);
 }
 
-export default Error;
+export default ErrorPage;

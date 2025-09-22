@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import MinimalLayout from '~/layouts/MinimalLayout';
 import PublicRoutes from '~/routes/public';
 
-import Error from '~/routes/ErrorRoute';
+import ErrorPage from '~/routes/ErrorRoute';
 
 const router = createBrowserRouter(
 	[
@@ -13,7 +13,7 @@ const router = createBrowserRouter(
 			children: [
 				{
 					path: '*',
-					element: <Error />,
+					element: <ErrorPage />,
 				},
 			],
 		},

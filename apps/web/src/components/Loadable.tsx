@@ -1,4 +1,4 @@
-import { Suspense, ElementType, ComponentProps } from 'react';
+import { Suspense, type ElementType, type ComponentProps } from 'react';
 
 import Loader from '~/components/Loader';
 

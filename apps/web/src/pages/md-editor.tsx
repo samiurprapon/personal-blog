@@ -9,10 +9,10 @@ function MarkDownEditorPage() {
 		<>
 			<Navigation />
 			<main>
-				<div className="container-fluid">
-					<h2 className="mb-xs-4 mb-md-2">
+				<div className='container-fluid'>
+					<h2 className='mb-xs-4 mb-md-2'>
 						{'Markdown Editor '}
-						<span className="small-text">(GitHub compatible)</span>
+						<span className='small-text'>(GitHub compatible)</span>
 					</h2>
 
 					<ContentEditor extra={true} preview={isMobile || isTablet ? 'edit' : 'live'} />

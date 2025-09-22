@@ -1,4 +1,4 @@
-@use '../base/vars' as *;
+@use "../base/vars" as *;
 
 .scroll-up__container {
 	display: flex;
@@ -13,6 +13,7 @@
 	align-items: center;
 	border-radius: 0.25rem;
 	transition: all 0.3s ease-in-out;
+	border-color: transparent;
 
 	&:hover,
 	&:active,

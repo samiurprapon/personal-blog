@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
+import type React from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { User, LogOut, Github, PencilLine } from 'lucide-react';
 
 import { useAuthStore } from '~/store/auth';
@@ -21,42 +22,42 @@ const ProfileButton: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="profile-button" ref={dropdownRef}>
+		<div className='profile-button' ref={dropdownRef}>
 			<button
-				className="profile-button__trigger"
+				type='button'
+				className='profile-button__trigger'
 				onClick={() => setIsOpen(!isOpen)}
 				aria-expanded={isOpen}
-				aria-label="Profile menu"
-			>
+				aria-label='Profile menu'>
 				{state.isAuthenticated && state.user ? (
-					<img src={state.user.avatar_url} alt={state.user.name} className="profile-button__avatar" />
+					<img src={state.user.avatar_url} alt={state.user.name} className='profile-button__avatar' />
 				) : (
-					<User className="profile-button__icon" />
+					<User className='profile-button__icon' />
 				)}
 			</button>
 
 			{isOpen && (
-				<div className="profile-button__dropdown">
+				<div className='profile-button__dropdown'>
 					{state.isAuthenticated && state.user ? (
 						<>
-							<div className="profile-button__user">
-								<img src={state.user.avatar_url} alt={state.user.name} className="profile-button__user-avatar" />
-								<div className="profile-button__user-info">
-									<span className="profile-button__user-name">{state.user.name}</span>
-									<span className="profile-button__user-login">@{state.user.login}</span>
+							<div className='profile-button__user'>
+								<img src={state.user.avatar_url} alt={state.user.name} className='profile-button__user-avatar' />
+								<div className='profile-button__user-info'>
+									<span className='profile-button__user-name'>{state.user.name}</span>
+									<span className='profile-button__user-login'>@{state.user.login}</span>
 								</div>
 							</div>
 
-							<Link to="/write" className="profile-button__action">
+							<Link to='/write' className='profile-button__action'>
 								<PencilLine /> Write a post
 							</Link>
 
-							<button onClick={logout} className="profile-button__action">
+							<button type='button' onClick={logout} className='profile-button__action'>
 								<LogOut /> Logout
 							</button>
 						</>
 					) : (
-						<button onClick={login} className="profile-button__action">
+						<button type='button' onClick={login} className='profile-button__action'>
 							<Github /> Login with GitHub
 						</button>
 					)}

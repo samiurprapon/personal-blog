@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { ApiResponse, ApiErrorResponse, Year, GithubIssue } from '~/interfaces/GithubAPI';
+import type { ApiResponse, ApiErrorResponse, Year, GithubIssue } from '~/interfaces/GithubAPI';
 
 import { GITHUB_API_URL, GITHUB_USERNAME } from '~/configs/environment';
 
