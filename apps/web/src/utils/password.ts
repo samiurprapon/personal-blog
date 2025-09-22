@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 
-import { GenerateOptions } from '~/interfaces/PasswordGenerateOptions';
+import type { GenerateOptions } from '~/interfaces/PasswordGenerateOptions';
 
 export class PasswordGenerator {
 	private static instance: PasswordGenerator;
@@ -40,16 +40,16 @@ export class PasswordGenerator {
 			const array = new Uint8Array(size);
 			window.crypto.getRandomValues(array);
 			return array;
-		} else if (typeof globalThis !== 'undefined' && globalThis.crypto) {
+		}
+		if (typeof globalThis !== 'undefined' && globalThis.crypto) {
 			// Fallback for environments like Node.js with Web Crypto API support
 			const array = new Uint8Array(size);
 			globalThis.crypto.getRandomValues(array);
 			return array;
-		} else {
-			// Use Node.js crypto for server environments
-			toast.error('No secure random number generator available');
-			return new Uint8Array(size);
 		}
+		// Use Node.js crypto for server environments
+		toast.error('No secure random number generator available');
+		return new Uint8Array(size);
 	}
 
 	private getNextRandomValue(): number {

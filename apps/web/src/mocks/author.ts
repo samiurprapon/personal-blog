@@ -1,6 +1,6 @@
 import { FULL_NAME, GITHUB_PROFILE_URL } from '~/configs/environment';
 
-import { Author } from '~/interfaces/Author';
+import type { Author } from '~/interfaces/Author';
 
 export const author: Author = {
 	id: '' + 25266703,

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Heart } from 'lucide-react';
 
 import ShareButtons from '~/components/post/ShareButtons';
-import { Post } from '~/interfaces/Post.interface';
+import type { Post } from '~/interfaces/Post.interface';
 
 interface PostProps {
 	post: Post;
@@ -18,15 +18,15 @@ function ReactionContainer({ post }: PostProps) {
 	};
 
 	return (
-		<div className="reaction-container">
-			<div className="love-button" onClick={handleClick}>
+		<div className='reaction-container'>
+			<button type='button' className='love-button' onClick={handleClick}>
 				<Heart
 					size={24}
 					fill={isLoved ? '#ff6881' : 'transparent'}
 					stroke={isLoved ? '#ff6881' : 'var(--color-text)'}
 				/>
-				<span className="reaction-count">{reactionCount}</span>
-			</div>
+				<span className='reaction-count'>{reactionCount}</span>
+			</button>
 			<ShareButtons post={post} />
 		</div>
 	);

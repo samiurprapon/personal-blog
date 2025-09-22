@@ -5,7 +5,7 @@ import EditorHeader from '~/components/editor/EditorHeader';
 
 const EditorOptions: React.FC = () => {
 	return (
-		<aside className="editor__sidebar">
+		<aside className='editor__sidebar'>
 			<EditorHeader />
 			<PublishSection />
 			<TagsSection />

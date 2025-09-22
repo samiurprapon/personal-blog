@@ -1,5 +1,5 @@
-import React from 'react';
-import MDEditor, { commands, PreviewType } from '@uiw/react-md-editor';
+import type React from 'react';
+import MDEditor, { commands, type PreviewType } from '@uiw/react-md-editor';
 
 import { useEditorStore } from '~/store/editor';
 import { useTheme } from '~/hooks/useTheme';
@@ -12,7 +12,7 @@ const ContentEditor: React.FC<{
 	const { theme } = useTheme();
 
 	return (
-		<div className="content-editor" data-color-mode={theme}>
+		<div className='content-editor' data-color-mode={theme}>
 			<MDEditor
 				value={state.post.content}
 				onChange={(value) => setContent(value || '')}

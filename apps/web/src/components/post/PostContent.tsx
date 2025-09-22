@@ -1,5 +1,5 @@
 import Markdown from 'markdown-to-jsx';
-import React from 'react';
+import type React from 'react';
 
 interface PostContentProps {
 	content: string;
@@ -7,7 +7,7 @@ interface PostContentProps {
 
 const PostContent: React.FC<PostContentProps> = ({ content }) => {
 	return (
-		<div className="blog-container__wrapper">
+		<div className='blog-container__wrapper'>
 			<Markdown options={{ wrapper: 'article' }}>{content}</Markdown>
 		</div>
 	);

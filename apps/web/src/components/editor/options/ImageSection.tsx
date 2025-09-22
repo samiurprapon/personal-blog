@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { useDropzone } from 'react-dropzone';
 
 import { useEditorStore } from '~/store/editor';
@@ -19,13 +19,13 @@ const ImageSection: React.FC = () => {
 	});
 
 	return (
-		<section className="sidebar-section">
-			<h3 className="sidebar-section__title">Featured Image</h3>
-			<div className="sidebar-section__content">
-				<div {...getRootProps()} className="image-dropzone">
+		<section className='sidebar-section'>
+			<h3 className='sidebar-section__title'>Featured Image</h3>
+			<div className='sidebar-section__content'>
+				<div {...getRootProps()} className='image-dropzone'>
 					<input {...getInputProps()} />
 					{state.post.featuredImage ? (
-						<img src={state.post.featuredImage} alt="Featured" className="image-preview" />
+						<img src={state.post.featuredImage} alt='Featured' className='image-preview' />
 					) : (
 						<p>Drag & drop an image here, or click to select</p>
 					)}

@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { Post } from '~/interfaces/Post.interface';
+import type { Post } from '~/interfaces/Post.interface';
 
 import mockPosts from '~/mocks/posts';
 

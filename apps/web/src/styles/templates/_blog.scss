@@ -1,5 +1,5 @@
-@use '../base/vars' as *;
-@use '../base/typography' as *;
+@use "../base/vars" as *;
+@use "../base/typography" as *;
 
 .blog-container {
 	max-width: 90rem;
@@ -78,6 +78,7 @@
 			border-color 0.25s,
 			background-color 0.25s;
 		border-color: transparent;
+		background-color: transparent;
 
 		.speak-svg {
 			width: 1.25rem;
@@ -139,7 +140,7 @@
 				margin-right: 0.75rem;
 			}
 
-			img[align='left'] {
+			img[align="left"] {
 				margin: 0.215rem;
 
 				@media screen and (min-width: $break-point-md) {

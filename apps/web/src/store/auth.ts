@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 import { FULL_NAME, GITHUB_PROFILE_URL, GITHUB_USERNAME, VITE_GITHUB_CLIENT_ID } from '~/configs/environment';
 
-import { AuthStore, AuthState, GithubUser } from '~/types/auth.type';
+import type { AuthStore, AuthState, GithubUser } from '~/types/auth.type';
 
 const initialState: AuthState = {
 	isAuthenticated: true,

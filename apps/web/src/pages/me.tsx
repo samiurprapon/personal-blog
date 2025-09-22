@@ -6,7 +6,7 @@ import { GITHUB_USERNAME, GITHUB_JOIN_YEAR } from '~/configs/environment';
 import Navigation from '~/components/header/Navigation';
 import GithubProfile from '~/components/github/GithubProfile';
 import { GitHubContributionsCalendar } from '~/components/github/GitHubCalendar';
-import { Year } from '~/interfaces/GithubAPI';
+import type { Year } from '~/interfaces/GithubAPI';
 
 function MePage() {
 	const [year, setYear] = useState<number | 'last'>('last');
@@ -21,13 +21,13 @@ function MePage() {
 		<>
 			<Navigation />
 
-			<main className="container">
+			<main className='container'>
 				<GithubProfile />
 
-				<div className="row">
-					<div className="col-xs-12">
-						<div className="dropdown-container">
-							<div className="dropdown-year">
+				<div className='row'>
+					<div className='col-xs-12'>
+						<div className='dropdown-container'>
+							<div className='dropdown-year'>
 								<Select
 									value={year === 'last' ? { value: 'last', label: 'Last 12 months' } : { value: year, label: year }}
 									onChange={(selected) =>
@@ -37,16 +37,16 @@ function MePage() {
 										value: typeof y === 'string' ? y : y.toString(),
 										label: y.toString(),
 									}))}
-									className="select-container"
-									classNamePrefix="react-select"
+									className='select-container'
+									classNamePrefix='react-select'
 								/>
 							</div>
 						</div>
 					</div>
 
-					<div className="col-md-3"></div>
-					<div className="col-xs-12 col-md-9">
-						<div className="github-calendar">
+					<div className='col-md-3' />
+					<div className='col-xs-12 col-md-9'>
+						<div className='github-calendar'>
 							<GitHubContributionsCalendar username={GITHUB_USERNAME} year={year} />
 						</div>
 					</div>
