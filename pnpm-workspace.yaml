@@ -1,2 +1,6 @@
 packages:
-  - 'apps/*'
+  - apps/*
+# ignoredBuiltDependencies:
+#   - '@parcel/watcher'
+#   - '@swc/core'
+#   - esbuild
